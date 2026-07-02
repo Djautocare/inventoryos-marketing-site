@@ -1,0 +1,157 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1200"
+    height="630"
+    viewBox="0 0 1200 630"
+>
+    <defs>
+        <radialGradient
+            id="glow"
+            cx="78%"
+            cy="15%"
+            r="68%"
+        >
+            <stop
+                offset="0"
+                stop-color="#7f31e3"
+                stop-opacity=".48"
+            />
+
+            <stop
+                offset="1"
+                stop-color="#09060f"
+                stop-opacity="0"
+            />
+        </radialGradient>
+
+        <linearGradient
+            id="purple"
+            x1="0"
+            x2="1"
+        >
+            <stop
+                offset="0"
+                stop-color="#d6b1ff"
+            />
+
+            <stop
+                offset="1"
+                stop-color="#9b4dff"
+            />
+        </linearGradient>
+    </defs>
+
+    <rect
+        width="1200"
+        height="630"
+        fill="#09060f"
+    />
+
+    <rect
+        width="1200"
+        height="630"
+        fill="url(#glow)"
+    />
+
+    <g transform="translate(88 88)">
+        <rect
+            width="64"
+            height="64"
+            rx="18"
+            fill="#171021"
+            stroke="#9b4dff"
+            stroke-opacity=".55"
+            stroke-width="2"
+        />
+
+        <rect
+            x="14"
+            y="35"
+            width="9"
+            height="15"
+            rx="3"
+            fill="url(#purple)"
+        />
+
+        <rect
+            x="28"
+            y="17"
+            width="9"
+            height="33"
+            rx="3"
+            fill="url(#purple)"
+        />
+
+        <rect
+            x="42"
+            y="25"
+            width="9"
+            height="25"
+            rx="3"
+            fill="url(#purple)"
+        />
+
+        <text
+            x="82"
+            y="45"
+            fill="#fff"
+            font-family="Arial, sans-serif"
+            font-size="36"
+            font-weight="700"
+        >
+            Inventory<tspan fill="#b46cff">OS</tspan>
+        </text>
+    </g>
+
+    <text
+        x="88"
+        y="270"
+        fill="#fff"
+        font-family="Arial, sans-serif"
+        font-size="72"
+        font-weight="700"
+    >
+        The operating system
+    </text>
+
+    <text
+        x="88"
+        y="354"
+        fill="url(#purple)"
+        font-family="Arial, sans-serif"
+        font-size="72"
+        font-weight="700"
+    >
+        for UK resellers.
+    </text>
+
+    <text
+        x="88"
+        y="438"
+        fill="#b7afc1"
+        font-family="Arial, sans-serif"
+        font-size="30"
+    >
+        Inventory · sales · profit · barcodes · shipping labels
+    </text>
+
+    <rect
+        x="88"
+        y="500"
+        width="224"
+        height="62"
+        rx="16"
+        fill="#8d3fe8"
+    />
+
+    <text
+        x="136"
+        y="541"
+        fill="#fff"
+        font-family="Arial, sans-serif"
+        font-size="24"
+        font-weight="700"
+    >
+        Start free
+    </text>
+</svg>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://inventoryos.co.uk/sitemap.xml
