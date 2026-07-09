@@ -6,6 +6,45 @@ const SITE_CONFIG = Object.freeze({
         "https://app.inventoryos.co.uk/login.html"
 });
 
+const VALID_PLANS = new Set([
+    "free",
+    "starter",
+    "pro",
+    "business"
+]);
+
+function normalisePlan(plan){
+    const clean = String(plan || "")
+        .trim()
+        .toLowerCase();
+
+    return VALID_PLANS.has(clean)
+        ? clean
+        : "";
+}
+
+function withPlan(url, plan){
+    const cleanPlan = normalisePlan(plan);
+
+    if(!cleanPlan){
+        return url;
+    }
+
+    const builtUrl = new URL(url);
+
+    builtUrl.searchParams.set(
+        "plan",
+        cleanPlan
+    );
+
+    builtUrl.searchParams.set(
+        "source",
+        "inventoryos-pricing"
+    );
+
+    return builtUrl.toString();
+}
+
 function setConfiguredLinks(){
     document
         .querySelectorAll(
@@ -13,8 +52,15 @@ function setConfiguredLinks(){
         )
         .forEach(
             function(link){
-                link.href =
-                    SITE_CONFIG.signupUrl;
+                const plan =
+                    normalisePlan(
+                        link.dataset.plan
+                    );
+
+                link.href = withPlan(
+                    SITE_CONFIG.signupUrl,
+                    plan
+                );
             }
         );
 
@@ -24,8 +70,15 @@ function setConfiguredLinks(){
         )
         .forEach(
             function(link){
-                link.href =
-                    SITE_CONFIG.loginUrl;
+                const plan =
+                    normalisePlan(
+                        link.dataset.plan
+                    );
+
+                link.href = withPlan(
+                    SITE_CONFIG.loginUrl,
+                    plan
+                );
             }
         );
 }
@@ -35,6 +88,10 @@ function setupHeader(){
         document.querySelector(
             ".site-header"
         );
+
+    if(!header){
+        return;
+    }
 
     function updateHeader(){
         header.classList.toggle(
