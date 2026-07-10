@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Data and Security | InventoryOS</title>
+    <meta name="description" content="How InventoryOS stores business data and protects accounts, uploads and integrations.">
+    <meta name="theme-color" content="#0b0712">
+    <link rel="canonical" href="https://inventoryos.co.uk/data-security.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" id="top">
+        <div class="shell header-inner">
+            <a class="brand" href="index.html" aria-label="InventoryOS home">
+                <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+                <span class="brand-name">Inventory<span>OS</span></span>
+            </a>
+
+            <nav class="desktop-nav" aria-label="Main navigation">
+                <a href="index.html#features">Features</a>
+                <a href="index.html#workflow">How it works</a>
+                <a href="index.html#pricing">Pricing</a>
+                <a href="index.html#faq">FAQ</a>
+            </nav>
+
+            <div class="header-actions">
+                <a class="text-link desktop-only" data-login-link href="https://app.inventoryos.co.uk/login.html">Log in</a>
+                <a class="button button-small button-primary" data-signup-link data-plan="free" href="https://app.inventoryos.co.uk/register.html?plan=free">Start free</a>
+                <button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+
+        <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation" hidden>
+            <a href="index.html#features">Features</a>
+            <a href="index.html#workflow">How it works</a>
+            <a href="index.html#pricing">Pricing</a>
+            <a href="index.html#faq">FAQ</a>
+            <a data-login-link href="https://app.inventoryos.co.uk/login.html">Log in</a>
+        </nav>
+    </header>
+
+    <main id="main" class="legal-main">
+        <section class="legal-hero">
+            <div class="shell legal-hero-panel">
+                <span class="legal-updated">Last updated: 10 July 2026</span>
+                <h1>Data & Security</h1>
+                <p>InventoryOS stores business-critical inventory, sales, receipt, label and integration data. This page explains what is stored and the protections used.</p>
+            </div>
+        </section>
+        <section class="legal-section">
+            <div class="shell legal-layout">
+                <aside class="legal-toc">
+                    <strong>On this page</strong>
+                    <a href="#overview">Overview</a>
+                    <a href="#stored-data">Stored data</a>
+                    <a href="#protection">Protection</a>
+                    <a href="#admin-access">Admin access</a>
+                    <a href="#gmail">Gmail</a>
+                    <a href="#storage-retention">Retention</a>
+                    <a href="#your-responsibility">Your responsibility</a>
+                </aside>
+
+                <div class="legal-content">
+                    <article class="legal-card" id="overview">
+                        <h2>1. Overview</h2>
+                        <p>InventoryOS is designed to store operational business data such as inventory, stock locations, sales, expenses, receipts and shipping-label files. This page summarises how those areas are handled.</p>
+                    </article>
+                    <article class="legal-card" id="stored-data">
+                        <h2>2. What is stored</h2>
+                        <div class="security-grid">
+                            <div class="security-tile"><strong>Inventory</strong><span>Products, barcodes, quantities, locations, movement history and workspace settings.</span></div>
+                            <div class="security-tile"><strong>Sales and finance records</strong><span>Sales, refunds, expenses, receipt uploads, corrections, revenue and profit calculations.</span></div>
+                            <div class="security-tile"><strong>Uploaded files</strong><span>Receipts, shipping labels, PDFs, image files and generated/cropped label outputs.</span></div>
+                            <div class="security-tile"><strong>Integrations</strong><span>Gmail OAuth connection details, label import metadata, QZ printing preferences and signing requests.</span></div>
+                            <div class="security-tile"><strong>Billing</strong><span>Plan, status, Stripe IDs and subscription events. Full card details are handled by Stripe.</span></div>
+                            <div class="security-tile"><strong>Account security</strong><span>Password hashes, verification state, login timestamps, admin/suspension flags and last-seen activity.</span></div>
+                        </div>
+                    </article>
+                    <article class="legal-card" id="protection">
+                        <h2>3. Security measures</h2>
+                        <ul>
+                            <li>HTTPS is used for app and API traffic.</li>
+                            <li>Passwords are stored as hashes rather than plain text.</li>
+                            <li>Private uploads are intended to be protected by authenticated routes.</li>
+                            <li>Workspace permissions limit what users can access.</li>
+                            <li>Admin tools are restricted to authorised admin accounts.</li>
+                            <li>QZ private keys and app secrets should be stored outside public folders and not committed to source control.</li>
+                        </ul>
+                    </article>
+                    <article class="legal-card" id="admin-access">
+                        <h2>4. Admin and support access</h2>
+                        <p>Authorised InventoryOS admins may access account, workspace, plan, billing-status and usage information to provide support, investigate bugs, manage beta testers, apply complimentary plan overrides, handle abuse and keep the service secure.</p>
+                    </article>
+                    <article class="legal-card" id="gmail">
+                        <h2>5. Gmail and shipping labels</h2>
+                        <p>Gmail connection is optional. When connected, InventoryOS uses Google OAuth to access shipping-label emails and attachments for label import. Users can disconnect Gmail, and reconnecting may be required if permissions or secrets change.</p>
+                    </article>
+                    <article class="legal-card" id="storage-retention">
+                        <h2>6. Storage and retention</h2>
+                        <p>Operational records and uploaded files are kept while your account is active and for a reasonable period afterwards for recovery, audit, security, legal, support or dispute reasons. You can request deletion by contacting <a href="mailto:hello@inventoryos.co.uk">hello@inventoryos.co.uk</a>.</p>
+                    </article>
+                    <article class="legal-card" id="your-responsibility">
+                        <h2>7. Your responsibility</h2>
+                        <p>You are responsible for keeping your password secure, checking that your business records are accurate, only uploading files you are allowed to process, and exporting any records you need before deleting your account.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="shell footer-grid">
+            <div class="footer-brand">
+                <a class="brand" href="index.html">
+                    <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+                    <span class="brand-name">Inventory<span>OS</span></span>
+                </a>
+                <p>Inventory, sales and shipping tools built around the real workflow of UK resellers.</p>
+            </div>
+
+            <div class="footer-links footer-links-expanded">
+                <div>
+                    <strong>Product</strong>
+                    <a href="index.html#features">Features</a>
+                    <a href="index.html#workflow">How it works</a>
+                    <a href="index.html#pricing">Pricing</a>
+                </div>
+
+                <div>
+                    <strong>Account</strong>
+                    <a data-signup-link data-plan="free" href="https://app.inventoryos.co.uk/register.html?plan=free">Sign up</a>
+                    <a data-login-link href="https://app.inventoryos.co.uk/login.html">Log in</a>
+                    <a href="mailto:hello@inventoryos.co.uk">Contact</a>
+                </div>
+
+                <div>
+                    <strong>Legal</strong>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="cookies.html">Cookie Policy</a>
+                    <a href="refunds.html">Refund & Cancellation</a>
+                    <a href="data-security.html">Data & Security</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="shell footer-bottom">
+            <span>© <span id="currentYear"></span> InventoryOS. All rights reserved.</span>
+            <span>Independent software. Not affiliated with Vinted, eBay, Meta or Amazon.</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
