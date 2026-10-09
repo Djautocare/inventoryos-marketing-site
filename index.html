@@ -9,11 +9,12 @@
     >
 
     <title>
-        InventoryOS | Inventory, sales and shipping for UK resellers
+        InventoryOS | Inventory for resellers and small manufacturers
     </title>
 
     <meta
         name="description"
+        content="InventoryOS is a browser-based inventory management web app for UK resellers and small manufacturers. It helps users track stock, locations, sales, expenses, profits, barcodes, shipping labels and automatic shipping-label email imports."
         content="InventoryOS is a browser-based inventory management web app for UK resellers. It helps users track stock, locations, sales, expenses, profits, barcodes, shipping labels and automatic shipping-label email imports."
     >
 
@@ -29,6 +30,7 @@
 
     <meta
         property="og:description"
+        content="A browser-based inventory, production, sales and dispatch app for UK resellers and small manufacturers, with automatic shipping-label email import for Dispatch Centre workflows."
         content="A browser-based inventory, sales and dispatch app for UK resellers, with automatic shipping-label email import for Dispatch Centre workflows."
     >
 
@@ -60,7 +62,7 @@
 
     <link
         rel="stylesheet"
-        href="styles.css"
+        href="styles.css?v=manufacturing-1"
     >
 
     <script
@@ -202,6 +204,8 @@
     </header>
 
     <main id="main">
+<div class="audience-bar shell"><div class="audience-switch" role="tablist" aria-label="Choose your business"><button type="button" role="tab" aria-selected="true" aria-controls="resellerAudience" id="resellerTab" data-audience="resellers">For resellers</button><button type="button" role="tab" aria-selected="false" aria-controls="manufacturingAudience" id="manufacturingTab" data-audience="manufacturing" tabindex="-1">For manufacturing &amp; small businesses</button></div><p>One inventory system. Choose the tools for your business.</p></div>
+<div id="resellerAudience" class="audience-panel" role="tabpanel" aria-labelledby="resellerTab">
         <section class="hero section">
             <div class="hero-glow hero-glow-one"></div>
             <div class="hero-glow hero-glow-two"></div>
@@ -472,6 +476,7 @@
                         labels and view business reports from one account.
                     </p>
 
+                    <p>On Pro and Business, your workspace has its own shipping-label email address. Forward label attachments to it to import, detect the carrier and crop labels in the Dispatch Centre. You can also upload labels manually.</p><p>Email import shows its progress, supports reimporting previous label emails and helps prevent duplicate labels. It does not need access to your Gmail mailbox.</p>
                     <p>Pro and Business workspaces can forward shipping-label emails and attachments to their own InventoryOS email address. Labels are cropped and added to the Dispatch Centre packing queue for review and printing.</p><p>Forward labels from any email provider. Keep the address private and use a label-only forwarding rule. The integration does not request access to your mailbox.</p>
 
                     <div
@@ -566,6 +571,13 @@
                 </div>
             </div>
         </section>
+<section class="section reseller-directory"><div class="shell"><div class="section-heading"><div class="eyebrow">Tools for your daily workflow</div><h2>From your first item to a shared stockroom.</h2><p>Each paid plan adds tools to the plans below it. Reorder email reminders are a separate optional £1.99/month add-on for Pro and Business.</p></div><div class="feature-grid audience-directory">
+<article class="feature-card"><span class="feature-label">Free · £0</span><h3>Keep stock organised.</h3><ul><li>Up to 100 active items in one personal workspace</li><li>Add, search, scan, move, remove, discard and refund stock</li><li>Locations, efficient consolidated picking and adjustable pick locations</li><li>Dashboard sales, revenue and profit figures</li><li>Stale-stock reporting, account themes and in-app guide</li></ul></article>
+<article class="feature-card"><span class="feature-label">Starter · £7.99/month</span><h3>Sell, track and print.</h3><ul><li>Up to 1,000 active stock items</li><li>Sales history, stock and sales corrections</li><li>Expenses and account-organised receipt uploads</li><li>Spreadsheet stock import</li><li>Barcode print jobs and label creation</li><li>Shipping-label uploads, cropping and Dispatch Centre packing</li><li>Share cropped shipping labels for mobile printing</li></ul></article>
+<article class="feature-card"><span class="feature-label">Pro · £14.99/month</span><h3>Keep orders moving.</h3><ul><li>Unlimited active stock and multiple inventories</li><li>Unique workspace shipping-label email address</li><li>Email-import progress, review and previous-email reimport</li><li>QZ Tray direct printing and custom location names</li><li>Reorder minimums, target stock levels and supplier details</li><li>Mark ordered stock received, print barcodes and split it between destinations or holding</li><li>Optional reorder emails, instantly or in a scheduled daily summary</li></ul></article>
+<article class="feature-card"><span class="feature-label">Business · £29.99/month</span><h3>Work together. Make products.</h3><ul><li>Team accounts and shared inventory</li><li>Workspace roles, permissions and owner/admin controls</li><li>Priority support</li><li>Optional Manufacturing mode, off by default</li><li>Measured materials, product recipes and production</li><li>Batch, expiry and recall traceability</li><li>Equipment maintenance and persistent timers</li></ul></article>
+</div><p class="pricing-note">Manage your subscription, invoices and payment details from Settings. Printing options depend on your printer and device setup.</p></div></section>
+
 
         <section
             class="features-section section"
@@ -1100,6 +1112,22 @@
                 </div>
             </div>
         </section>
+</div>
+<div id="manufacturingAudience" class="audience-panel" role="tabpanel" aria-labelledby="manufacturingTab" hidden>
+<section class="hero section" id="mfg-overview"><div class="hero-glow hero-glow-one"></div><div class="shell hero-grid"><div class="hero-copy"><div class="eyebrow">For workshops &amp; small manufacturers · Business</div><h1>From raw materials<br>to <span>ready-to-sell stock.</span></h1><p class="hero-lead">Know what goes into every product. Record a production batch, deduct its materials and put finished items straight into your stockroom — ready to find, label and dispatch.</p><div class="hero-actions"><a class="button button-primary button-large" data-signup-link data-plan="business" href="https://app.inventoryos.co.uk/register.html?plan=business">Explore Business <span aria-hidden="true">→</span></a><a class="button button-secondary button-large" href="#mfg-features">See manufacturing tools</a></div><div class="manufacturing-plan-note"><strong>Business · £29.99/month</strong><p>Includes the reseller inventory, sales, printing and dispatch tools. Manufacturing mode is off by default and switched on per workspace in Settings.</p></div></div>
+<div class="manufacturing-preview" aria-label="Example production preview using sample data"><div class="manufacturing-preview-top"><span>InventoryOS / Manufacturing</span><span class="preview-status">Preview</span></div><h2>Make 20 workshop candles</h2><div class="manufacturing-preview-metrics"><div><small>Finished batch</small><strong>CANDLE-020</strong></div><div><small>Destination</small><strong>Shelf 4</strong></div></div><div class="manufacturing-preview-row"><span>Wax<br><small>Batch WAX-014 · Materials shelf</small></span><strong>500 g</strong></div><div class="manufacturing-preview-row"><span>Cotton wicks<br><small>Batch WICK-008 · Components drawer</small></span><strong>20 each</strong></div><div class="manufacturing-preview-row"><span>Packaging<br><small>Batch PACK-006 · Packaging rack</small></span><strong>20 each</strong></div><div class="manufacturing-preview-result"><span>After completion</span><strong>+20 candles in saleable stock</strong></div><div class="manufacturing-preview-timer"><span class="timer-dot" aria-hidden="true"></span><span>Product-ready timer<br><strong>10 hours · deadline saved</strong></span></div><p class="manufacturing-example-caption">Illustrative preview with sample data. Timers remind you; you confirm when production is finished.</p></div></div></section>
+<section class="features-section section" id="mfg-features"><div class="shell"><div class="section-heading"><div class="eyebrow">Manufacturing tools on Business</div><h2>A clear record of what you use and what you make.</h2><p>Designed for small-batch makers who need practical stock and production tools alongside their everyday sales workflow.</p></div><div class="feature-grid audience-directory">
+<article class="feature-card"><span class="feature-label">Materials &amp; packaging</span><h3>Use the units your work needs.</h3><p>Track raw materials and packaging separately from whole-item stock. Use each, grams, kilograms, litres, millilitres, metres, centimetres or millimetres, including decimal quantities.</p><ul><li>Receive batches into named storage areas</li><li>Record material batch numbers and expiry dates</li><li>Adjust or relocate remaining quantities with a recorded reason</li></ul></article>
+<article class="feature-card"><span class="feature-label">Product recipes</span><h3>Define what makes one product.</h3><p>Create a bill of materials linking a finished product to its components and their quantities per item. Reuse existing products and barcodes or create a new finished item.</p><ul><li>Convert units within the same measurement type</li><li>Link equipment usage per batch or per item</li><li>Edit recipes while keeping completed-run history</li></ul></article>
+<article class="feature-card"><span class="feature-label">Production</span><h3>Make a batch. Update both sides.</h3><p>Preview the exact material batches, quantities and storage areas needed. When you confirm production is finished, components are deducted and finished stock is added in one operation.</p><ul><li>Earliest eligible expiry used first</li><li>Insufficient, held, recalled or expired materials blocked</li><li>Finished batch, expiry and destination recorded</li></ul></article>
+<article class="feature-card"><span class="feature-label">Batch traceability</span><h3>Follow a batch through your workflow.</h3><p>See which material batches made each finished batch, where its remaining stock is located and its recorded movements or dispatch history.</p><ul><li>Hold or recall batches</li><li>Source-material holds and recalls block affected finished batches</li><li>Confirm batch numbers when picking tracked stock</li><li>Existing opening stock is clearly marked as origin unknown</li></ul></article>
+<article class="feature-card"><span class="feature-label">Equipment &amp; maintenance</span><h3>Know when to clean or replace.</h3><p>Set a lifespan such as 30 uses and a cleaning interval such as every 10 operating hours. Log real use manually or record planned recipe usage when completing production.</p><ul><li>Remaining uses and operating hours</li><li>Cleaning and replacement due warnings</li><li>Separate maintenance and lifespan counters</li><li>History retained when counters restart</li></ul></article>
+<article class="feature-card"><span class="feature-label">Persistent timers</span><h3>Set the deadline and get on with work.</h3><p>Start “Clean in 10 hours” or “Products ready in 10 hours” from the app. Deadlines stay saved while you are logged out, with optional emails to your verified account.</p><ul><li>Minute, hour and day durations</li><li>Live countdowns and due reminders</li><li>Acknowledge or cancel timers</li><li>No automatic stock change or cleaning confirmation</li></ul><p class="feature-small-print">Closing the website does not stop a timer. Reminders resume after a temporary service outage. Elapsed timer time is separate from logged operating hours.</p></article>
+</div></div></section>
+<section class="section" id="mfg-workflow"><div class="shell"><div class="section-heading"><div class="eyebrow">Your first production batch</div><h2>Receive. Prepare. Make. Dispatch.</h2></div><div class="manufacturing-steps"><article><span>01</span><h3>Enable your workspace</h3><p>On Business, an owner or admin turns on Manufacturing mode in Settings. Pick the inventory you want to work in.</p></article><article><span>02</span><h3>Receive your materials</h3><p>Enter material batches, quantities, storage areas and optional expiry dates. Create your finished product and its recipe.</p></article><article><span>03</span><h3>Preview and complete</h3><p>Review the exact source batches, then confirm once the products are finished. Start a timer if they need curing or preparation time.</p></article><article><span>04</span><h3>Use your normal stock tools</h3><p>Find, move, label and dispatch finished products from the same stock system. Their batch history follows the recorded stock movements.</p></article></div><div class="manufacturing-plan-note"><h3>Everything else your small business needs.</h3><p>Business also includes shared team inventory, roles and permissions, unlimited active stock, multiple inventories, sales and expense records, receipt uploads, barcode print jobs, shipping-label cropping, mobile sharing, QZ printing, a workspace label email address and reorder rules.</p><p>Optional reorder email reminders are £1.99/month. Manufacturing timer emails are included with Business and do not require that add-on.</p><a class="button button-secondary" href="#pricing">Compare plans</a></div></div></section>
+</div>
+
+
 
         <section
             class="pricing-section section"
@@ -1120,6 +1148,7 @@
                     </p>
                 </div>
 
+                <p id="manufacturingPricingNote" class="manufacturing-plan-note" hidden><strong>Manufacturing tools require Business.</strong> Free, Starter and Pro remain available for ordinary reseller inventory. Business includes those tools plus the manufacturing features above.</p>
                 <div class="pricing-grid">
                     <article class="price-card reveal">
                         <div class="price-card-head">
@@ -1218,7 +1247,7 @@
                             <li>Multiple inventories</li>
                             <li>Automatic shipping-label email import</li>
                             <li>QZ direct printing</li>
-                            <li>Custom workspace location labels</li>
+                            <li>Custom workspace location labels</li><li>Reorder rules, ordered stock and destination assignment</li>
                         </ul>
 
                         <a
@@ -1238,8 +1267,8 @@
                             </span>
 
                             <p>
-                                For teams running inventory together
-                                across several workspaces.
+                                For teams, workshops and small manufacturers
+                                managing shared inventory and production.
                             </p>
 
                             <div class="price">
@@ -1254,7 +1283,7 @@
                             <li>Shared team inventory</li>
                             <li>Workspace roles and permissions</li>
                             <li>Owner and admin controls</li>
-                            <li>Priority support</li>
+                            <li>Manufacturing mode: materials, recipes and production</li><li>Batch, expiry and recall traceability</li><li>Equipment use limits and cleaning intervals</li><li>Persistent manufacturing timers and optional timer emails</li><li>Priority support</li>
                         </ul>
 
                         <a
@@ -1373,11 +1402,13 @@
                             type="button"
                             aria-expanded="false"
                         >
+                            How do shipping labels arrive by email?
                             How do automatic shipping-label email imports work?
                             <span>＋</span>
                         </button>
 
                         <div class="faq-answer">
+                            <p>Pro and Business give each workspace a unique shipping-label email address. Forward shipping-label attachments from your email provider to this address. InventoryOS imports and crops supported labels into the Dispatch Centre without connecting to or reading your mailbox. Manual uploads remain available on Starter and above.</p>
                             <p>Pro and Business workspaces have a shared shipping-label email address. Forward emails with label attachments to that address, or create a label-only forwarding filter in your email provider. InventoryOS crops the attachments into your Dispatch Centre queue. Duplicate attachments are skipped, and you review the labels before packing or printing.</p>
                         </div>
                     </article>
@@ -1602,6 +1633,7 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=manufacturing-1"></script>
 </body>
 </html>
+

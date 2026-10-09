@@ -389,3 +389,11 @@ document.addEventListener(
         setCurrentYear();
     }
 );
+
+
+(function initialiseAudienceChoice(){
+ const buttons=[...document.querySelectorAll('[data-audience]')];if(!buttons.length)return;
+ const reseller=document.getElementById('resellerAudience'),manufacturer=document.getElementById('manufacturingAudience');
+ function choose(value,{updateUrl=true}={}){const manufacturing=value==='manufacturing';reseller.hidden=manufacturing;manufacturer.hidden=!manufacturing;buttons.forEach(b=>{const selected=b.dataset.audience===(manufacturing?'manufacturing':'resellers');b.setAttribute('aria-selected',String(selected));b.tabIndex=selected?0:-1;});document.getElementById('manufacturingPricingNote').hidden=!manufacturing;document.querySelectorAll('a[href="#features"],a[href="#mfg-features"],a[href="#workflow"],a[href="#mfg-workflow"],a[href="#what-it-does"],a[href="#mfg-overview"]').forEach(a=>{const map={'#features':'#mfg-features','#workflow':'#mfg-workflow','#what-it-does':'#mfg-overview'};const reverse=Object.fromEntries(Object.entries(map).map(([k,v])=>[v,k]));a.setAttribute('href',manufacturing?(map[a.getAttribute('href')]||a.getAttribute('href')):(reverse[a.getAttribute('href')]||a.getAttribute('href')));});if(updateUrl){const url=new URL(location.href);url.searchParams.set('audience',manufacturing?'manufacturing':'resellers');url.hash='';history.replaceState(null,'',url);}}
+ buttons.forEach((b,index)=>{b.addEventListener('click',()=>choose(b.dataset.audience));b.addEventListener('keydown',e=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;e.preventDefault();const next=e.key==='Home'?0:e.key==='End'?buttons.length-1:(index+(e.key==='ArrowRight'?1:-1)+buttons.length)%buttons.length;choose(buttons[next].dataset.audience);buttons[next].focus();});});choose(new URL(location.href).searchParams.get('audience')==='manufacturing'?'manufacturing':'resellers',{updateUrl:false});
+})();
