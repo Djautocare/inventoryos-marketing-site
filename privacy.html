@@ -58,7 +58,7 @@
                     <strong>On this page</strong>
                     <a href="#who-we-are">Who we are</a>
                     <a href="#data-we-collect">Data we collect</a>
-                    <a href="#google-user-data">Google user data</a>
+                    <a href="#email-import">Shipping-label email data</a>
                     <a href="#how-we-use">How we use it</a>
                     <a href="#lawful-basis">Lawful basis</a>
                     <a href="#sharing">Sharing</a>
@@ -82,7 +82,7 @@
                             <div class="policy-row"><strong>Inventory data</strong><span>Products, descriptions, barcodes, active stock quantities, boxes, shelves, locations, movements and workspace settings.</span></div>
                             <div class="policy-row"><strong>Sales and records</strong><span>Sales, refunds, expenses, receipts, corrections, revenue, profit and dashboard figures entered into InventoryOS.</span></div>
                             <div class="policy-row"><strong>Uploaded files</strong><span>Receipt images, PDFs, shipping labels, cropped label files and other files uploaded to use the service.</span></div>
-                            <div class="policy-row"><strong>Gmail import data</strong><span>If you connect Gmail, we store connection tokens and process relevant shipping-label emails and attachments for the label-import workflow.</span></div>
+                            <div class="policy-row"><strong>Shipping-label email data</strong><span>Emails and attachments you send or forward to your workspace shipping-label address, email subject and processing history, attachment hashes used to prevent duplicates, and cropped label files.</span></div>
                             <div class="policy-row"><strong>Printing data</strong><span>Printer preferences, label previews, print requests and QZ Tray signing information needed to send labels to supported printers.</span></div>
                             <div class="policy-row"><strong>Billing data</strong><span>Plan, subscription status, Stripe customer/subscription IDs and billing events. InventoryOS does not store full card details.</span></div>
                             <div class="policy-row"><strong>Technical data</strong><span>IP address, browser/device information, login events, error logs and last-seen activity used to secure and operate the service.</span></div>
@@ -93,30 +93,30 @@
                         <ul>
                             <li>To create and manage your InventoryOS account and workspace.</li>
                             <li>To provide inventory, stock movement, sales, refunds, expenses, barcode, dispatch and printing features.</li>
-                            <li>To import shipping labels from Gmail when you choose to connect Gmail.</li>
+                            <li>To receive and process shipping-label attachments you choose to send to your workspace address.</li>
                             <li>To process subscriptions, billing states and plan access through Stripe.</li>
                             <li>To provide support, investigate bugs, prevent abuse and keep the service secure.</li>
                             <li>To improve InventoryOS using aggregated or operational usage information.</li>
                         </ul>
                     </article>
-                    <article class="legal-card" id="google-user-data">
-                        <h2>Google User Data and Gmail Integration</h2>
-                        <p>InventoryOS allows users to optionally connect a Google Gmail account to locate and import shipping-label emails and attachments into the Dispatch Centre.</p>
-                        <p>InventoryOS requests read-only Gmail access and uses Google user data only to search for relevant shipping-label emails, identify relevant messages, and retrieve their associated shipping-label attachments. InventoryOS does not send, edit or delete emails.</p>
-                        <p>Google user data is not sold, used for advertising or shared for unrelated purposes. OAuth tokens are stored securely only while the Gmail connection is active or where needed to provide the Gmail integration. Users can disconnect Gmail from InventoryOS at any time.</p>
-                        <p>InventoryOS's use and transfer of information received from Google APIs complies with the Google API Services User Data Policy, including the Limited Use requirements.</p>
+                    <article class="legal-card" id="email-import">
+                        <h2>Shipping-label email import</h2>
+                        <p>Pro and Business workspaces can use a shared InventoryOS email address to receive shipping-label emails and attachments. You choose which emails to forward, either manually or using your email provider’s forwarding rules. InventoryOS does not connect to, search, read or change your mailbox.</p>
+                        <p>Resend receives forwarded emails and makes them available for processing. InventoryOS downloads supported attachments, crops shipping labels and adds them to your workspace’s Dispatch Centre. Shipping labels may contain names, addresses, tracking references and other personal information about recipients. Forward only the information needed for dispatch.</p>
+                        <p>InventoryOS stores cropped labels, email subjects, processing history and attachment hashes for this workflow. Verified forwarding-confirmation text may be shown to the workspace owner or admin to complete setup, and is removed from InventoryOS after seven days. Temporary local originals are removed after processing; received emails and attachments may also be retained by Resend under its service retention arrangements. Workspace members with access to Dispatch Centre can view the shared queue. We do not sell this information or use it for advertising.</p>
+                        <p>Downgrading locks future imports but retains the address and existing labels. Upgrading can reactivate the address. Regenerating the address disables the old address; you must update forwarding rules. To stop forwarding entirely, remove those rules in your email provider. Contact us for help with data deletion.</p>
                     </article>
                     <article class="legal-card" id="lawful-basis">
                         <h2>4. Lawful basis</h2>
-                        <p>We normally process data because it is necessary to provide the service you request, to comply with legal obligations, or because we have a legitimate interest in operating, securing and improving InventoryOS. Where we rely on consent, for example for optional Gmail connection or non-essential cookies if added later, you can withdraw that consent.</p>
+                        <p>We normally process data because it is necessary to provide the service you request, to comply with legal obligations, or because we have a legitimate interest in operating, securing and improving InventoryOS. Where we rely on consent, for example for non-essential cookies if added later, you can withdraw that consent.</p>
                     </article>
                     <article class="legal-card" id="sharing">
                         <h2>5. Who data is shared with</h2>
                         <p>We only share data where needed to run InventoryOS, provide integrations, or meet legal requirements.</p>
                         <ul>
                             <li><strong>Stripe</strong> for subscription checkout, billing and payment status.</li>
-                            <li><strong>Google</strong> when you connect Gmail for shipping-label import.</li>
-                            <li><strong>Resend</strong> or email providers for account, verification and password reset emails.</li>
+                            <li><strong>Resend</strong> to receive forwarded shipping-label emails and attachments and to send service emails.</li>
+
                             <li><strong>Hosting, database, storage and security providers</strong> used to operate the service.</li>
                             <li><strong>Legal or regulatory bodies</strong> where required by law.</li>
                         </ul>
