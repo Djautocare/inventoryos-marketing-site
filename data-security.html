@@ -60,7 +60,7 @@
                     <a href="#stored-data">Stored data</a>
                     <a href="#protection">Protection</a>
                     <a href="#admin-access">Admin access</a>
-                    <a href="#gmail">Gmail</a>
+                    <a href="#email-import">Email imports</a>
                     <a href="#storage-retention">Retention</a>
                     <a href="#your-responsibility">Your responsibility</a>
                 </aside>
@@ -76,7 +76,7 @@
                             <div class="security-tile"><strong>Inventory</strong><span>Products, barcodes, quantities, locations, movement history and workspace settings.</span></div>
                             <div class="security-tile"><strong>Sales and finance records</strong><span>Sales, refunds, expenses, receipt uploads, corrections, revenue and profit calculations.</span></div>
                             <div class="security-tile"><strong>Uploaded files</strong><span>Receipts, shipping labels, PDFs, image files and generated/cropped label outputs.</span></div>
-                            <div class="security-tile"><strong>Integrations</strong><span>Gmail OAuth connection details, label import metadata, QZ printing preferences and signing requests.</span></div>
+                            <div class="security-tile"><strong>Integrations</strong><span>Workspace shipping-label addresses, received label attachments and import metadata, QZ printing preferences and signing requests.</span></div>
                             <div class="security-tile"><strong>Billing</strong><span>Plan, status, Stripe IDs and subscription events. Full card details are handled by Stripe.</span></div>
                             <div class="security-tile"><strong>Account security</strong><span>Password hashes, verification state, login timestamps, admin/suspension flags and last-seen activity.</span></div>
                         </div>
@@ -96,10 +96,7 @@
                         <h2>4. Admin and support access</h2>
                         <p>Authorised InventoryOS admins may access account, workspace, plan, billing-status and usage information to provide support, investigate bugs, manage beta testers, apply complimentary plan overrides, handle abuse and keep the service secure.</p>
                     </article>
-                    <article class="legal-card" id="gmail">
-                        <h2>5. Gmail and shipping labels</h2>
-                        <p>Gmail connection is optional. When connected, InventoryOS uses Google OAuth to access shipping-label emails and attachments for label import. Users can disconnect Gmail, and reconnecting may be required if permissions or secrets change.</p>
-                    </article>
+                    <article class="legal-card" id="email-import"><h2>5. Shipping-label email import</h2><p>Workspace shipping-label addresses are random and shared only with authorised workspace members. Keep the address private and forward shipping labels only. Resend receives forwarded emails; InventoryOS verifies signed webhook events before processing attachments.</p><p>The backend checks the current workspace subscription before receiving and importing labels. Free and Starter cannot use inbound import. Downgrading locks the saved address. Regenerating it disables the old address. Attachment hashes prevent repeated imports within a workspace.</p><p>Supported attachments use the existing carrier detection and cropping workflow. Temporary originals are removed after processing. Labels enter the review queue and do not automatically print or remove stock. The integration does not request mailbox permissions.</p></article>
                     <article class="legal-card" id="storage-retention">
                         <h2>6. Storage and retention</h2>
                         <p>Operational records and uploaded files are kept while your account is active and for a reasonable period afterwards for recovery, audit, security, legal, support or dispute reasons. You can request deletion by contacting <a href="mailto:hello@inventoryos.co.uk">hello@inventoryos.co.uk</a>.</p>
