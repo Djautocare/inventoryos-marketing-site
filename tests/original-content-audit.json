@@ -1,0 +1,57 @@
+{
+  "source_commit": "ff3d082ee4552b60411525925241fd85ba2d4107",
+  "original_main_sha256": "005c78227fd6e341f315b825ea5a235be84b7361b8b8ebc3bbacf11618c859c3",
+  "original_main_characters": 46009,
+  "original_policy_ids": {
+    "privacy": [
+      "who-we-are",
+      "data-we-collect",
+      "how-we-use",
+      "email-import",
+      "lawful-basis",
+      "sharing",
+      "retention",
+      "your-rights",
+      "security",
+      "changes"
+    ],
+    "terms": [
+      "agreement",
+      "service",
+      "accounts",
+      "plans",
+      "user-data",
+      "integrations",
+      "not-advice",
+      "acceptable-use",
+      "availability",
+      "liability",
+      "termination",
+      "contact"
+    ],
+    "refunds": [
+      "plans",
+      "cancelling",
+      "after-cancel",
+      "refunds",
+      "billing-errors",
+      "beta"
+    ],
+    "cookies": [
+      "summary",
+      "what-we-use",
+      "why",
+      "choices",
+      "updates"
+    ],
+    "data-security": [
+      "overview",
+      "stored-data",
+      "protection",
+      "admin-access",
+      "email-import",
+      "storage-retention",
+      "your-responsibility"
+    ]
+  }
+}

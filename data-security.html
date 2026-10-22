@@ -9,66 +9,42 @@
     <link rel="canonical" href="https://inventoryos.co.uk/data-security.html">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="styles.css">
-</head>
+<link rel="stylesheet" href="assets/document-chrome.css?v=2"><link rel="stylesheet" href="assets/pages.css?v=2"></head>
 
-<body>
+<body id="top">
     <a class="skip-link" href="#main">Skip to content</a>
 
-    <header class="site-header" id="top">
-        <div class="shell header-inner">
-            <a class="brand" href="index.html" aria-label="InventoryOS home">
-                <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
-                <span class="brand-name">Inventory<span>OS</span></span>
-            </a>
-
-            <nav class="desktop-nav" aria-label="Main navigation">
-                <a href="index.html#features">Features</a>
-                <a href="index.html#workflow">How it works</a>
-                <a href="index.html#pricing">Pricing</a>
-                <a href="index.html#faq">FAQ</a>
-            </nav>
-
-            <div class="header-actions">
-                <a class="text-link desktop-only" data-login-link href="https://app.inventoryos.co.uk/login.html">Log in</a>
-                <a class="button button-small button-primary" data-signup-link data-plan="free" href="https://app.inventoryos.co.uk/register.html?plan=free">Start free</a>
-                <button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu"><span></span><span></span><span></span></button>
-            </div>
-        </div>
-
-        <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation" hidden>
-            <a href="index.html#features">Features</a>
-            <a href="index.html#workflow">How it works</a>
-            <a href="index.html#pricing">Pricing</a>
-            <a href="index.html#faq">FAQ</a>
-            <a data-login-link href="https://app.inventoryos.co.uk/login.html">Log in</a>
-        </nav>
-    </header>
+    <header class="header"><div class="wrap header-inner"><a class="wordmark" href="index.html" aria-label="InventoryOS home"><span class="brand-symbol" aria-hidden="true"><i></i><i></i><i></i></span><span>Inventory<span class="wordmark-os">OS</span><span class="brand-period">.</span></span></a><nav class="desktop-nav" aria-label="Main navigation"><a href="index.html#workflow">How it works</a><a href="index.html#features">Features</a><a href="index.html#pricing">Pricing</a></nav><div class="nav-actions"><a class="nav-login" href="https://app.inventoryos.co.uk/login.html">Log in <svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"></path></svg></a><a class="button small primary" href="https://app.inventoryos.co.uk/login.html?view=register&amp;plan=free">Start free<svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"></path></svg></a><button id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"></path></svg></button></div></div><nav id="mobile-menu" class="mobile-nav wrap" hidden="" aria-label="Mobile navigation"><a href="index.html#workflow">How it works</a><a href="index.html#features">Features</a><a href="index.html#pricing">Pricing</a><a href="features.html">Complete feature guide</a></nav><div class="scroll-progress"></div></header>
 
     <main id="main" class="legal-main">
         <section class="legal-hero">
             <div class="shell legal-hero-panel">
-                <span class="legal-updated">Last updated: 10 July 2026</span>
+                <span class="legal-updated">Last updated: 22 October 2026</span>
                 <h1>Data & Security</h1>
-                <p>InventoryOS stores business-critical inventory, sales, receipt, label and integration data. This page explains what is stored and the protections used.</p>
+                <p>InventoryOS stores business-critical inventory, sales, receipt, label and integration data. This page explains what is stored and the protections used.</p><div class="document-actions"><a href="index.html">← Back to InventoryOS</a><a href="mailto:hello@inventoryos.co.uk">Questions? Get in touch ↗</a></div>
             </div>
         </section>
         <section class="legal-section">
             <div class="shell legal-layout">
-                <aside class="legal-toc">
-                    <strong>On this page</strong>
-                    <a href="#overview">Overview</a>
-                    <a href="#stored-data">Stored data</a>
-                    <a href="#protection">Protection</a>
-                    <a href="#admin-access">Admin access</a>
-                    <a href="#email-import">Email imports</a>
-                    <a href="#storage-retention">Retention</a>
-                    <a href="#your-responsibility">Your responsibility</a>
-                </aside>
+                <aside class="legal-toc"><strong>On this page</strong>
+<a href="#overview">Overview</a>
+<a href="#stored-data">What is stored</a>
+<a href="#protection">Security measures</a>
+<a href="#admin-access">Admin and support access</a>
+<a href="#email-import">Shipping-label email import</a>
+<a href="#storage-retention">Storage and retention</a>
+<a href="#your-responsibility">Your responsibility</a>
+<a href="#retail-security">Shop separation, till access and customer records</a>
+<a href="#printing-setup">Desktop printing setup and signing certificates</a>
+<a href="#receipts-and-support">Receipt emails, help requests and exports</a>
+<a href="#offline-and-availability">Offline records, availability and backups</a>
+<a href="#manufacturing-records">Manufacturing and human review</a>
+</aside>
 
                 <div class="legal-content">
                     <article class="legal-card" id="overview">
                         <h2>1. Overview</h2>
-                        <p>InventoryOS is designed to store operational business data such as inventory, stock locations, sales, expenses, receipts and shipping-label files. This page summarises how those areas are handled.</p>
+                        <p>InventoryOS stores operational business data such as inventory, stock locations, sales, expenses, receipts and shipping-label files, plus Manufacturing records and separate Retail shop, customer, staff and till records. This page summarises how those areas are handled.</p>
                     </article>
                     <article class="legal-card" id="stored-data">
                         <h2>2. What is stored</h2>
@@ -105,53 +81,18 @@
                         <h2>7. Your responsibility</h2>
                         <p>You are responsible for keeping your password secure, checking that your business records are accurate, only uploading files you are allowed to process, and exporting any records you need before deleting your account.</p>
                     </article>
+<article class="legal-card" id="retail-security"><h2>8. Shop separation, till access and customer records</h2><p>Retail shops have their own inventories and subscriptions, separate from reseller/manufacturing workspaces. Staff access is limited by assigned shops and permissions. Till pairing and staff number or QR plus a private PIN are used for restricted till sessions; a QR code alone is not the staff PIN. Management actions are recorded against the relevant staff and approval details.</p><p>Card payments are manually confirmed by staff after using a separate terminal. A recorded card sale is not independent verification that the terminal payment succeeded or settled.</p><p>Shop owners control staff assignments and permissions. Store customer records, loyalty cards, receipt addresses and purchase history only when needed for your business. Protect shared devices and review staff access when people leave.</p></article>
+<article class="legal-card" id="printing-setup"><h2>9. Desktop printing setup and signing certificates</h2><p>The website can prepare a Windows setup file or Mac setup ZIP using the backend’s public printing certificate. Setup installs or updates the official QZ Tray package when needed, checks the download and adds the public certificate to QZ’s printing trust. The private signing key remains on the backend; it is not included in the customer download.</p><p>Administrator or operating-system approval may be required. Printer drivers, the physical connection, paper configuration and a test print remain device-specific. The app signs printing requests on the backend. Do not send private signing keys, passwords or .env files in support requests.</p></article>
+<article class="legal-card" id="receipts-and-support"><h2>10. Receipt emails, help requests and exports</h2><p>Customer email receipts pass the recipient address and itemised sale details to Resend for delivery. The shop display name is used as the sender display name; a verified sending email address is still required. Sending records and usage support delivery status and add-on billing. A transactional receipt is not consent to unrelated marketing.</p><p>Help requests go to the protected support administration area and the support email inbox. Permanent store deletion requires an emailed CSV backup to the verified login email. Exports can contain personal and commercially sensitive business records. Restrict access to the receiving inbox, downloaded files and any backups you keep. Passwords and staff PINs are excluded from these exports.</p></article>
+<article class="legal-card" id="offline-and-availability"><h2>11. Offline records, availability and backups</h2><p>Prepared back-office cash sales may remain in a local queue until reconnecting; restricted staff tills require internet access. Keep the original device and browser data until successful sync. A PWA, cached page or successful local save is not confirmation that a transaction reached the server.</p><p>Internet, power, local-device, service-provider and software outages can interrupt access or delay emails, timers and imports. We do not promise uninterrupted availability or a particular recovery time on this page. Export the business records you need and verify your own recovery arrangements before relying on the service for trading.</p></article>
+<article class="legal-card" id="manufacturing-records"><h2>12. Manufacturing and human review</h2><p>Manufacturing records connect measured materials, recipes, source batches, finished batches, expiry and recall status, equipment usage and deadlines. Users confirm completed production and review batch picks. Timers do not automatically certify that a product is safe, cleaning is complete or a regulatory obligation has been met.</p><p>Carrier detection, label cropping, barcode lookups, supplier price checks, reorder calculations and suggested prices need user review. Check the original label or supplier source before acting on imported or suggested information.</p></article>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="site-footer">
-        <div class="shell footer-grid">
-            <div class="footer-brand">
-                <a class="brand" href="index.html">
-                    <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
-                    <span class="brand-name">Inventory<span>OS</span></span>
-                </a>
-                <p>Inventory, sales and shipping tools built around the real workflow of UK resellers.</p>
-            </div>
+    <footer class="footer"><div class="wrap footer-top"><div><a class="wordmark wordmark-light" href="index.html" aria-label="InventoryOS home"><span class="brand-symbol" aria-hidden="true"><i></i><i></i><i></i></span><span>Inventory<span class="wordmark-os">OS</span><span class="brand-period">.</span></span></a><p>A little more clarity.<br/>A lot more room to grow.</p><a class="footer-email" href="mailto:hello@inventoryos.co.uk">hello@inventoryos.co.uk <svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"></path></svg></a></div><div class="footer-links"><div><h3>Find your fit</h3><a href="index.html">For resellers</a><a href="manufacturing.html">For manufacturing</a><a href="retail.html">For retail &amp; services</a><a href="features.html">Complete feature guide</a></div><div><h3>A few useful links</h3><a href="https://app.inventoryos.co.uk/login.html">Log in</a><a href="https://app.inventoryos.co.uk/login.html?view=register">Create an account</a><a href="data-security.html">Data &amp; security</a><a href="mailto:hello@inventoryos.co.uk">Help &amp; contact</a></div><div><h3>The important things</h3><a href="privacy.html">Privacy policy</a><a href="terms.html">Terms &amp; conditions</a><a href="cookies.html">Cookie policy</a><a href="refunds.html">Refunds &amp; cancellation</a></div></div></div><div class="wrap footer-bottom"><span>© 2026 InventoryOS</span><span>Independent software. Not affiliated with Vinted, eBay, Meta or Amazon.</span><a href="#top">Back to top ↑</a></div></footer>
 
-            <div class="footer-links footer-links-expanded">
-                <div>
-                    <strong>Product</strong>
-                    <a href="index.html#features">Features</a>
-                    <a href="index.html#workflow">How it works</a>
-                    <a href="index.html#pricing">Pricing</a>
-                </div>
 
-                <div>
-                    <strong>Account</strong>
-                    <a data-signup-link data-plan="free" href="https://app.inventoryos.co.uk/register.html?plan=free">Sign up</a>
-                    <a data-login-link href="https://app.inventoryos.co.uk/login.html">Log in</a>
-                    <a href="mailto:hello@inventoryos.co.uk">Contact</a>
-                </div>
-
-                <div>
-                    <strong>Legal</strong>
-                    <a href="privacy.html">Privacy Policy</a>
-                    <a href="terms.html">Terms of Service</a>
-                    <a href="cookies.html">Cookie Policy</a>
-                    <a href="refunds.html">Refund & Cancellation</a>
-                    <a href="data-security.html">Data & Security</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="shell footer-bottom">
-            <span>© <span id="currentYear"></span> InventoryOS. All rights reserved.</span>
-            <span>Independent software. Not affiliated with Vinted, eBay, Meta or Amazon.</span>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
+<script src="assets/pages.js?v=2" defer></script></body>
 </html>

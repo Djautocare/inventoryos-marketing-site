@@ -9,59 +9,32 @@
     <link rel="canonical" href="https://inventoryos.co.uk/cookies.html">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="styles.css">
-</head>
+<link rel="stylesheet" href="assets/document-chrome.css?v=2"><link rel="stylesheet" href="assets/pages.css?v=2"></head>
 
-<body>
+<body id="top">
     <a class="skip-link" href="#main">Skip to content</a>
 
-    <header class="site-header" id="top">
-        <div class="shell header-inner">
-            <a class="brand" href="index.html" aria-label="InventoryOS home">
-                <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
-                <span class="brand-name">Inventory<span>OS</span></span>
-            </a>
-
-            <nav class="desktop-nav" aria-label="Main navigation">
-                <a href="index.html#features">Features</a>
-                <a href="index.html#workflow">How it works</a>
-                <a href="index.html#pricing">Pricing</a>
-                <a href="index.html#faq">FAQ</a>
-            </nav>
-
-            <div class="header-actions">
-                <a class="text-link desktop-only" data-login-link href="https://app.inventoryos.co.uk/login.html">Log in</a>
-                <a class="button button-small button-primary" data-signup-link data-plan="free" href="https://app.inventoryos.co.uk/register.html?plan=free">Start free</a>
-                <button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu"><span></span><span></span><span></span></button>
-            </div>
-        </div>
-
-        <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation" hidden>
-            <a href="index.html#features">Features</a>
-            <a href="index.html#workflow">How it works</a>
-            <a href="index.html#pricing">Pricing</a>
-            <a href="index.html#faq">FAQ</a>
-            <a data-login-link href="https://app.inventoryos.co.uk/login.html">Log in</a>
-        </nav>
-    </header>
+    <header class="header"><div class="wrap header-inner"><a class="wordmark" href="index.html" aria-label="InventoryOS home"><span class="brand-symbol" aria-hidden="true"><i></i><i></i><i></i></span><span>Inventory<span class="wordmark-os">OS</span><span class="brand-period">.</span></span></a><nav class="desktop-nav" aria-label="Main navigation"><a href="index.html#workflow">How it works</a><a href="index.html#features">Features</a><a href="index.html#pricing">Pricing</a></nav><div class="nav-actions"><a class="nav-login" href="https://app.inventoryos.co.uk/login.html">Log in <svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"></path></svg></a><a class="button small primary" href="https://app.inventoryos.co.uk/login.html?view=register&amp;plan=free">Start free<svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"></path></svg></a><button id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"></path></svg></button></div></div><nav id="mobile-menu" class="mobile-nav wrap" hidden="" aria-label="Mobile navigation"><a href="index.html#workflow">How it works</a><a href="index.html#features">Features</a><a href="index.html#pricing">Pricing</a><a href="features.html">Complete feature guide</a></nav><div class="scroll-progress"></div></header>
 
     <main id="main" class="legal-main">
         <section class="legal-hero">
             <div class="shell legal-hero-panel">
-                <span class="legal-updated">Last updated: 10 July 2026</span>
+                <span class="legal-updated">Last updated: 22 October 2026</span>
                 <h1>Cookie Policy</h1>
-                <p>This page explains how InventoryOS uses cookies, local storage and similar technologies on the public website and app.</p>
+                <p>This page explains how InventoryOS uses cookies, local storage and similar technologies on the public website and app.</p><div class="document-actions"><a href="index.html">← Back to InventoryOS</a><a href="mailto:hello@inventoryos.co.uk">Questions? Get in touch ↗</a></div>
             </div>
         </section>
         <section class="legal-section">
             <div class="shell legal-layout">
-                <aside class="legal-toc">
-                    <strong>On this page</strong>
-                    <a href="#summary">Summary</a>
-                    <a href="#what-we-use">What we use</a>
-                    <a href="#why">Why we use it</a>
-                    <a href="#choices">Your choices</a>
-                    <a href="#updates">Updates</a>
-                </aside>
+                <aside class="legal-toc"><strong>On this page</strong>
+<a href="#summary">Summary</a>
+<a href="#what-we-use">What we use</a>
+<a href="#why">Why cookies and storage are used</a>
+<a href="#choices">Your choices</a>
+<a href="#updates">Updates</a>
+<a href="#marketing-page-effects">Marketing animation and locally served assets</a>
+<a href="#retail-pwa-storage">Retail PWAs, pairing and pending sales</a>
+</aside>
 
                 <div class="legal-content">
                     <article class="legal-card" id="summary">
@@ -75,7 +48,7 @@
                             <div class="policy-row"><strong>Local storage</strong><span>Used for app preferences such as selected inventory, selected workspace, theme, API base and login token storage.</span></div>
                             <div class="policy-row"><strong>Stripe</strong><span>Stripe Checkout and billing pages may use cookies or similar technologies for payment, fraud prevention and checkout security.</span></div>
                             <div class="policy-row"><strong>Email imports</strong><span>Shipping-label forwarding uses your email provider and does not require a Google OAuth connection or Google cookies in InventoryOS.</span></div>
-                            <div class="policy-row"><strong>Analytics</strong><span>If analytics are added later, this page should be updated and consent collected where required.</span></div>
+                            <div class="policy-row"><strong>Analytics</strong><span>The redesigned marketing pages do not add advertising pixels or analytics tracking. If non-essential analytics or other storage is introduced later, we will update this policy and obtain consent where required.</span></div>
                         </div>
                     </article>
                     <article class="legal-card" id="why">
@@ -90,59 +63,21 @@
                     <article class="legal-card" id="choices">
                         <h2>4. Your choices</h2>
                         <p>You can block or delete cookies in your browser settings. Some essential parts of InventoryOS may not work correctly if you disable cookies or browser storage, including login, billing and workspace selection.</p>
-                        <p>Where non-essential cookies are introduced, InventoryOS should provide a clear choice before setting them.</p>
+                        <p>Where non-essential cookies or similar technologies require consent, we will offer a clear choice before using them. Refusing optional tracking will not prevent access to the public marketing information.</p>
                     </article>
                     <article class="legal-card" id="updates">
                         <h2>5. Updates</h2>
-                        <p>This policy should be updated if InventoryOS adds analytics, advertising, tracking pixels, embedded third-party tools or other non-essential storage technologies.</p>
+                        <p>We will update this policy if InventoryOS adds analytics, advertising, tracking pixels, embedded third-party tools or other non-essential storage technologies.</p>
                     </article>
+<article class="legal-card" id="marketing-page-effects"><h2>6. Marketing animation and locally served assets</h2><p>The marketing redesign uses GSAP, Lenis and React Bits for presentation and scrolling. They are bundled with the site, and the font is served from our own site. These animations do not need advertising cookies, a third-party analytics account or marketing pixels. Pointer effects use the pointer position to draw the effect in your browser; the redesign does not send those positions to InventoryOS or an advertising provider.</p><p>Reduced-motion preferences are respected. Links to Stripe, app login, email and external providers open those separate services when you choose to use them; their own notices apply there.</p></article>
+<article class="legal-card" id="retail-pwa-storage"><h2>7. Retail PWAs, pairing and pending sales</h2><p>Installed Retail apps can use service workers, cached app assets, browser storage and local databases for the requested app experience, store selection, device pairing, authenticated till sessions and pending cash-sale sync. These can include business and transaction data on a shared device. Use the relevant app sign-out or till lock and keep the device secure.</p><p>Clearing site data, uninstalling an app or resetting a browser can remove unsynced sales or device pairing. Sync pending records on the original device before doing so. Browser storage is not an independent backup of your business records.</p></article>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="site-footer">
-        <div class="shell footer-grid">
-            <div class="footer-brand">
-                <a class="brand" href="index.html">
-                    <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
-                    <span class="brand-name">Inventory<span>OS</span></span>
-                </a>
-                <p>Inventory, sales and shipping tools built around the real workflow of UK resellers.</p>
-            </div>
+    <footer class="footer"><div class="wrap footer-top"><div><a class="wordmark wordmark-light" href="index.html" aria-label="InventoryOS home"><span class="brand-symbol" aria-hidden="true"><i></i><i></i><i></i></span><span>Inventory<span class="wordmark-os">OS</span><span class="brand-period">.</span></span></a><p>A little more clarity.<br/>A lot more room to grow.</p><a class="footer-email" href="mailto:hello@inventoryos.co.uk">hello@inventoryos.co.uk <svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"></path></svg></a></div><div class="footer-links"><div><h3>Find your fit</h3><a href="index.html">For resellers</a><a href="manufacturing.html">For manufacturing</a><a href="retail.html">For retail &amp; services</a><a href="features.html">Complete feature guide</a></div><div><h3>A few useful links</h3><a href="https://app.inventoryos.co.uk/login.html">Log in</a><a href="https://app.inventoryos.co.uk/login.html?view=register">Create an account</a><a href="data-security.html">Data &amp; security</a><a href="mailto:hello@inventoryos.co.uk">Help &amp; contact</a></div><div><h3>The important things</h3><a href="privacy.html">Privacy policy</a><a href="terms.html">Terms &amp; conditions</a><a href="cookies.html">Cookie policy</a><a href="refunds.html">Refunds &amp; cancellation</a></div></div></div><div class="wrap footer-bottom"><span>© 2026 InventoryOS</span><span>Independent software. Not affiliated with Vinted, eBay, Meta or Amazon.</span><a href="#top">Back to top ↑</a></div></footer>
 
-            <div class="footer-links footer-links-expanded">
-                <div>
-                    <strong>Product</strong>
-                    <a href="index.html#features">Features</a>
-                    <a href="index.html#workflow">How it works</a>
-                    <a href="index.html#pricing">Pricing</a>
-                </div>
 
-                <div>
-                    <strong>Account</strong>
-                    <a data-signup-link data-plan="free" href="https://app.inventoryos.co.uk/register.html?plan=free">Sign up</a>
-                    <a data-login-link href="https://app.inventoryos.co.uk/login.html">Log in</a>
-                    <a href="mailto:hello@inventoryos.co.uk">Contact</a>
-                </div>
-
-                <div>
-                    <strong>Legal</strong>
-                    <a href="privacy.html">Privacy Policy</a>
-                    <a href="terms.html">Terms of Service</a>
-                    <a href="cookies.html">Cookie Policy</a>
-                    <a href="refunds.html">Refund & Cancellation</a>
-                    <a href="data-security.html">Data & Security</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="shell footer-bottom">
-            <span>© <span id="currentYear"></span> InventoryOS. All rights reserved.</span>
-            <span>Independent software. Not affiliated with Vinted, eBay, Meta or Amazon.</span>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
+<script src="assets/pages.js?v=2" defer></script></body>
 </html>
