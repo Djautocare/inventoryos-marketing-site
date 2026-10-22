@@ -16,7 +16,7 @@ Marketing site for InventoryOS reseller stock tools, Business Manufacturing mode
 - After editing shared React header/footer fragments, run `node scripts/style-documents.mjs` after the build to refresh document chrome. This does not rewrite the policies' substantive content.
 - `scripts/update-policy-content.py` records the one-time policy migration. Do not rerun it on the already-updated documents.
 
-The redesign adds no analytics, advertising pixels, external font requests, account creation, payment handling or backend changes. Interactive previews use clearly labelled sample data. All login, signup and checkout-related links lead to the existing app.
+The redesign adds no analytics providers, advertising pixels, external font requests, account creation, payment handling or backend changes. The existing Cloudflare delivery injects its Web Analytics beacon, which is disclosed in the policies. The pre-rendered React root uses Cloudflare’s documented `email_off` markers so its public support address is not rewritten before hydration. Interactive previews use clearly labelled sample data. All login, signup and checkout-related links lead to the existing app.
 
 ## Verification
 
