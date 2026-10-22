@@ -11,7 +11,7 @@ Marketing site for InventoryOS reseller stock tools, Business Manufacturing mode
 - `src/marketing.css`: responsive styling. The Manrope font is served locally.
 - `src/components`: React Bits SpotlightCard and AnimatedContent, with the original licence. AnimatedContent was adapted to keep content visible before hydration.
 - GSAP handles motion and ScrollTrigger. Lenis uses the same GSAP ticker on desktop with a fine pointer. Touch scrolling stays native and reduced-motion preferences disable those effects. Effects are cleaned up on unmount/media changes.
-- `features.html`: the complete original marketing page's main content, retained as a detailed feature guide. It keeps all original feature and pricing details. A no-JavaScript fallback displays all three business panels.
+- `features.html`: the complete original marketing information, presented in the current paper/ink/purple design with topic links and audience-specific guide navigation. It keeps all original feature and pricing details; `assets/feature-guide.css` supplies its independent styling. A no-JavaScript fallback displays all three business panels.
 - `privacy.html`, `terms.html`, `refunds.html`, `cookies.html`, `data-security.html`: public policy content. `assets/document-chrome.css`, `assets/pages.css` and `assets/pages.js` provide consistent document navigation and styling without loading React.
 - After editing shared React header/footer fragments, run `node scripts/style-documents.mjs` after the build to refresh document chrome. This does not rewrite the policies' substantive content.
 - `scripts/update-policy-content.py` records the one-time policy migration. Do not rerun it on the already-updated documents.
@@ -20,7 +20,7 @@ The redesign adds no analytics providers, advertising pixels, external font requ
 
 ## Verification
 
-`npm test` checks preserved source content, local links and assets, public policy coverage, pricing and the static no-JavaScript render. Browser QA is performed on the Sites managed preview. To prepare it: `node scripts/prepare-preview.mjs`, then use the supported preview supervisor. The ignored `dist/` directory is for QA; it is not the source of truth.
+`npm test` checks preserved original text, topic destinations, local links and assets, public policy coverage, pricing and the static no-JavaScript render. Browser QA is performed on the Sites managed preview. To prepare it: `node scripts/prepare-preview.mjs`, then use the supported preview supervisor. The ignored `dist/` directory is for QA; it is not the source of truth.
 
 ## Policy review
 

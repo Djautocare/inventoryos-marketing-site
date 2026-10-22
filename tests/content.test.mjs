@@ -6,7 +6,15 @@ import crypto from 'node:crypto';
 const read=p=>fs.readFileSync(p,'utf8'),audit=JSON.parse(read('tests/original-content-audit.json'));
 const main=s=>s.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)[1].replace(/\s+/g,' ').trim();
 test('the complete original marketing main content is preserved in the feature guide',()=>{
- const content=main(read('features.html'));assert.equal(crypto.createHash('sha256').update(content).digest('hex'),audit.original_main_sha256);assert.equal(content.length,audit.original_main_characters);assert(read('features.html').includes('<noscript>'));assert(read('features.html').includes('audience-panel[hidden]{display:block!important}'));
+ const content=main(read('features.html')).replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim();assert.equal(crypto.createHash('sha256').update(content).digest('hex'),audit.original_main_text_sha256);assert(read('features.html').includes('<noscript>'));assert(read('features.html').includes('audience-panel[hidden]{display:block!important}'));
+});
+test('learn-more links open their audience and relevant topic in the redesigned guide',()=>{
+ const destinations={'index.html':['workflow','shipping-labels','features','pricing'],'manufacturing.html':['mfg-workflow','recipe-planning','mfg-features','pricing'],'retail.html':['retail-workflow','retail-pricing','retail-features']};
+ for(const [file,sections] of Object.entries(destinations)){
+  const mode=file==='index.html'?'resellers':file.split('.')[0],html=read(file);
+  for(const section of sections)assert(html.includes('features.html?audience='+mode+'#'+section),file+' missing topic '+section);
+ }
+ const guide=read('features.html');assert(guide.includes('assets/feature-guide.css'));assert(!guide.includes('href="styles.css'));assert(!guide.includes('href="assets/pages.css'));assert(guide.includes('aria-label="Guide sections"'));assert(read('script.js').includes('scrollToGuideHash'));
 });
 test('three public pages are pre-rendered, with distinct metadata, correct pricing and signup destinations',()=>{
  for(const [file,mode,price]of [['index.html','resellers','14.99'],['manufacturing.html','manufacturing','29.99'],['retail.html','retail','19.99']]){
