@@ -9,12 +9,12 @@
     >
 
     <title>
-        InventoryOS | Inventory for resellers and small manufacturers
+        InventoryOS | Inventory, manufacturing and retail POS
     </title>
 
     <meta
         name="description"
-        content="InventoryOS is a browser-based inventory management web app for UK resellers and small manufacturers. It helps users track stock, locations, sales, expenses, profits, barcodes, shipping labels and automatic shipping-label email imports."
+        content="InventoryOS is a browser-based inventory management web app for UK resellers, small manufacturers and independent shops. It helps users track stock, locations, sales, expenses, profits, barcodes, shipping labels and automatic shipping-label email imports."
     >
 
     <meta
@@ -60,7 +60,7 @@
 
     <link
         rel="stylesheet"
-        href="styles.css?v=recipe-planning-2"
+        href="styles.css?v=retail-billing-1"
     >
 
     <script
@@ -160,7 +160,7 @@
                     class="button button-small button-primary"
                     data-signup-link
                     data-plan="free"
-                    href="https://app.inventoryos.co.uk/register.html?plan=free"
+                    href="https://app.inventoryos.co.uk/login.html?view=register&amp;plan=free"
                 >
                     Start free
                 </a>
@@ -202,7 +202,7 @@
     </header>
 
     <main id="main">
-<div class="audience-bar shell"><div class="audience-switch" role="tablist" aria-label="Choose your business"><button type="button" role="tab" aria-selected="true" aria-controls="resellerAudience" id="resellerTab" data-audience="resellers">For resellers</button><button type="button" role="tab" aria-selected="false" aria-controls="manufacturingAudience" id="manufacturingTab" data-audience="manufacturing" tabindex="-1">For manufacturing &amp; small businesses</button></div><p>One inventory system. Choose the tools for your business.</p></div>
+<div class="audience-bar shell"><div class="audience-switch" role="tablist" aria-label="Choose your business"><button type="button" role="tab" aria-selected="true" aria-controls="resellerAudience" id="resellerTab" data-audience="resellers">For resellers</button><button type="button" role="tab" aria-selected="false" aria-controls="manufacturingAudience" id="manufacturingTab" data-audience="manufacturing" tabindex="-1">For manufacturing &amp; small businesses</button><button type="button" role="tab" aria-selected="false" aria-controls="retailAudience" id="retailTab" data-audience="retail" tabindex="-1">For retail &amp; services</button></div><p>Choose your business. Retail shops have their own stock, tools and billing.</p></div>
 <div id="resellerAudience" class="audience-panel" role="tabpanel" aria-labelledby="resellerTab">
         <section class="hero section">
             <div class="hero-glow hero-glow-one"></div>
@@ -231,7 +231,7 @@
                             class="button button-primary button-large"
                             data-signup-link
                             data-plan="free"
-                            href="https://app.inventoryos.co.uk/register.html?plan=free"
+                            href="https://app.inventoryos.co.uk/login.html?view=register&amp;plan=free"
                         >
                             Start free
                             <span aria-hidden="true">→</span>
@@ -485,7 +485,7 @@
                             class="button button-primary"
                             data-signup-link
                             data-plan="free"
-                            href="https://app.inventoryos.co.uk/register.html?plan=free"
+                            href="https://app.inventoryos.co.uk/login.html?view=register&amp;plan=free"
                         >
                             Create an account
                         </a>
@@ -1112,7 +1112,7 @@
         </section>
 </div>
 <div id="manufacturingAudience" class="audience-panel" role="tabpanel" aria-labelledby="manufacturingTab" hidden>
-<section class="hero section" id="mfg-overview"><div class="hero-glow hero-glow-one"></div><div class="shell hero-grid"><div class="hero-copy"><div class="eyebrow">For workshops &amp; small manufacturers · Business</div><h1>From raw materials<br>to <span>ready-to-sell stock.</span></h1><p class="hero-lead">Know what goes into every product. Record a production batch, deduct its materials and put finished items straight into your stockroom — ready to find, label and dispatch.</p><div class="hero-actions"><a class="button button-primary button-large" data-signup-link data-plan="business" href="https://app.inventoryos.co.uk/register.html?plan=business">Explore Business <span aria-hidden="true">→</span></a><a class="button button-secondary button-large" href="#mfg-features">See manufacturing tools</a></div><div class="manufacturing-plan-note"><strong>Business · £29.99/month</strong><p>Includes the reseller inventory, sales, printing and dispatch tools. Manufacturing mode is off by default and switched on per workspace in Settings.</p></div></div>
+<section class="hero section" id="mfg-overview"><div class="hero-glow hero-glow-one"></div><div class="shell hero-grid"><div class="hero-copy"><div class="eyebrow">For workshops &amp; small manufacturers · Business</div><h1>From raw materials<br>to <span>ready-to-sell stock.</span></h1><p class="hero-lead">Know what goes into every product. Record a production batch, deduct its materials and put finished items straight into your stockroom — ready to find, label and dispatch.</p><div class="hero-actions"><a class="button button-primary button-large" data-signup-link data-plan="business" href="https://app.inventoryos.co.uk/login.html?view=register&amp;plan=business">Explore Business <span aria-hidden="true">→</span></a><a class="button button-secondary button-large" href="#mfg-features">See manufacturing tools</a></div><div class="manufacturing-plan-note"><strong>Business · £29.99/month</strong><p>Includes the reseller inventory, sales, printing and dispatch tools. Manufacturing mode is off by default and switched on per workspace in Settings.</p></div></div>
 <div class="manufacturing-preview" aria-label="Example production preview using sample data"><div class="manufacturing-preview-top"><span>InventoryOS / Manufacturing</span><span class="preview-status">Preview</span></div><h2>Make 20 workshop candles</h2><div class="manufacturing-preview-metrics"><div><small>Finished batch</small><strong>CANDLE-020</strong></div><div><small>Destination</small><strong>Shelf 4</strong></div></div><div class="manufacturing-preview-row"><span>Wax<br><small>Batch WAX-014 · Materials shelf</small></span><strong>500 g</strong></div><div class="manufacturing-preview-row"><span>Cotton wicks<br><small>Batch WICK-008 · Components drawer</small></span><strong>20 each</strong></div><div class="manufacturing-preview-row"><span>Packaging<br><small>Batch PACK-006 · Packaging rack</small></span><strong>20 each</strong></div><div class="manufacturing-preview-result"><span>After completion</span><strong>+20 candles in saleable stock</strong></div><div class="manufacturing-preview-timer"><span class="timer-dot" aria-hidden="true"></span><span>Product-ready timer<br><strong>10 hours · deadline saved</strong></span></div><p class="manufacturing-example-caption">Illustrative preview with sample data. Timers remind you; you confirm when production is finished.</p></div></div></section>
 <section class="features-section section" id="mfg-features"><div class="shell"><div class="section-heading"><div class="eyebrow">Manufacturing tools on Business</div><h2>A clear record of what you use and what you make.</h2><p>Designed for small-batch makers who need practical stock and production tools alongside their everyday sales workflow.</p></div><div class="feature-grid audience-directory">
 <article class="feature-card"><span class="feature-label">Materials &amp; packaging</span><h3>Use the units your work needs.</h3><p>Track raw materials and packaging separately from whole-item stock. Use each, grams, kilograms, litres, millilitres, metres, centimetres or millimetres, including decimal quantities.</p><ul><li>Receive batches into named storage areas</li><li>Record material batch numbers and expiry dates</li><li>Adjust or relocate remaining quantities with a recorded reason</li></ul></article>
@@ -1127,6 +1127,23 @@
 </div>
 
 
+
+
+<div id="retailAudience" class="audience-panel" role="tabpanel" aria-labelledby="retailTab" hidden>
+<section class="hero section" id="retail-overview"><div class="hero-glow hero-glow-one"></div><div class="shell hero-grid"><div class="hero-copy"><div class="eyebrow">InventoryOS Retail · Independent shops &amp; services</div><h1>A clearer counter.<br><span>A better-run shop.</span></h1><p class="hero-lead">Scan sales, receive deliveries and know what needs ordering. Give your team a simple till screen, while you keep control of stock, cash and the day ahead.</p><div class="hero-actions"><a class="button button-primary button-large" href="https://app.inventoryos.co.uk/login.html?view=register&amp;returnTo=%2Fretail%2Fdashboard%2Findex.html">Create your Retail account <span aria-hidden="true">→</span></a><a class="button button-secondary button-large" href="#retail-features">Explore Retail</a></div><div class="manufacturing-plan-note"><strong>£19.99 per shop / month</strong><p>All Retail features. Unlimited tills and staff. Add a second subscribed shop for £39.98/month in total. Separate from reseller and manufacturing subscriptions.</p></div></div>
+<div class="retail-marketing-preview" aria-label="Illustrative InventoryOS Retail till with sample products"><div class="retail-preview-head"><strong>Inventory<span>OS</span> <small>RETAIL</small></strong><span class="preview-status">Sample till</span></div><div class="retail-preview-context"><span>High Street shop</span><span>Till 1 · Alex</span></div><div class="retail-preview-search"><span aria-hidden="true">▥</span> Scan a barcode or find a product</div><div class="retail-preview-body"><div class="retail-preview-products"><div><span aria-hidden="true">▤</span><strong>Chocolate bar</strong><small>£0.85</small></div><div><span aria-hidden="true">▥</span><strong>Fresh milk</strong><small>£1.55</small></div><div><span aria-hidden="true">▧</span><strong>Mineral water</strong><small>£0.70</small></div><div><span aria-hidden="true">▣</span><strong>Kitchen roll</strong><small>£2.40</small></div></div><div class="retail-preview-basket"><h3>Current sale</h3><p><span>Chocolate bar</span><strong>£0.85</strong></p><p><span>Fresh milk</span><strong>£1.55</strong></p><p><span>Chocolate bar</span><strong>£0.85</strong></p><div class="retail-preview-total"><span>Total</span><strong>£3.25</strong></div><div class="retail-preview-pay"><span>Cash</span><span>Confirm card</span></div></div></div><p class="manufacturing-example-caption">Illustrative layout with sample data. Take card payments on your existing reader, then confirm them in the till.</p></div></div></section>
+<section class="features-section section" id="retail-features"><div class="shell"><div class="section-heading"><div class="eyebrow">One Retail plan. Your whole day.</div><h2>From the first delivery to the last cash count.</h2><p>For corner shops, small retailers, bakeries and service businesses. Choose the business tools you use and keep the rest out of the way.</p></div><div class="feature-grid audience-directory">
+<article class="feature-card"><span class="feature-label">Sell</span><h3>A till your team can settle into.</h3><p>Scan products with a USB scanner, keep each scan on its own line or add a quantity in bulk. Take cash, confirm external card payments and print receipts.</p><ul><li>Dedicated full-screen till PWA</li><li>Staff number or QR followed by a private PIN</li><li>Assigned drawers, refunds and management permissions</li><li>PIN-approved wastage with a wastage receipt</li></ul></article>
+<article class="feature-card"><span class="feature-label">Stock</span><h3>Know what is on the shelf.</h3><p>Receive deliveries, count stock and follow up shortages. Scan barcodes to look up matching catalogue entries, then confirm the details for your shop.</p><ul><li>Products and services kept separate</li><li>Minimum levels, case sizes and unit costs</li><li>Negative stock flagged for counting</li><li>CSV import and export</li></ul><p class="feature-small-print">Barcode lookup depends on public catalogue coverage; some products need manual details.</p></article>
+<article class="feature-card"><span class="feature-label">Order</span><h3>Put the next order together faster.</h3><p>See what needs replenishing, grouped by supplier, with estimated costs and product links. Outstanding deliveries are included so you avoid ordering twice.</p><ul><li>Supplier codes, packs and order minimums</li><li>Optional daily reorder email summary</li><li>Supplier price checks where public pages support them</li><li>Review selling prices when recorded costs increase</li></ul></article>
+<article class="feature-card"><span class="feature-label">Control</span><h3>See how the day adds up.</h3><p>Review transactions, daily sales, cash movements, stock-count differences and waste. Keep a clear record of the person who performed and approved an action.</p><ul><li>Opening float, cash lifts and cash balancing</li><li>Cash and manually confirmed card totals</li><li>Date filters and management activity</li><li>Receipt business details and optional VAT breakdown</li></ul></article>
+<article class="feature-card"><span class="feature-label">Customers</span><h3>Give regulars a reason to return.</h3><p>Create loyalty accounts, print customer QR cards, look up purchase history and run offers or promotions. Enable the tools that fit your business.</p><ul><li>Loyalty QR receipts and customer profiles</li><li>Services and appointments</li><li>Preorders, collections and deposits</li><li>Optional customer-facing display</li></ul></article>
+<article class="feature-card"><span class="feature-label">Your shops</span><h3>Separate stock. One clear overview.</h3><p>Each shop has its own stock, staff assignments, drawers and subscription. Open the Retail dashboard as an installed web app and manage charges from Retail billing.</p><ul><li>Unlimited tills and staff within each paid shop</li><li>Display names for stores and locations</li><li>Shop-by-shop billing and cancellation</li><li>Separate from reseller/manufacturing workspaces</li></ul></article>
+</div></div></section>
+<section class="section" id="retail-workflow"><div class="shell"><div class="section-heading"><div class="eyebrow">Get your first shop ready</div><h2>Set up. Stock up. Open the till.</h2></div><div class="manufacturing-steps"><article><span>01</span><h3>Create your shop</h3><p>Sign in, choose InventoryOS Retail and name your business and first shop. Confirm the shop subscription when you are ready.</p></article><article><span>02</span><h3>Add your catalogue</h3><p>Import a CSV or add products and services. Set prices, costs, minimum stock and suppliers. Receive your opening stock.</p></article><article><span>03</span><h3>Connect your tills</h3><p>Register each drawer, pair its device and give staff their own number or QR and PIN. Open a float before selling.</p></article><article><span>04</span><h3>Run your day</h3><p>Scan sales, receive stock and complete tasks. Review your reports, ordering list and cash balance from the dashboard.</p></article></div></div></section>
+<section class="section" id="retail-pricing"><div class="shell retail-marketing-pricing"><div><div class="eyebrow">Straightforward Retail pricing</div><h2>All the tools.<br>One price per shop.</h2><p>£19.99/month for one subscribed shop.<br>£39.98/month for two. £59.97/month for three.</p><p>There are no extra till or staff licence charges. Create shops first; billing starts when you confirm each subscription. Cancel a shop at the end of its paid period.</p><p class="feature-small-print">Hardware, receipt printers and card-provider fees are separate. InventoryOS records card payments you confirm on your existing terminal; it does not automatically charge that terminal. Restricted staff tills require an internet connection. Prepared back-office cash sales can sync after reconnecting.</p></div><article class="price-card featured"><span class="plan-name">InventoryOS Retail</span><div class="price"><strong>£19.99</strong><span>/ shop / month</span></div><ul><li>All Retail features included</li><li>Unlimited tills and staff</li><li>Stock, checkout, suppliers and reports</li><li>Loyalty, promotions and service tools</li><li>Daily reorder emails included</li><li>Separate shop stock and billing</li></ul><a class="button button-primary button-full" href="https://app.inventoryos.co.uk/login.html?view=register&amp;returnTo=%2Fretail%2Fdashboard%2Findex.html">Get started with Retail</a><a class="button button-secondary button-full" href="https://app.inventoryos.co.uk/login.html?returnTo=%2Fretail%2Fdashboard%2Findex.html">Already registered? Open Retail</a></article></div></section>
+<section class="section" id="retail-faq"><div class="shell"><div class="section-heading"><div class="eyebrow">Retail questions</div><h2>A few things before you open.</h2></div><div class="retail-faq-grid"><article class="feature-card"><h3>Can I use my existing card reader?</h3><p>Yes. Take the payment on your reader, then choose Confirm card in InventoryOS. The till records your confirmation; it does not verify or trigger the payment.</p></article><article class="feature-card"><h3>Do extra tills cost more?</h3><p>No. Each £19.99/month shop subscription includes unlimited tills and staff. Each additional subscribed shop adds £19.99/month, with its own stock and renewal date.</p></article><article class="feature-card"><h3>Can I use a tablet or computer?</h3><p>Use a supported modern browser and install the Retail dashboard or Till PWA. Scanner, printer and cash-drawer compatibility depends on your hardware; check your setup before trading.</p></article><article class="feature-card"><h3>Is Retail included with Business?</h3><p>Retail is a separate subscription. Your login can open Retail alongside InventoryOS, but Retail shops have separate workspaces, stock and billing from reseller and manufacturing tools.</p></article></div></div></section>
+</div>
 
         <section
             class="pricing-section section"
@@ -1178,7 +1195,7 @@
                             class="button button-secondary button-full"
                             data-signup-link
                             data-plan="free"
-                            href="https://app.inventoryos.co.uk/register.html?plan=free"
+                            href="https://app.inventoryos.co.uk/login.html?view=register&amp;plan=free"
                         >
                             Start free
                         </a>
@@ -1213,7 +1230,7 @@
                             class="button button-secondary button-full"
                             data-signup-link
                             data-plan="starter"
-                            href="https://app.inventoryos.co.uk/register.html?plan=starter"
+                            href="https://app.inventoryos.co.uk/login.html?view=register&amp;plan=starter"
                         >
                             Choose Starter
                         </a>
@@ -1253,7 +1270,7 @@
                             class="button button-primary button-full"
                             data-signup-link
                             data-plan="pro"
-                            href="https://app.inventoryos.co.uk/register.html?plan=pro"
+                            href="https://app.inventoryos.co.uk/login.html?view=register&amp;plan=pro"
                         >
                             Choose Pro
                         </a>
@@ -1289,7 +1306,7 @@
                             class="button button-secondary button-full"
                             data-signup-link
                             data-plan="business"
-                            href="https://app.inventoryos.co.uk/register.html?plan=business"
+                            href="https://app.inventoryos.co.uk/login.html?view=register&amp;plan=business"
                         >
                             Choose Business
                         </a>
@@ -1530,7 +1547,7 @@
                         class="button button-primary button-large"
                         data-signup-link
                         data-plan="free"
-                        href="https://app.inventoryos.co.uk/register.html?plan=free"
+                        href="https://app.inventoryos.co.uk/login.html?view=register&amp;plan=free"
                     >
                         Create your account
                         <span aria-hidden="true">→</span>
@@ -1589,7 +1606,7 @@
                     <a
                         data-signup-link
                         data-plan="free"
-                        href="https://app.inventoryos.co.uk/register.html?plan=free"
+                        href="https://app.inventoryos.co.uk/login.html?view=register&amp;plan=free"
                     >
                         Sign up
                     </a>
@@ -1630,7 +1647,7 @@
         </div>
     </footer>
 
-    <script src="script.js?v=recipe-planning-2"></script>
+    <script src="script.js?v=retail-billing-1"></script>
 </body>
 </html>
 

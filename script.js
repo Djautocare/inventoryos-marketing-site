@@ -1,6 +1,6 @@
 const SITE_CONFIG = Object.freeze({
     signupUrl:
-        "https://app.inventoryos.co.uk/register.html",
+        "https://app.inventoryos.co.uk/login.html?view=register",
 
     loginUrl:
         "https://app.inventoryos.co.uk/login.html"
@@ -393,7 +393,15 @@ document.addEventListener(
 
 (function initialiseAudienceChoice(){
  const buttons=[...document.querySelectorAll('[data-audience]')];if(!buttons.length)return;
- const reseller=document.getElementById('resellerAudience'),manufacturer=document.getElementById('manufacturingAudience');
- function choose(value,{updateUrl=true}={}){const manufacturing=value==='manufacturing';reseller.hidden=manufacturing;manufacturer.hidden=!manufacturing;buttons.forEach(b=>{const selected=b.dataset.audience===(manufacturing?'manufacturing':'resellers');b.setAttribute('aria-selected',String(selected));b.tabIndex=selected?0:-1;});document.getElementById('manufacturingPricingNote').hidden=!manufacturing;document.querySelectorAll('a[href="#features"],a[href="#mfg-features"],a[href="#workflow"],a[href="#mfg-workflow"],a[href="#what-it-does"],a[href="#mfg-overview"]').forEach(a=>{const map={'#features':'#mfg-features','#workflow':'#mfg-workflow','#what-it-does':'#mfg-overview'};const reverse=Object.fromEntries(Object.entries(map).map(([k,v])=>[v,k]));a.setAttribute('href',manufacturing?(map[a.getAttribute('href')]||a.getAttribute('href')):(reverse[a.getAttribute('href')]||a.getAttribute('href')));});if(updateUrl){const url=new URL(location.href);url.searchParams.set('audience',manufacturing?'manufacturing':'resellers');url.hash='';history.replaceState(null,'',url);}}
- buttons.forEach((b,index)=>{b.addEventListener('click',()=>choose(b.dataset.audience));b.addEventListener('keydown',e=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;e.preventDefault();const next=e.key==='Home'?0:e.key==='End'?buttons.length-1:(index+(e.key==='ArrowRight'?1:-1)+buttons.length)%buttons.length;choose(buttons[next].dataset.audience);buttons[next].focus();});});choose(new URL(location.href).searchParams.get('audience')==='manufacturing'?'manufacturing':'resellers',{updateUrl:false});
+ const panels={resellers:document.getElementById('resellerAudience'),manufacturing:document.getElementById('manufacturingAudience'),retail:document.getElementById('retailAudience')};
+ const routes={features:{resellers:'#features',manufacturing:'#mfg-features',retail:'#retail-features'},workflow:{resellers:'#workflow',manufacturing:'#mfg-workflow',retail:'#retail-workflow'},overview:{resellers:'#what-it-does',manufacturing:'#mfg-overview',retail:'#retail-overview'},faq:{resellers:'#faq',manufacturing:'#faq',retail:'#retail-faq'},pricing:{resellers:'#pricing',manufacturing:'#pricing',retail:'#retail-pricing'}};
+ for(const a of document.querySelectorAll('a[href^="#"]')){for(const [key,map]of Object.entries(routes))if(Object.values(map).includes(a.getAttribute('href')))a.dataset.audienceRoute=key;}
+ function choose(value,{updateUrl=true}={}){
+  const current=Object.hasOwn(panels,value)?value:'resellers';for(const [key,panel]of Object.entries(panels))panel.hidden=key!==current;
+  buttons.forEach(b=>{const selected=b.dataset.audience===current;b.setAttribute('aria-selected',String(selected));b.tabIndex=selected?0:-1;});
+  document.getElementById('manufacturingPricingNote').hidden=current!=='manufacturing';document.getElementById('pricing').hidden=current==='retail';document.getElementById('faq').hidden=current==='retail';document.querySelector('.printing-section').hidden=current==='retail';
+  document.querySelectorAll('[data-audience-route]').forEach(a=>a.setAttribute('href',routes[a.dataset.audienceRoute][current]));
+  if(updateUrl){const url=new URL(location.href);url.searchParams.set('audience',current);url.hash='';history.replaceState(null,'',url);}
+ }
+ buttons.forEach((b,index)=>{b.addEventListener('click',()=>choose(b.dataset.audience));b.addEventListener('keydown',e=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;e.preventDefault();const next=e.key==='Home'?0:e.key==='End'?buttons.length-1:(index+(e.key==='ArrowRight'?1:-1)+buttons.length)%buttons.length;choose(buttons[next].dataset.audience);buttons[next].focus();});});choose(new URL(location.href).searchParams.get('audience'),{updateUrl:false});
 })();
