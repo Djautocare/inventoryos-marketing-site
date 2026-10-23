@@ -5,3 +5,16 @@ export function selectProducts(products,{search='',category='',sort='featured'}=
 }
 export function minimumQuantity(variant){return Number.isSafeInteger(variant?.min_order_qty)&&variant.min_order_qty>0?variant.min_order_qty:1;}
 export function quantityProblem(variant,qty){const min=minimumQuantity(variant);if(!Number.isInteger(qty)||qty<min)return 'Minimum order quantity: '+min+'.';if(qty>Math.min(200,variant?.stock??0))return 'That quantity exceeds available stock or the online order limit.';return '';}
+
+// Cloudflare Pages also serves HTML files at extensionless addresses.
+export function productIdForPath(pathname,search=''){
+ const parts=pathname.split('/').filter(Boolean);
+ if(parts.at(-1)==='index.html')parts.pop();
+ const leaf=parts.at(-1)?.replace(/\.html$/,'');
+ if(parts.length===1&&leaf==='shop-printer')return 'jadens-668bt';
+ if(parts.length===1&&leaf==='shop-product')return new URLSearchParams(search).get('product')||'jadens-668bt';
+ if(parts.length===3&&parts[0]==='shop'&&parts[1]==='product'){
+  try{return decodeURIComponent(parts[2]);}catch{return null;}
+ }
+ return null;
+}
