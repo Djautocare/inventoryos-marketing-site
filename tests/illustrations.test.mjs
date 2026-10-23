@@ -1,7 +1,7 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {illustrations,productImage,variantAnnotation} from '../assets/shop-product-illustrations.js';
+import {illustrations,productImage,variantAnnotation,originalPrinterMedia} from '../assets/shop-product-illustrations.js';
 test('all 26 supplied images are assigned to the 27 packaging families',()=>{
  assert.equal(Object.keys(illustrations).length,27);
  assert.equal(new Set(Object.values(illustrations)).size,26);
@@ -24,4 +24,14 @@ test('illustrations are fallback images and existing product and colour photos t
  assert.deepEqual(productImage({id:'new-product'}),{src:'',illustration:false});
  assert.equal(variantAnnotation({name:'Pink · 230 x 300mm · 100 bags'}),'Pink · 230 x 300mm · 100 bags');
  assert.equal(variantAnnotation({name:'CL-A (100 x 100 x 70mm) · 1 boxes'}),'CL-A (100 x 100 x 70mm) · 1 box');
+});
+
+test('original JADENS gallery and colour photos survive catalogue image overrides',()=>{
+ const p={id:'jadens-668bt',image_url:'https://example.com/replacement.png'};
+ assert.equal(originalPrinterMedia.gallery.length,9);
+ for(const colour of ['Black','White','Pink']){
+  const image=productImage(p,{name:colour,id:'catalogue-'+colour.toLowerCase(),image:'https://example.com/cartoon.webp'});
+  assert.equal(image.src,originalPrinterMedia.colours[colour.toLowerCase()]);assert.equal(image.illustration,false);
+ }
+ assert.equal(productImage(p).src,originalPrinterMedia.gallery[0].src);
 });
