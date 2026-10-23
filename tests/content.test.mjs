@@ -31,7 +31,7 @@ test('local links and assets resolve, anchors exist and page IDs are unique',()=
   const html=read(file),ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(x=>x[1]);assert.equal(new Set(ids).size,ids.length,file+' duplicate IDs');
   for(const match of html.matchAll(/\b(?:href|src)="([^"]+)"/g)){
    const link=match[1].replaceAll('&amp;','&');if(/^(?:https?:|mailto:|data:)/.test(link))continue;
-   const [target,hash]=link.split('#'),local=(target||file).split('?')[0].replace(/^\//,'');assert(fs.existsSync(local),file+' missing '+local);
+   const [target,hash]=link.split('#'),local=(target||file).split('?')[0].replace(/^\//,'')||'.';assert(fs.existsSync(local),file+' missing '+local);
    if(hash&&local.endsWith('.html'))assert(read(local).includes('id="'+hash+'"'),file+' missing anchor '+link);
   }
  }

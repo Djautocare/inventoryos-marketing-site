@@ -8,7 +8,7 @@ const source=JSON.parse(fs.readFileSync('assets/shop-products.json','utf8'));
 test('the live printer uses the agreed delivered price and exposes its colour checkouts',()=>{
  const data=catalogue(source);assert.equal(data.products[0].pricePence,5899);assert.equal(data.products[0].gallery.length,9);assert.equal(data.ready,true);assert.equal(data.products[0].availability,'available');
  assert.equal(data.products[0].paymentLink,'https://buy.stripe.com/00w3cu7gb4NI1V2aWoaIM00');
- const html=fs.readFileSync('shop.html','utf8');assert(html.includes('£58.99'));assert(html.includes('Free UK shipping'));assert(!html.includes('Online ordering opens soon'));assert(html.includes('data-shop-colour'));assert(html.includes('data-shop-buy'));assert.equal((html.match(/data-shop-photo/g)||[]).length,9);
+ const html=fs.readFileSync('shop/product/jadens-668bt/index.html','utf8');assert(html.includes('£58.99'));assert(html.includes('Free UK shipping'));assert(!html.includes('Online ordering opens soon'));assert(html.includes('data-shop-colour'));assert(html.includes('data-shop-buy'));assert.equal((html.match(/data-shop-photo/g)||[]).length,9);
  for(const variant of data.products[0].variants)assert(html.includes(`href="${variant.paymentLink}"`));
  for(const item of data.products[0].gallery)assert(fs.statSync(item.src).size>0);
 });
