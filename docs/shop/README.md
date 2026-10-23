@@ -56,3 +56,11 @@ Activate all three live payment links only when the backend settings are in plac
 `npm run build` creates the three audience pages and `shop.html`. `node scripts/style-documents.mjs` updates shared document navigation. `npm test` checks existing content plus catalogue price, photo availability and checkout safeguards. Product copy is escaped into static HTML and works without JavaScript; the small shop script changes gallery photos only. It does not collect card or address data.
 
 Browser QA covered the gallery, specifications, light/dark appearances, account-settings entry, and 390px/320px shop layouts with no document overflow. The sandbox checkout was opened to verify its price, test branding and UK delivery-address collection. The preview image is a catalogue preview, not an operational live checkout.
+
+## Checkout agreement and optional email updates
+
+All three live colour Payment Links require agreement to InventoryOS Terms & Conditions. The sandbox link also requires terms agreement. Marketing consent is separate and is never bundled into that required agreement. Stripe does not support its native promotions checkbox for this UK account.
+
+The Shop's optional checkbox is implemented behind `marketingEnabled` in the catalogue. It is enabled with a backend readiness check: the checkbox stays hidden until the private updated Shop backend package is installed, checked and restarted. No new .env values are needed. Opted-in buyers enter an email before checkout; a random reference and that email are passed to Stripe. Only a paid, signed-webhook order using the same email activates the consent. Unchecked choices, failed/unpaid orders, stale references and different emails do not subscribe anybody. A choice alone sends no marketing emails.
+
+Guest contacts are available in Admin → Mailing List → Shop customers. Existing accounts also use their normal marketing preferences. A later removal must not be overwritten by an old payment retry. Sandbox choices stay outside the live list.

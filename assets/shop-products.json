@@ -111,5 +111,6 @@
     "name": "Dylan Smith trading as InventoryOS",
     "address": "6 New Hall Avenue, Manchester, M30 7LE, United Kingdom",
     "email": "hello@inventoryos.co.uk"
-  }
+  },
+  "marketingEnabled": true
 }

@@ -39,6 +39,6 @@ export function catalogue(value) {
     typeof value.deliverySummary === 'string' && value.deliverySummary.trim().length > 0 &&
     typeof value.returnsSummary === 'string' && value.returnsSummary.trim().length > 0 &&
     ['name','address','email'].every(key => typeof value.seller?.[key] === 'string' && value.seller[key].trim());
-  return {products, ready: Boolean(ready), delivery: value.deliverySummary || '', returns: value.returnsSummary || '', seller: value.seller};
+  return {marketingEnabled:value.marketingEnabled===true, products, ready: Boolean(ready), delivery: value.deliverySummary || '', returns: value.returnsSummary || '', seller: value.seller};
 }
 export const money = pence => new Intl.NumberFormat('en-GB',{style:'currency',currency:'GBP'}).format(pence / 100);

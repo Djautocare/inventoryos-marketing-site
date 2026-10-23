@@ -39,7 +39,7 @@ test('changing the colour changes the actual purchase link and the image, includ
  let selected=0;const handlers={},buy={setAttribute(){}},image={};
  const select={get selectedOptions(){const v=variants[selected];return [{dataset:{paymentLink:v.paymentLink,photo:v.image,colour:v.colour}}];},addEventListener(name,fn){handlers[name]=fn;}};
  const product={querySelector(s){if(s==='.shop-price')return {textContent:'£58.99'};if(s==='h2')return {textContent:'JADENS printer'};if(s==='.shop-product-image')return image;return null;},querySelectorAll(){return [];}};
- const control={hidden:true,querySelector(s){return s==='[data-shop-colour]'?select:buy;},closest(){return product;}};
+ const control={hidden:true,querySelector(s){return s==='[data-shop-colour]'?select:s==='[data-shop-buy]'?buy:null;},closest(){return product;}};
  vm.runInNewContext(fs.readFileSync('assets/shop.js','utf8'),{document:{querySelectorAll(){return [control];},addEventListener(){}},window:{addEventListener(name,fn){handlers[name]=fn;}}});
  assert.equal(control.hidden,false);
  for(selected=0;selected<variants.length;selected++){handlers.change();assert.equal(buy.href,variants[selected].paymentLink);assert.equal(image.src,variants[selected].image);assert(buy.textContent.includes(variants[selected].colour.toLowerCase()));}
