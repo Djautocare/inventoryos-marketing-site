@@ -1,8 +1,8 @@
 {
   "version": 1,
   "checkoutEnabled": false,
-  "deliverySummary": "Free UK delivery via Royal Mail. The displayed price includes delivery.",
-  "returnsSummary": "",
+  "deliverySummary": "Free UK shipping. Dispatch within 1–3 days, with delivery estimated at around 48 hours after dispatch. Delivery times are estimates.",
+  "returnsSummary": "Consumers can cancel within 14 days after delivery and then have a further 14 days to return the goods. Contact hello@inventoryos.co.uk with your order number. You pay return postage for a change of mind; we cover reasonable return costs for faulty or incorrect goods. Your statutory rights are unaffected.",
   "products": [
     {
       "id": "jadens-668bt",
@@ -13,7 +13,7 @@
       "pricePence": 5899,
       "availability": "coming-soon",
       "image": "assets/shop/jadens-668bt-1.webp",
-      "delivery": "Free UK delivery · Royal Mail",
+      "delivery": "Free UK shipping · Dispatch in 1–3 days",
       "paymentLink": "https://buy.stripe.com/00w3cu7gb4NI1V2aWoaIM00",
       "gallery": [
         {
@@ -84,7 +84,32 @@
           "Connections",
           "Bluetooth / USB"
         ]
+      ],
+      "variants": [
+        {
+          "id": "black",
+          "colour": "Black",
+          "paymentLink": "https://buy.stripe.com/00w3cu7gb4NI1V2aWoaIM00",
+          "image": "assets/shop/jadens-668bt-1.webp"
+        },
+        {
+          "id": "white",
+          "colour": "White",
+          "paymentLink": "https://buy.stripe.com/5kQ28q0RNfsmdDK0hKaIM02",
+          "image": "assets/shop/jadens-668bt-5.webp"
+        },
+        {
+          "id": "pink",
+          "colour": "Pink",
+          "paymentLink": "https://buy.stripe.com/4gM28qdEzeoi7fm5C4aIM03",
+          "image": "assets/shop/jadens-668bt-3.webp"
+        }
       ]
     }
-  ]
+  ],
+  "seller": {
+    "name": "",
+    "address": "",
+    "email": "hello@inventoryos.co.uk"
+  }
 }
