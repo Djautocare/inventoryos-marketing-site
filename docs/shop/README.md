@@ -6,13 +6,13 @@ The public catalogue is linked from all marketing headers/footers, the three aud
 
 **Catalogue only: online ordering is not enabled.** Product photos and product-specific details were imported from the owner-supplied eBay listing https://www.ebay.co.uk/itm/377228291527 on 23 October 2026. The original nine images are hosted locally; eBay checkout, buyer-protection text, seller feedback, fluctuating stock counts and eBay returns terms are not copied into the shop. Black, white and pink appear in the gallery but are not asserted to be in stock.
 
-The separate InventoryOS sandbox has a one-off payment link tagged `inventoryos_area=shop`, `inventoryos_shop_sku=jadens-668bt`. The link charges GBP 58.99, collects a GB shipping address, has quantity fixed at one and clearly states no goods are dispatched for a test. Paid invoice creation is enabled. It does not use subscription prices. No test payment or real payment was submitted. No live Stripe objects were created or subscriptions changed.
+The separate InventoryOS sandbox has a one-off payment link tagged `inventoryos_area=shop`, `inventoryos_shop_sku=jadens-668bt`. The link charges GBP 58.99, collects a GB shipping address, has quantity fixed at one and clearly states no goods are dispatched for a test. Stripe invoice creation is disabled for new Shop tests; the backend generates InventoryOS invoice PDFs. It does not use subscription prices. No test payment or real payment was submitted. No live Stripe objects were created or subscriptions changed.
 
 ## Order management and backend installation
 
 The application has an admin-only **Shop orders** tab with separate Live and Sandbox filters, customer/delivery details, payment state, invoice access, status, Royal Mail tracking, private notes and email status/history. The backend is supplied privately as `InventoryOS-shop-orders-update.zip`, with the tested PostgreSQL schema, installer and Windows setup instructions. The download contains only the installable files; backend source is not published in this marketing repository. It must be installed on the owner's PC before the admin tab can load orders.
 
-Signed webhooks retrieve authoritative Stripe sessions and import paid orders once. The Resend queue sends a high-contrast confirmation with the actual paid Stripe invoice PDF attached, then sends status/tracking updates. Sandbox messages are routed to an explicitly configured owner test inbox. Internal notes are excluded. No customer emails have been sent during development. Existing subscriptions and global Stripe receipt settings are unchanged.
+Signed webhooks retrieve authoritative Stripe sessions and import paid orders once. The Resend queue sends a high-contrast confirmation with a saved InventoryOS invoice PDF attached (new live numbering starts IOS-10001), then sends status/tracking updates. Sandbox messages are routed to an explicitly configured owner test inbox. Internal notes are excluded. No customer emails have been sent during development. Existing genuine Stripe invoices are retained. Existing subscriptions and global Stripe receipt settings are unchanged.
 
 ## Remaining before live ordering
 
