@@ -3,3 +3,5 @@ export function selectProducts(products,{search='',category='',sort='featured'}=
  let list=products.filter(p=>(p.name+' '+p.category+' '+p.description).toLowerCase().includes(search.trim().toLowerCase())&&(!category||matches[category]?.test(p.name+' '+p.category)));
  const price=p=>Math.min(...p.variants.map(v=>v.price_pence));if(sort==='price-asc')list.sort((a,b)=>price(a)-price(b)||a.name.localeCompare(b.name));if(sort==='price-desc')list.sort((a,b)=>price(b)-price(a)||a.name.localeCompare(b.name));if(sort==='name')list.sort((a,b)=>a.name.localeCompare(b.name));return list;
 }
+export function minimumQuantity(variant){return Number.isSafeInteger(variant?.min_order_qty)&&variant.min_order_qty>0?variant.min_order_qty:1;}
+export function quantityProblem(variant,qty){const min=minimumQuantity(variant);if(!Number.isInteger(qty)||qty<min)return 'Minimum order quantity: '+min+'.';if(qty>Math.min(200,variant?.stock??0))return 'That quantity exceeds available stock or the online order limit.';return '';}
