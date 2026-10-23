@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "checkoutEnabled": false,
+  "deliverySummary": "Free UK delivery via Royal Mail. The displayed price includes delivery.",
+  "returnsSummary": "",
+  "products": [
+    {
+      "id": "jadens-668bt",
+      "published": true,
+      "name": "JADENS 668BT Bluetooth Shipping Label Printer",
+      "description": "A compact thermal printer for shipping labels and everyday labelling. Print from your phone over Bluetooth, or connect to a Windows PC or Mac using USB.",
+      "category": "Thermal label printers",
+      "pricePence": 5899,
+      "availability": "coming-soon",
+      "image": "assets/shop/jadens-668bt-1.webp",
+      "delivery": "Free UK delivery · Royal Mail",
+      "paymentLink": null,
+      "gallery": [
+        {
+          "src": "assets/shop/jadens-668bt-1.webp",
+          "alt": "Black JADENS 668BT thermal label printer with a phone"
+        },
+        {
+          "src": "assets/shop/jadens-668bt-2.webp",
+          "alt": "Shipping-platform label examples"
+        },
+        {
+          "src": "assets/shop/jadens-668bt-3.webp",
+          "alt": "Pink JADENS 668BT thermal label printer"
+        },
+        {
+          "src": "assets/shop/jadens-668bt-4.webp",
+          "alt": "Bluetooth for mobile devices and USB for Windows and macOS"
+        },
+        {
+          "src": "assets/shop/jadens-668bt-5.webp",
+          "alt": "White JADENS 668BT thermal label printer"
+        },
+        {
+          "src": "assets/shop/jadens-668bt-6.webp",
+          "alt": "Package contents shown in the listing"
+        },
+        {
+          "src": "assets/shop/jadens-668bt-7.webp",
+          "alt": "Compact JADENS 668BT printer"
+        },
+        {
+          "src": "assets/shop/jadens-668bt-8.webp",
+          "alt": "Supported thermal label formats"
+        },
+        {
+          "src": "assets/shop/jadens-668bt-9.webp",
+          "alt": "Examples of packing and labelling uses"
+        }
+      ],
+      "features": [
+        "Print 4 × 6 inch shipping labels",
+        "Direct thermal printing: no ink or toner",
+        "Bluetooth connection for iOS and Android",
+        "USB connection for Windows and macOS"
+      ],
+      "specifications": [
+        [
+          "Brand",
+          "JADENS"
+        ],
+        [
+          "Model",
+          "668BT"
+        ],
+        [
+          "Condition",
+          "New"
+        ],
+        [
+          "Print technology",
+          "Direct thermal · black and white"
+        ],
+        [
+          "Resolution",
+          "203 × 203 DPI"
+        ],
+        [
+          "Connections",
+          "Bluetooth / USB"
+        ]
+      ]
+    }
+  ]
+}
