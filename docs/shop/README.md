@@ -24,7 +24,7 @@ Live one-time colour checkouts are all GBP 58.99 with free UK shipping:
 | White | `inventoryos_shop_jadens_668bt_white_v1` | `price_1UTmnbC9bSpYsWkxk8hRpwhW` | `plink_1UTmniC9bSpYsWkxJzJsNxix` |
 | Pink | `inventoryos_shop_jadens_668bt_pink_v1` | `price_1UTmo3C9bSpYsWkxLiWwd6Uj` | `plink_1UTmoAC9bSpYsWkxruhvQ1Fr` |
 
-The colour is part of the Stripe product name, so the existing backend records it on the order and invoice without a backend upgrade. Checkout selection has a non-JavaScript fallback. No checkout has been used to take a live payment. All three links are paused during setup. The public catalogue contains their URLs, but does not render purchase links until checkout is enabled. The owner has supplied seller details privately. They are omitted here pending explicit approval to include them in this public repository. The hardware terms, returns and privacy sections have been added. Remaining launch work is private backend configuration and its live check.
+The colour is part of the Stripe product name, so the existing backend records it on the order and invoice without a backend upgrade. Checkout selection has a non-JavaScript fallback. No checkout has been used to take a live payment. All three links are paused during setup. The public catalogue contains their URLs, but does not render purchase links until checkout is enabled. The owner explicitly approved publishing the supplied seller identity and business/returns address to this public repository and the Shop. Those details now appear on the Shop and policy pages. The hardware terms, returns and privacy sections have been added. Remaining launch work is private backend configuration and its live check.
 
 The dedicated live webhook is `we_1UTmefC9bSpYsWkxTtVy7oZQ` at `https://api.inventoryos.co.uk/shop/webhook`, using API version `2026-08-26.dahlia`. It listens for `checkout.session.completed`, `checkout.session.async_payment_succeeded`, `checkout.session.async_payment_failed` and `invoice.paid`. Retrieve this destination's signing secret privately in Stripe; it is not stored in this repository.
 
@@ -45,11 +45,11 @@ Activate all three live payment links only when the backend settings are in plac
 
 ## Remaining before live ordering
 
-- Colours and dispatch/delivery estimates have been supplied by the owner and added to the Shop. Seller details remain private pending repository-publication approval.
+- Colours and dispatch/delivery estimates have been supplied by the owner and added to the Shop. Seller identity and business/returns address have been supplied and explicitly approved for this public repository.
 - Shop-specific delivery, returns, seller terms and physical-order privacy coverage are prepared alongside the purchase selector.
 - Install the prepared backend package, add the private environment settings, configure the dedicated sandbox webhook and complete a test order including the invoice attachment and tracking update. Then configure and verify a separate live key/link/webhook. Keep test and live orders separate. Never fulfil from a browser return page.
 - Verify the prepared live one-time product price and payment link, shipping collection and final checkout total. Confirm enabled payment-method fees fit the intended sale proceeds.
-- Only then fill `returnsSummary`, add the valid live payment link, set availability to `available` and turn `checkoutEnabled` on in `assets/shop-products.json`. Rebuild and rerun the tests.
+- After live backend verification, set availability to `available` and turn `checkoutEnabled` on in `assets/shop-products.json`. The seller, delivery, returns and colour checkout details are already prepared. Rebuild and rerun the tests.
 
 ## Development
 
