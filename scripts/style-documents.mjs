@@ -24,6 +24,11 @@ for(const file of ['privacy.html','terms.html','refunds.html','cookies.html','da
   const toc=sections.map(([,id,title])=>`<a href="#${id}">${title.replace(/^\d+\.\s*/,'')}</a>`).join('\n');
   html=html.replace(/<aside class="legal-toc">[\s\S]*?<\/aside>/,`<aside class="legal-toc"><strong>On this page</strong>\n${toc}\n</aside>`);
  }
+ html=html.replace(/<html[^>]*>/,'<html lang="en" data-marketing-appearance="dark">');
+ html=html.replace(/(<meta\s+name="theme-color"\s+content=")[^"]+("\s*\/?\s*>)/,'$1#080909$2');
+ if(!html.includes('assets/appearance.js'))html=html.replace(/(<meta\s+name="theme-color"[\s\S]*?>)/,'$1<script src="assets/appearance.js?v=1"></script>');
+ html=html.replace(/<link rel="stylesheet" href="assets\/appearance\.css[^"]*">/g,'');
+ html=html.replace('</head>','<link rel="stylesheet" href="assets/appearance.css?v=1"></head>');
  await fs.writeFile(file,html);
 }
 console.log('Styled the complete guide and five policy pages.');
