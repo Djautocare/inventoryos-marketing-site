@@ -4,7 +4,7 @@ The public catalogue is linked from all marketing headers/footers, the three aud
 
 ## Current release state
 
-**Catalogue only: online ordering is not enabled.** Product photos and product-specific details were imported from the owner-supplied eBay listing https://www.ebay.co.uk/itm/377228291527 on 23 October 2026. The original nine images are hosted locally; eBay checkout, buyer-protection text, seller feedback, fluctuating stock counts and eBay returns terms are not copied into the shop. The owner has confirmed black, white and pink are available, with dispatch within 1–3 days and delivery estimated at around 48 hours after dispatch.
+**Live ordering is enabled.** The owner reports the live backend check passed after adding live settings and restarting InventoryOS Backend. The three colour checkouts are active. Product photos and product-specific details were imported from the owner-supplied eBay listing https://www.ebay.co.uk/itm/377228291527 on 23 October 2026. The original nine images are hosted locally; eBay checkout, buyer-protection text, seller feedback, fluctuating stock counts and eBay returns terms are not copied into the shop. The owner has confirmed black, white and pink are available, with dispatch within 1–3 days and delivery estimated at around 48 hours after dispatch.
 
 The separate InventoryOS sandbox has a one-off payment link tagged `inventoryos_area=shop`, `inventoryos_shop_sku=jadens-668bt`. The link charges GBP 58.99, collects a GB shipping address, has quantity fixed at one and clearly states no goods are dispatched for a test. Stripe invoice creation is disabled for new Shop tests; the backend generates InventoryOS invoice PDFs. It does not use subscription prices. The owner reports a successful sandbox test. Development tools have not submitted payments. The separate live objects prepared below do not change existing subscriptions.
 
@@ -24,7 +24,7 @@ Live one-time colour checkouts are all GBP 58.99 with free UK shipping:
 | White | `inventoryos_shop_jadens_668bt_white_v1` | `price_1UTmnbC9bSpYsWkxk8hRpwhW` | `plink_1UTmniC9bSpYsWkxJzJsNxix` |
 | Pink | `inventoryos_shop_jadens_668bt_pink_v1` | `price_1UTmo3C9bSpYsWkxLiWwd6Uj` | `plink_1UTmoAC9bSpYsWkxruhvQ1Fr` |
 
-The colour is part of the Stripe product name, so the existing backend records it on the order and invoice without a backend upgrade. Checkout selection has a non-JavaScript fallback. No checkout has been used to take a live payment. All three links are paused during setup. The public catalogue contains their URLs, but does not render purchase links until checkout is enabled. The owner explicitly approved publishing the supplied seller identity and business/returns address to this public repository and the Shop. Those details now appear on the Shop and policy pages. The hardware terms, returns and privacy sections have been added. Remaining launch work is private backend configuration and its live check.
+The colour is part of the Stripe product name, so the existing backend records it on the order and invoice without a backend upgrade. Checkout selection has a non-JavaScript fallback. Development tools have not submitted a live payment. All three colour links are active, and the public Shop renders the colour selector and corresponding purchase link. The owner explicitly approved publishing the supplied seller identity and business/returns address to this public repository and the Shop. Those details now appear on the Shop and policy pages. The hardware terms, returns and privacy sections have been added. The owner has completed private backend configuration and reports a passing live check. A successful live signed-webhook delivery and customer email should be checked on the first genuine order; development tools have not independently observed a live transaction.
 
 The dedicated live webhook is `we_1UTmefC9bSpYsWkxTtVy7oZQ` at `https://api.inventoryos.co.uk/shop/webhook`, using API version `2026-08-26.dahlia`. It listens for `checkout.session.completed`, `checkout.session.async_payment_succeeded`, `checkout.session.async_payment_failed` and `invoice.paid`. Retrieve this destination's signing secret privately in Stripe; it is not stored in this repository.
 
@@ -43,13 +43,13 @@ Do not overwrite sandbox settings, Retail billing settings or existing subscript
 
 Activate all three live payment links only when the backend settings are in place, run `node .\check-shop.cjs --live`, then restart InventoryOS Backend. Only publish the enabled Buy now button once that check passes. The check does not take payment or send email; a successful sandbox test does not verify the live key or live webhook secret.
 
-## Remaining before live ordering
+## Operational checks
 
-- Colours and dispatch/delivery estimates have been supplied by the owner and added to the Shop. Seller identity and business/returns address have been supplied and explicitly approved for this public repository.
-- Shop-specific delivery, returns, seller terms and physical-order privacy coverage are prepared alongside the purchase selector.
-- Install the prepared backend package, add the private environment settings, configure the dedicated sandbox webhook and complete a test order including the invoice attachment and tracking update. Then configure and verify a separate live key/link/webhook. Keep test and live orders separate. Never fulfil from a browser return page.
-- Verify the prepared live one-time product price and payment link, shipping collection and final checkout total. Confirm enabled payment-method fees fit the intended sale proceeds.
-- After live backend verification, set availability to `available` and turn `checkoutEnabled` on in `assets/shop-products.json`. The seller, delivery, returns and colour checkout details are already prepared. Rebuild and rerun the tests.
+- The owner reports a passing `node .\check-shop.cjs --live` after live configuration and backend restart.
+- A live buyer can choose black, white or pink, each at GBP 58.99 with free UK shipping. Stripe collects the billing and GB delivery address. New Shop invoices are generated by InventoryOS; Stripe post-payment invoice creation is disabled.
+- Monitor the first genuine order for a successful signed delivery to the Shop webhook, an entry under Admin → Shop orders → Live, and a confirmation email with the invoice attached. An enabled webhook destination is not proof of successful delivery.
+- Keep sandbox and live credentials separate. Never fulfil from a browser return page, and keep the backend and Cloudflare Tunnel running to process orders and email.
+- To pause new website purchases, set `checkoutEnabled` to `false` and rebuild. To prevent checkout through previously shared links too, deactivate all three Payment Links in Stripe.
 
 ## Development
 

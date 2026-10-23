@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "checkoutEnabled": false,
+  "checkoutEnabled": true,
   "deliverySummary": "Free UK shipping. Dispatch within 1–3 days, with delivery estimated at around 48 hours after dispatch. Delivery times are estimates.",
   "returnsSummary": "Consumers can cancel within 14 days after delivery and then have a further 14 days to return the goods. Contact hello@inventoryos.co.uk with your order number. You pay return postage for a change of mind; we cover reasonable return costs for faulty or incorrect goods. Your statutory rights are unaffected.",
   "products": [
@@ -11,7 +11,7 @@
       "description": "A compact thermal printer for shipping labels and everyday labelling. Print from your phone over Bluetooth, or connect to a Windows PC or Mac using USB.",
       "category": "Thermal label printers",
       "pricePence": 5899,
-      "availability": "coming-soon",
+      "availability": "available",
       "image": "assets/shop/jadens-668bt-1.webp",
       "delivery": "Free UK shipping · Dispatch in 1–3 days",
       "paymentLink": "https://buy.stripe.com/00w3cu7gb4NI1V2aWoaIM00",
