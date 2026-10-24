@@ -25,7 +25,11 @@ The live Cloudflare project currently publishes committed assets without running
 
 ## Finish Google Search Console
 
-Search Console is account-specific. The audit browser reached Google's public introduction page, not an authenticated property; ownership and sitemap submission have not been confirmed.
+On 24 October 2026, the existing Domain property `inventoryos.co.uk` was confirmed accessible and verified. Google accepted `https://inventoryos.co.uk/sitemap.xml` with **Success**, discovering **38 pages**. Its historical indexing report (last updated 15 October) showed 9 indexed pages and 31 duplicate URLs without a user-selected canonical. These are historical counts, not results of the new deployment.
+
+A representative new product failed Google's live test with **Redirect error**. Product proxy destinations were corrected to extensionless content routes, removing reciprocal internal-alias redirects so Cloudflare HTML normalization cannot cycle back into the public proxy. The source build and regression test retain this correction.
+
+The following steps remain useful for future ownership changes and monitoring:
 
 1. Sign in at https://search.google.com/search-console/ with the Google account that should own InventoryOS. If `inventoryos.co.uk` is already verified, select it and skip the verification step.
 2. Otherwise add a **Domain** property for `inventoryos.co.uk` and publish Google's exact TXT verification record in Cloudflare DNS. This covers all protocols and subdomains. Alternatively add a **URL-prefix** property for `https://inventoryos.co.uk/` and select **HTML tag** verification.

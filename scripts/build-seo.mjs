@@ -25,7 +25,7 @@ for(const p of listings){
  const graph=productSchema(p,image(p),productURL(p));html=metadata(html,{title:(p.id==='ps-thermal-labels-on-rolls'?'Direct Thermal Label Rolls':p.id==='ps-colour-mailing-bags'?'Coloured Self-Seal Mailing Bags':p.name)+' | InventoryOS Shop',description:p.description,url:productURL(p),type:'product',image:image(p),imageAlt:p.name},graph);
  await fs.writeFile('shop-product-pages/'+p.id+'.html',html);
  if(p.id==='jadens-668bt'){await fs.writeFile('shop-printer.html',html);await fs.writeFile('shop/product/jadens-668bt/index.html',html);}
- redirects+=`${productPageURL(p.id)} /shop-product-pages/${p.id}.html 200\n${productPageURL(p.id)}/ ${productPageURL(p.id)} 301\n/shop-product-pages/${p.id} ${productPageURL(p.id)} 301\n/shop-product-pages/${p.id}.html ${productPageURL(p.id)} 301\n`;
+ redirects+=`${productPageURL(p.id)} /shop-product-pages/${p.id} 200\n${productPageURL(p.id)}/ ${productPageURL(p.id)} 301\n`;
 }
 redirects+='/shop/product/:product/index.html /shop/product/:product 301\n/shop/product/:product/ /shop/product/:product 301\n/shop/product/:product /shop-product?product=:product 302\n';await fs.writeFile('_redirects',redirects);
 let grid=await fs.readFile('shop.html','utf8');grid=grid.replace(/<div class="sf-grid" id="sf-grid">[\s\S]*?<\/div><p class="sf-disclosure">/,'<div class="sf-grid" id="sf-grid">'+cards+'</div><p class="sf-disclosure">');
