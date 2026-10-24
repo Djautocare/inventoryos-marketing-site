@@ -15,3 +15,5 @@
 .sf-product-intro{display:flex;justify-content:space-between;align-items:center;padding-top:36px;padding-bottom:10px}.sf-product-intro .sf-cart-button{margin:0}.shop-questions[hidden],.sf-check[hidden]{display:none!important}
 
 .shop-product-image.sf-illustration{aspect-ratio:auto;padding:0;height:auto;max-height:760px;object-fit:contain}.sf-image-annotation{margin:12px 0 0;padding:14px 16px;border:1px solid var(--line);border-radius:10px;color:var(--ink);background:var(--guide-soft);font-weight:650;line-height:1.6;overflow-wrap:anywhere}.sf-image-annotation[hidden]{display:none!important}
+
+.shop-seller-footer{padding-top:22px;padding-bottom:20px;border-bottom:1px solid var(--line,#ddd);font-size:13px;line-height:1.8}.shop-seller-footer summary{cursor:pointer;font-weight:650}.shop-seller-footer address{font-style:normal;margin-top:12px}.shop-seller-footer p{margin:8px 0}

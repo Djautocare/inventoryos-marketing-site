@@ -5,6 +5,9 @@ const $=s=>document.querySelector(s),legacyKey='inventoryos_shop_cart_v2';
 let products=[],cart=[],quote=null,busy=false,version=0,requestId=null,deliverySettings=null,catalogueReady=false,printerCheckoutReady=false;
 try{const saved=JSON.parse(localStorage.getItem(legacyKey)||'[]');if(Array.isArray(saved))cart=saved.filter(x=>typeof x.id==='string'&&typeof x.variant_id==='string'&&Number.isInteger(x.qty)&&x.qty>0&&x.qty<=200).slice(0,50);}catch{}
 const [legacySource,listingSource]=await Promise.all([fetch('/assets/shop-products.json',{signal:AbortSignal.timeout(10000)}).then(r=>r.json()).catch(()=>({products:[]})),fetch('/assets/shop-listings.json',{signal:AbortSignal.timeout(10000)}).then(r=>r.json()).catch(()=>({products:[]}))]);
+// Keep the existing configured seller information in a compact footer. Public values
+// are read from their existing file, rather than duplicated into every product document.
+for(const target of document.querySelectorAll('[data-shop-seller-contact]')){const seller=legacySource.seller;if(seller?.name&&seller?.address){const address=document.createElement('address');address.textContent=seller.name+' — '+seller.address;target.prepend(address);}}
 const listings=new Map((listingSource.products||[]).map(p=>[p.id,p]));
 
 products=(legacySource.products||[]).filter(p=>p.published).map(p=>({id:p.id,name:p.name,category:p.category,description:p.description,image_url:'/'+p.image,specifications:p.specifications,legacy:true,delivery:p.delivery,variants:p.variants.map(v=>({id:p.id+'-'+v.id,name:v.colour,price_pence:p.pricePence,stock:p.availability==='available'?10:0,paymentLink:v.paymentLink,image:'/'+v.image}))}));

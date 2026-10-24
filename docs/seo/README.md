@@ -19,6 +19,10 @@ The public catalogue could not be retrieved from the audit environment (HTTP 403
 
 When adding a new family, add its public copy to `assets/shop-listings.json`, retain its backend product ID and rebuild. Existing unknown/custom product IDs retain the generic live template, which is noindex to avoid indexing empty placeholders. Never add supplier costs or unsupported compatibility claims to the public file.
 
+## Publishing
+
+The live Cloudflare project currently publishes committed assets without running the source build. Run `npm run build` and commit the generated public HTML, CSS, JavaScript chunks, sitemap and redirects alongside source changes. Shop documents reference the existing public seller configuration at runtime in a compact footer instead of duplicating the configured address into each HTML file; full contact details remain accessible through the existing terms page without JavaScript. Existing policy documents remain published. Setting the Cloudflare build command to `npm run build` later will automate generated output updates and the prepared policy-head improvements.
+
 ## Finish Google Search Console
 
 Search Console is account-specific. The audit browser reached Google's public introduction page, not an authenticated property; ownership and sitemap submission have not been confirmed.
