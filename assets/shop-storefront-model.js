@@ -4,7 +4,9 @@ export function selectProducts(products,{search='',category='',sort='featured'}=
  const price=p=>Math.min(...p.variants.map(v=>v.price_pence));if(sort==='price-asc')list.sort((a,b)=>price(a)-price(b)||a.name.localeCompare(b.name));if(sort==='price-desc')list.sort((a,b)=>price(b)-price(a)||a.name.localeCompare(b.name));if(sort==='name')list.sort((a,b)=>a.name.localeCompare(b.name));return list;
 }
 export function minimumQuantity(variant){return Number.isSafeInteger(variant?.min_order_qty)&&variant.min_order_qty>0?variant.min_order_qty:1;}
-export function quantityProblem(variant,qty){const min=minimumQuantity(variant);if(!Number.isInteger(qty)||qty<min)return 'Minimum order quantity: '+min+'.';if(qty>Math.min(200,variant?.stock??0))return 'That quantity exceeds available stock or the online order limit.';return '';}
+export function orderLimit(v){if(v?.availability_mode==='supplier'||v?.availability_mode==='offer')return Number.isSafeInteger(v.order_limit)&&v.availability_status==='available'?Math.max(0,Math.min(200,v.order_limit)):0;return Math.max(0,Math.min(200,v?.stock??0));}
+export function availabilityText(v){if(v?.availability_mode==='supplier'||v?.availability_mode==='offer')return v.availability_status==='available'?'Available to order · Sourced after your order':v.availability_status==='unavailable'?'Temporarily unavailable from supplier':'Supplier availability is being checked';return orderLimit(v)>0?'Available to order':'Temporarily unavailable';}
+export function quantityProblem(variant,qty){const min=minimumQuantity(variant);if(!Number.isInteger(qty)||qty<min)return 'Minimum order quantity: '+min+'.';if(variant?.availability_mode==='supplier'&&variant.availability_status!=='available')return availabilityText(variant)+'.';if(qty>orderLimit(variant))return 'That quantity exceeds current availability or the online order limit.';return '';}
 
 // Cloudflare Pages also serves HTML files at extensionless addresses.
 export function productIdForPath(pathname,search=''){
