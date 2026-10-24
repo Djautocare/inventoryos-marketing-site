@@ -12,9 +12,12 @@ export function productIdForPath(pathname,search=''){
  if(parts.at(-1)==='index.html')parts.pop();
  const leaf=parts.at(-1)?.replace(/\.html$/,'');
  if(parts.length===1&&leaf==='shop-printer')return 'jadens-668bt';
- if(parts.length===1&&leaf==='shop-product')return new URLSearchParams(search).get('product')||'jadens-668bt';
+ if(parts.length===1&&leaf==='shop-product')return validProductId(new URLSearchParams(search).get('product'));
  if(parts.length===3&&parts[0]==='shop'&&parts[1]==='product'){
-  try{return decodeURIComponent(parts[2]);}catch{return null;}
+  try{return validProductId(decodeURIComponent(parts[2]));}catch{return null;}
  }
  return null;
 }
+
+export function validProductId(value){return typeof value==='string'&&/^[a-z0-9][a-z0-9_-]{0,100}$/.test(value)?value:null;}
+export function productPageURL(id){const value=validProductId(id);if(!value)throw Error('Invalid product ID');return value==='jadens-668bt'?'/shop/product/jadens-668bt':'/shop-product?product='+encodeURIComponent(value);}

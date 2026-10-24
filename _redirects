@@ -1,3 +1,5 @@
 /shop/product/jadens-668bt /shop-printer.html 200
 /shop/product/jadens-668bt/ /shop-printer.html 200
-/shop/product/* /shop-product.html 200
+/shop/product/:product/index.html /shop-product?product=:product 302
+/shop/product/:product/ /shop-product?product=:product 302
+/shop/product/:product /shop-product?product=:product 302
