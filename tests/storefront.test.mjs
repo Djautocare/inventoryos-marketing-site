@@ -5,7 +5,7 @@ test('grid and product deep links are built with separate product details and ca
 
 test('public quantity rules enforce minimums without requiring multiples',()=>{const v={min_order_qty:5,stock:20};assert.equal(minimumQuantity(v),5);assert.match(quantityProblem(v,4),/Minimum order/);assert.equal(quantityProblem(v,5),'');assert.equal(quantityProblem(v,6),'');assert.match(quantityProblem(v,21),/availability/);assert.match(quantityProblem(v,5.5),/Minimum order/);assert.equal(minimumQuantity({stock:1}),1);});
 
-test('printer Buy now and basket controls activate when quantity checkout is available',()=>{const s=fs.readFileSync('assets/shop-storefront.js','utf8');assert(s.includes('printer_checkout_version===1'));assert(s.includes('id="sf-buy-now"'));assert(s.includes('Add to basket'));assert(s.includes('/shop/v2/printer-checkout'));assert(s.includes('buyRequest??=crypto.randomUUID()'));});
+test('printer Buy now and basket controls activate when quantity checkout is available',()=>{const s=fs.readFileSync('assets/shop-storefront.js','utf8');assert(s.includes('printer_checkout_version===1'));assert(s.includes('id="sf-buy-now"'));assert(s.includes('Add to basket'));assert(s.includes('/shop/v2/printer-checkout'));assert(s.includes('form.requestSubmit()'));assert(s.includes('requestId??=crypto.randomUUID()'));});
 
 test('printer purchase controls resolve Pages clean URLs and older direct addresses',()=>{
  for(const path of ['/shop-printer.html','/shop-printer','/shop-printer/','/shop/product/jadens-668bt','/shop/product/jadens-668bt/','/shop/product/jadens-668bt/index.html'])assert.equal(productIdForPath(path),'jadens-668bt',path);
@@ -26,7 +26,12 @@ test('non-printer links preserve their selected ID and never fall back to the pr
  assert(!redirects.includes('/shop/product/* /shop-product.html 200'));assert(build.includes('/shop-product?product=:product 302'));
 });
 
-test('the shared product template contains no printer fallback or printer-only metadata',()=>{const html=fs.readFileSync('shop-product.html','utf8');assert(html.includes('<title>Product details | InventoryOS Shop</title>'));assert(!html.includes('data-printer-legacy-purchase'));assert(!html.includes('Explore the JADENS'));assert(html.includes('assets/shop-storefront.js?v=5'));});
+test('the shared product template contains no printer fallback or printer-only metadata',()=>{const html=fs.readFileSync('shop-product.html','utf8');assert(html.includes('<title>Product details | InventoryOS Shop</title>'));assert(!html.includes('data-printer-legacy-purchase'));assert(!html.includes('Explore the JADENS'));assert(html.includes('assets/shop-storefront.js?v=6'));});
 
 import {orderLimit,availabilityText} from '../assets/shop-storefront-model.js';
 test('supplier availability permits made-to-order sales with zero local stock without inventing a supplier count',()=>{const v={availability_mode:'supplier',availability_status:'available',order_limit:200,stock:0,min_order_qty:5};assert.equal(orderLimit(v),200);assert.equal(quantityProblem(v,5),'');assert(availabilityText(v).includes('Sourced after'));assert(!availabilityText(v).includes('200'));assert(quantityProblem({...v,availability_status:'unknown'},5).includes('being checked'));assert(quantityProblem({...v,availability_status:'unavailable',order_limit:0},5).includes('supplier'));assert.equal(orderLimit({...v,order_limit:10}),10);assert.equal(orderLimit({...v,availability_status:'unknown'}),0);});
+
+import {variantMatrix,resolveVariant} from '../assets/shop-storefront-model.js';
+test('size and colour selectors resolve exact real variants and reject combinations that do not exist',()=>{const variants=[{id:'g-small',name:'Green · Small · 100 bags'},{id:'g-large',name:'Green · Large · 100 bags'},{id:'p-small',name:'Pink · Small · 100 bags'}];const m=variantMatrix(variants);assert.deepEqual(m.colours,['Green','Pink']);assert.deepEqual(m.sizes,['Small · 100 bags','Large · 100 bags']);assert.equal(resolveVariant(m,'Small · 100 bags','Pink').id,'p-small');assert.equal(resolveVariant(m,'Large · 100 bags','Pink'),null);assert.equal(variantMatrix([{id:'x',name:'One roll'}]),null);});
+
+test('multi-word catalogue colours keep their exact names in separate selectors',()=>{const m=variantMatrix(['Baby Blue','Hot Pink','Green','White','Purple'].flatMap(c=>['9 x 12"','10 x 14"'].map(size=>({id:c+size,name:c+' · '+size+' · 100 bags'}))));assert.equal(m.colours.length,5);assert.equal(m.entries.length,10);assert.equal(resolveVariant(m,'9 x 12" · 100 bags','Baby Blue').colour,'Baby Blue');});

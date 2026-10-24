@@ -23,3 +23,12 @@ export function productIdForPath(pathname,search=''){
 
 export function validProductId(value){return typeof value==='string'&&/^[a-z0-9][a-z0-9_-]{0,100}$/.test(value)?value:null;}
 export function productPageURL(id){const value=validProductId(id);if(!value)throw Error('Invalid product ID');return value==='jadens-668bt'?'/shop/product/jadens-668bt':'/shop-product?product='+encodeURIComponent(value);}
+
+// Keep each real variant intact; selectors resolve to an existing size/colour pair.
+export function variantMatrix(variants){
+ const colour=/^(?:(?:baby|hot|light|dark|pale|bright|royal|pastel|rose)\s+)?(black|white|pink|blue|green|purple|red|yellow|orange|grey|gray|brown|clear|silver|gold|navy|teal|multicolou?red)$/i;
+ const entries=variants.map(v=>{const parts=String(v.name||'').split(/\s*·\s*/);if(parts.length<2||!colour.test(parts[0]))return null;return {id:v.id,colour:parts[0],size:parts.slice(1).join(' · ')};});
+ if(entries.some(x=>!x)||new Set(entries.map(x=>x.colour+'\0'+x.size)).size!==entries.length)return null;
+ const colours=[...new Set(entries.map(x=>x.colour))],sizes=[...new Set(entries.map(x=>x.size))];return colours.length>1&&sizes.length>1?{entries,colours,sizes}:null;
+}
+export function resolveVariant(matrix,size,colour){return matrix.entries.find(x=>x.size===size&&x.colour===colour)||null;}
