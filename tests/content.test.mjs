@@ -12,13 +12,13 @@ test('learn-more links open their audience and relevant topic in the redesigned 
  const destinations={'index.html':['workflow','shipping-labels','features','pricing'],'manufacturing.html':['mfg-workflow','recipe-planning','mfg-features','pricing'],'retail.html':['retail-workflow','retail-pricing','retail-features']};
  for(const [file,sections] of Object.entries(destinations)){
   const mode=file==='index.html'?'resellers':file.split('.')[0],html=read(file);
-  for(const section of sections)assert(html.includes('features.html?audience='+mode+'#'+section),file+' missing topic '+section);
+  for(const section of sections)assert(html.includes('/features?audience='+mode+'#'+section),file+' missing topic '+section);
  }
  const guide=read('features.html');assert(guide.includes('assets/feature-guide.css'));assert(!guide.includes('href="styles.css'));assert(!guide.includes('href="assets/pages.css'));assert(guide.includes('aria-label="Guide sections"'));assert(read('script.js').includes('scrollToGuideHash'));
 });
 test('three public pages are pre-rendered, with distinct metadata, correct pricing and signup destinations',()=>{
  for(const [file,mode,price]of [['index.html','resellers','14.99'],['manufacturing.html','manufacturing','29.99'],['retail.html','retail','19.99']]){
-  const html=read(file).replace(/<!--[\s\S]*?-->/g,'');assert.equal((html.match(/<h1\b/g)||[]).length,1);assert(html.includes('data-mode="'+mode+'"'));assert(html.includes('https://inventoryos.co.uk/'));assert(html.includes('£'+price));assert(html.includes('features.html?audience='+mode));assert(html.includes('href="privacy.html"'));assert(html.includes('Illustrative interface'));assert(html.includes('one free week of Business'));assert(!html.includes('visibility:hidden'));assert(!html.includes('opacity:0'));assert(html.includes('type="application/ld+json"'));
+  const html=read(file).replace(/<!--[\s\S]*?-->/g,'');assert.equal((html.match(/<h1\b/g)||[]).length,1);assert(html.includes('data-mode="'+mode+'"'));assert(html.includes('https://inventoryos.co.uk/'));assert(html.includes('£'+price));assert(html.includes('/features?audience='+mode));assert(html.includes('href="/privacy"'));assert(html.includes('Illustrative interface'));assert(html.includes('one free week of Business'));assert(!html.includes('visibility:hidden'));assert(!html.includes('opacity:0'));assert(html.includes('type="application/ld+json"'));
  }
  const retail=read('retail.html');assert(retail.includes('returnTo=%2Fretail%2Fdashboard%2Findex.html'));assert(retail.includes('does not trigger or independently verify'));assert(retail.includes('separate paid add-on from £2.99/month'));assert(read('manufacturing.html').includes('requires Business and is off by default'));
 });
@@ -31,10 +31,10 @@ test('local links and assets resolve, anchors exist and page IDs are unique',()=
   const html=read(file),ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(x=>x[1]);assert.equal(new Set(ids).size,ids.length,file+' duplicate IDs');
   for(const match of html.matchAll(/\b(?:href|src)="([^"]+)"/g)){
    const link=match[1].replaceAll('&amp;','&');if(/^(?:https?:|mailto:|data:)/.test(link))continue;
-   const [target,hash]=link.split('#'),local=(target||file).split('?')[0].replace(/^\//,'')||'.';assert(fs.existsSync(local),file+' missing '+local);
+   const [target,hash]=link.split('#');let local=(target||file).split('?')[0].replace(/^\//,'')||'index.html';if(!fs.existsSync(local)&&fs.existsSync(local+'.html'))local+='.html';if(!fs.existsSync(local)){const rewrite=read('_redirects').split('\n').map(x=>x.split(' ')).find(x=>x[0]==='/'+local&&x[2]==='200');if(rewrite)local=rewrite[1].slice(1);}assert(fs.existsSync(local),file+' missing '+local);
    if(hash&&local.endsWith('.html'))assert(read(local).includes('id="'+hash+'"'),file+' missing anchor '+link);
   }
  }
  for(const file of ['assets/fonts/manrope-latin.woff2','assets/marketing.js','assets/marketing.css','assets/pages.js','THIRD-PARTY-NOTICES.txt'])assert(fs.statSync(file).size>0);
- assert(read('src/marketing.css').includes('@media(prefers-reduced-motion:reduce)'));assert(read('src/App.jsx').includes("gsap.ticker.remove(tick)"));assert(read('src/App.jsx').includes("lenis.on('scroll',ScrollTrigger.update)"));
+ assert(read('src/marketing.css').includes('@media(prefers-reduced-motion:reduce)'));assert(read('src/motion.js').includes("gsap.ticker.remove(tick)"));assert(read('src/motion.js').includes("lenis.on('scroll',ScrollTrigger.update)"));
 });

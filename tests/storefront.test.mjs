@@ -18,7 +18,7 @@ test('printer purchase controls resolve Pages clean URLs and older direct addres
 });
 
 test('non-printer links preserve their selected ID and never fall back to the printer',()=>{
- for(const id of ['ps-grey-mailing-bags-pack-of-100','ps-warning-labels','ps-double-wall-boxes','custom_product_1']){const url=new URL(productPageURL(id),'https://inventoryos.co.uk');assert.equal(url.pathname,'/shop-product');assert.equal(productIdForPath(url.pathname,url.search),id);assert.equal(productIdForPath('/shop-product.html',url.search),id);}
+ for(const id of ['ps-grey-mailing-bags-pack-of-100','ps-warning-labels','ps-double-wall-boxes','custom_product_1']){const url=new URL(productPageURL(id),'https://inventoryos.co.uk');assert.equal(url.pathname,'/shop/product/'+id);assert.equal(productIdForPath(url.pathname,url.search),id);assert.equal(productIdForPath('/shop-product.html','?product='+id),id);}
  for(const query of ['', '?product=', '?product=../../private', '?product=%3Cscript%3E', '?product=unknown/bad'])assert.equal(productIdForPath('/shop-product',query),null);
  assert.equal(productPageURL('jadens-668bt'),'/shop/product/jadens-668bt');
  assert.equal(validProductId('unknown-safe-id'),'unknown-safe-id');assert.throws(()=>productPageURL('../wrong'));
@@ -26,7 +26,7 @@ test('non-printer links preserve their selected ID and never fall back to the pr
  assert(!redirects.includes('/shop/product/* /shop-product.html 200'));assert(build.includes('/shop-product?product=:product 302'));
 });
 
-test('the shared product template contains no printer fallback or printer-only metadata',()=>{const html=fs.readFileSync('shop-product.html','utf8');assert(html.includes('<title>Product details | InventoryOS Shop</title>'));assert(!html.includes('data-printer-legacy-purchase'));assert(!html.includes('Explore the JADENS'));assert(html.includes('assets/shop-storefront.js?v=6'));});
+test('the shared product template contains no printer fallback or printer-only metadata',()=>{const html=fs.readFileSync('shop-product.html','utf8');assert(html.includes('<title>Choose a Product | InventoryOS Shop</title>'));assert(!html.includes('data-printer-legacy-purchase'));assert(!html.includes('Explore the JADENS'));assert(html.includes('assets/shop-storefront.js?v=7'));});
 
 import {orderLimit,availabilityText} from '../assets/shop-storefront-model.js';
 test('supplier availability permits made-to-order sales with zero local stock without inventing a supplier count',()=>{const v={availability_mode:'supplier',availability_status:'available',order_limit:200,stock:0,min_order_qty:5};assert.equal(orderLimit(v),200);assert.equal(quantityProblem(v,5),'');assert(availabilityText(v).includes('Sourced after'));assert(!availabilityText(v).includes('200'));assert(quantityProblem({...v,availability_status:'unknown'},5).includes('being checked'));assert(quantityProblem({...v,availability_status:'unavailable',order_limit:0},5).includes('supplier'));assert.equal(orderLimit({...v,order_limit:10}),10);assert.equal(orderLimit({...v,availability_status:'unknown'}),0);});

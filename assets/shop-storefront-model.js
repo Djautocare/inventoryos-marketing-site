@@ -1,7 +1,7 @@
 export function selectProducts(products,{search='',category='',sort='featured'}={}){
  const matches={printers:/printer/i,bags:/mailing.*bag|bags/i,labels:/label/i,bubble:/bubble/i,boxes:/box/i,tape:/tape|dispenser/i,accessories:/accessor|retail|POS|cable|holder|stand/i};
  let list=products.filter(p=>(p.name+' '+p.category+' '+p.description).toLowerCase().includes(search.trim().toLowerCase())&&(!category||matches[category]?.test(p.name+' '+p.category)));
- const price=p=>Math.min(...p.variants.map(v=>v.price_pence));if(sort==='price-asc')list.sort((a,b)=>price(a)-price(b)||a.name.localeCompare(b.name));if(sort==='price-desc')list.sort((a,b)=>price(b)-price(a)||a.name.localeCompare(b.name));if(sort==='name')list.sort((a,b)=>a.name.localeCompare(b.name));return list;
+ const price=p=>p.variants.length?Math.min(...p.variants.map(v=>v.price_pence)):Infinity;if(sort==='price-asc')list.sort((a,b)=>price(a)-price(b)||a.name.localeCompare(b.name));if(sort==='price-desc')list.sort((a,b)=>price(b)-price(a)||a.name.localeCompare(b.name));if(sort==='name')list.sort((a,b)=>a.name.localeCompare(b.name));return list;
 }
 export function minimumQuantity(variant){return Number.isSafeInteger(variant?.min_order_qty)&&variant.min_order_qty>0?variant.min_order_qty:1;}
 export function orderLimit(v){if(v?.availability_mode==='supplier'||v?.availability_mode==='offer')return Number.isSafeInteger(v.order_limit)&&v.availability_status==='available'?Math.max(0,Math.min(200,v.order_limit)):0;return Math.max(0,Math.min(200,v?.stock??0));}
@@ -22,7 +22,7 @@ export function productIdForPath(pathname,search=''){
 }
 
 export function validProductId(value){return typeof value==='string'&&/^[a-z0-9][a-z0-9_-]{0,100}$/.test(value)?value:null;}
-export function productPageURL(id){const value=validProductId(id);if(!value)throw Error('Invalid product ID');return value==='jadens-668bt'?'/shop/product/jadens-668bt':'/shop-product?product='+encodeURIComponent(value);}
+export function productPageURL(id){const value=validProductId(id);if(!value)throw Error('Invalid product ID');return '/shop/product/'+encodeURIComponent(value);}
 
 // Keep each real variant intact; selectors resolve to an existing size/colour pair.
 export function variantMatrix(variants){

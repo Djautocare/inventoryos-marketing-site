@@ -1,14 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
- <url><loc>https://inventoryos.co.uk/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
- <url><loc>https://inventoryos.co.uk/manufacturing.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
- <url><loc>https://inventoryos.co.uk/retail.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
- <url><loc>https://inventoryos.co.uk/shop.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
- <url><loc>https://inventoryos.co.uk/features.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
- <url><loc>https://inventoryos.co.uk/privacy.html</loc><changefreq>monthly</changefreq></url>
- <url><loc>https://inventoryos.co.uk/terms.html</loc><changefreq>monthly</changefreq></url>
- <url><loc>https://inventoryos.co.uk/refunds.html</loc><changefreq>monthly</changefreq></url>
- <url><loc>https://inventoryos.co.uk/cookies.html</loc><changefreq>monthly</changefreq></url>
- <url><loc>https://inventoryos.co.uk/data-security.html</loc><changefreq>monthly</changefreq></url>
- <url><loc>https://inventoryos.co.uk/shop/product/jadens-668bt</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+ <url><loc>https://inventoryos.co.uk/</loc></url>
+ <url><loc>https://inventoryos.co.uk/manufacturing</loc></url>
+ <url><loc>https://inventoryos.co.uk/retail</loc></url>
+ <url><loc>https://inventoryos.co.uk/shop</loc></url>
+ <url><loc>https://inventoryos.co.uk/features</loc></url>
+ <url><loc>https://inventoryos.co.uk/privacy</loc></url>
+ <url><loc>https://inventoryos.co.uk/terms</loc></url>
+ <url><loc>https://inventoryos.co.uk/refunds</loc></url>
+ <url><loc>https://inventoryos.co.uk/cookies</loc></url>
+ <url><loc>https://inventoryos.co.uk/data-security</loc></url>
+ <url><loc>https://inventoryos.co.uk/shop/product/jadens-668bt</loc><image:image><image:loc>https://inventoryos.co.uk/assets/shop/jadens-668bt-1.webp</image:loc><image:title>JADENS 668BT Bluetooth Thermal Label Printer</image:title></image:image></url>
+ <url><loc>https://inventoryos.co.uk/shop/product/ps-hw38-handy-wrap-dispenser</loc><image:image><image:loc>https://inventoryos.co.uk/assets/shop-illustrations/01_handheld_stretch_wrap_dispenser.webp</image:loc><image:title>HW38 Handy Stretch Wrap Dispenser</image:title></image:image></url>
+ <url><loc>https://inventoryos.co.uk/shop/product/ps-heavy-duty-bench-desktop-tape-dispenser</loc><image:image><image:loc>https://inventoryos.co.uk/assets/shop-illustrations/02_desktop_tape_dispenser.webp</image:loc><image:title>Bench Top Packing Tape Dispensers</image:title></image:image></url>
+ <url><loc>https://inventoryos.co.uk/shop/product/ps-pro-series-pacplus-tape-gun-dispenser-robust-pistol-grip-heavy-duty-parcel-seal-packaging-</loc><image:image><image:loc>https://inventoryos.co.uk/assets/shop-illustrations/03_packing_tape_gun.webp</image:loc><image:title>Pistol Grip Packing Tape Gun Dispensers</image:title></image:image></url>
+ <url><loc>https://inventoryos.co.uk/shop/product/ps-jiffy-mono-bubbles-small-bubble-wrap-10mm</loc><image:image><image:loc>https://inventoryos.co.uk/assets/shop-illustrations/04_small_bubble_wrap.webp</image:loc><image:title>Jiffy Mono Bubbles Small Bubble Wrap — 10mm</image:title></image:image></url>
+ <url><loc>https://inventoryos.co.uk/shop/product/ps-large-bubble-wrap</loc><image:image><image:loc>https://inventoryos.co.uk/assets/shop-illustrations/05_large_bubble_wrap.webp</image:loc><image:title>Large Bubble Wrap Rolls for Packing</image:title></image:image></url>
+ <url><loc>https://inventoryos.co.uk/shop/product/ps-small-bubble-wrap</loc><image:image><image:loc>https://inventoryos.co.uk/assets/shop-illustrations/04_small_bubble_wrap.webp</image:loc><image:title>Small Bubble Wrap Rolls for Parcels</image:title></image:image></url>
+ <url><loc>https://inventoryos.co.uk/shop/product/ps-bubble-pouches</loc><image:image><image:loc>https://inventoryos.co.uk/assets/shop-illustrations/06_bubble_wrap_pouches.webp</image:loc><image:title>Bubble Pouches for Protective Packaging</image:title></image:image></url>
+ <url><loc>https://inventoryos.co.uk/shop/product/ps-mini-handy-pallet-wrap-100mm-x-150m</loc><image:image><image:loc>https://inventoryos.co.uk/assets/shop-illustrations/07_mini_pallet_wrap.webp</image:loc><image:title>Mini Handy Pallet Wrap — 100mm × 150m</image:title></image:image></url>
+ <url><loc>https://inventoryos.co.uk/shop/product/ps-clear-pallet-wrap</loc><image:image><image:loc>https://inventoryos.co.uk/assets/shop-illustrations/08_clear_pallet_wrap.webp</image:loc><image:title>Clear Pallet Stretch Wrap Rolls</image:title></image:image></url>
+ <url><loc>https://inventoryos.co.uk/shop/product/ps-black-pallet-wrap</loc><image:image><image:loc>https://inventoryos.co.uk/assets/shop-illustrations/09_black_pallet_wrap.webp</image:loc><image:title>Black Pallet Stretch Wrap Rolls</image:title></image:image></url>
+ <url><loc>https://inventoryos.co.uk/shop/product/ps-a4-sheet-labels</loc><image:image><image:loc>https://inventoryos.co.uk/assets/shop-illustrations/10_a4_adhesive_labels.webp</image:loc><image:title>A4 Self-Adhesive Sheet Labels</image:title></image:image></url>
+ <url><loc>https://inventoryos.co.uk/shop/product/ps-warning-labels</loc><image:image><image:loc>https://inventoryos.co.uk/assets/shop-illustrations/11_warning_labels.webp</image:loc><image:title>Fragile &amp; Heavy Parcel Warning Labels</image:title></image:image></url>
+ <url><loc>https://inventoryos.co.uk/shop/product/ps-fanfold-thermal-label-4x6-100-x-150mm</loc><image:image><image:loc>https://inventoryos.co.uk/assets/shop-illustrations/12_fanfold_thermal_labels.webp</image:loc><image:title>4 × 6 Fanfold Thermal Shipping Labels — 1,000</image:title></image:image></url>
+ <url><loc>https://inventoryos.co.uk/shop/product/ps-masking-tape-pack-of-6</loc><image:image><image:loc>https://inventoryos.co.uk/assets/shop-illustrations/14_masking_tape.webp</image:loc><image:title>Masking Tape Rolls — Width &amp; Pack Options</image:title></image:image></url>
+ <url><loc>https://inventoryos.co.uk/shop/product/ps-thermal-labels-on-rolls</loc><image:image><image:loc>https://inventoryos.co.uk/assets/shop-illustrations/13_thermal_label_rolls.webp</image:loc><image:title>Direct Thermal Label Rolls — Product &amp; Shipping Labels</image:title></image:image></url>
+ <url><loc>https://inventoryos.co.uk/shop/product/ps-duct-tape-48mm-x-50m</loc><image:image><image:loc>https://inventoryos.co.uk/assets/shop-illustrations/15_duct_tape.webp</image:loc><image:title>Duct Tape — 48mm × 50m, Black or Silver/Grey</image:title></image:image></url>
+ <url><loc>https://inventoryos.co.uk/shop/product/ps-kraft-paper-tape-pack-of-6</loc><image:image><image:loc>https://inventoryos.co.uk/assets/shop-illustrations/16_kraft_paper_tape.webp</image:loc><image:title>Kraft Paper Packing Tape Rolls</image:title></image:image></url>
+ <url><loc>https://inventoryos.co.uk/shop/product/ps-fragile-tape-pack-of-6</loc><image:image><image:loc>https://inventoryos.co.uk/assets/shop-illustrations/17_fragile_tape.webp</image:loc><image:title>Fragile Printed Packing Tape Rolls</image:title></image:image></url>
+ <url><loc>https://inventoryos.co.uk/shop/product/ps-brown-tape-pack-of-6</loc><image:image><image:loc>https://inventoryos.co.uk/assets/shop-illustrations/18_brown_packing_tape.webp</image:loc><image:title>Brown Parcel Packing Tape Rolls</image:title></image:image></url>
+ <url><loc>https://inventoryos.co.uk/shop/product/ps-clear-tape-pack-of-6</loc><image:image><image:loc>https://inventoryos.co.uk/assets/shop-illustrations/19_clear_packing_tape.webp</image:loc><image:title>Clear Parcel Packing Tape Rolls</image:title></image:image></url>
+ <url><loc>https://inventoryos.co.uk/shop/product/ps-crash-lock-boxes</loc><image:image><image:loc>https://inventoryos.co.uk/assets/shop-illustrations/20_crash_lock_cardboard_boxes.webp</image:loc><image:title>Crash Lock Cardboard Boxes — Size Options</image:title></image:image></url>
+ <url><loc>https://inventoryos.co.uk/shop/product/ps-070502-die-cut-boxes-brown-pack-of-50</loc><image:image><image:loc>https://inventoryos.co.uk/assets/shop-illustrations/21_die_cut_cardboard_boxes.webp</image:loc><image:title>Brown 070502 Die Cut Postal Boxes — Pack of 50</image:title></image:image></url>
+ <url><loc>https://inventoryos.co.uk/shop/product/ps-royal-mail-pip-large-letter-boxes-pack-of-50</loc><image:image><image:loc>https://inventoryos.co.uk/assets/shop-illustrations/22_large_letter_postal_boxes.webp</image:loc><image:title>PIP Large Letter Postal Boxes — Packs of 50</image:title></image:image></url>
+ <url><loc>https://inventoryos.co.uk/shop/product/ps-double-wall-boxes</loc><image:image><image:loc>https://inventoryos.co.uk/assets/shop-illustrations/23_double_wall_cardboard_boxes.webp</image:loc><image:title>Double Wall Cardboard Packing Boxes</image:title></image:image></url>
+ <url><loc>https://inventoryos.co.uk/shop/product/ps-single-wall-boxes</loc><image:image><image:loc>https://inventoryos.co.uk/assets/shop-illustrations/24_single_wall_cardboard_boxes.webp</image:loc><image:title>Single Wall Cardboard Packing Boxes</image:title></image:image></url>
+ <url><loc>https://inventoryos.co.uk/shop/product/ps-grey-mailing-bags-pack-of-100</loc><image:image><image:loc>https://inventoryos.co.uk/assets/shop-illustrations/25_grey_mailing_bags.webp</image:loc><image:title>Grey Self-Seal Mailing Bags — Size Options</image:title></image:image></url>
+ <url><loc>https://inventoryos.co.uk/shop/product/ps-colour-mailing-bags</loc><image:image><image:loc>https://inventoryos.co.uk/assets/shop-illustrations/26_coloured_mailing_bags.webp</image:loc><image:title>Coloured Self-Seal Mailing Bags — Sizes &amp; Colours</image:title></image:image></url>
 </urlset>

@@ -1,0 +1,571 @@
+{
+  "version": 1,
+  "products": [
+    {
+      "id": "jadens-668bt",
+      "name": "JADENS 668BT Bluetooth Thermal Label Printer",
+      "category": "Thermal label printers",
+      "description": "Print shipping labels from a compatible phone over Bluetooth or connect by USB on Windows and Mac. Compare the black, white and pink JADENS 668BT options.",
+      "details": [
+        "Choose a thermal label printer for your parcel-packing area. The JADENS 668BT offers a Bluetooth mobile workflow and a USB connection for desktop use.",
+        "Check the label width, printer driver and mobile-app requirements for your device before ordering. Keep your label file at its intended size when printing shipping barcodes."
+      ],
+      "specifications": [
+        [
+          "Model",
+          "668BT"
+        ],
+        [
+          "Colours",
+          "Black, white and pink"
+        ]
+      ],
+      "optionExamples": [
+        "Black",
+        "White",
+        "Pink"
+      ]
+    },
+    {
+      "id": "ps-hw38-handy-wrap-dispenser",
+      "name": "HW38 Handy Stretch Wrap Dispenser",
+      "category": "Protective packaging",
+      "description": "Prepare small bundles with the HW38 handy wrap dispenser. Check your stretch-wrap roll and core compatibility before choosing packing equipment.",
+      "details": [
+        "A handy wrap dispenser helps you apply stretch film around suitable small bundles and packing materials. It gives the roll a dedicated handhold while you wrap.",
+        "Match the dispenser to the film roll and core you plan to use. Film and dispenser contents are confirmed in the selected product option."
+      ],
+      "specifications": [],
+      "optionExamples": [
+        "HW38 Handy Wrap Dispenser"
+      ]
+    },
+    {
+      "id": "ps-heavy-duty-bench-desktop-tape-dispenser",
+      "name": "Bench Top Packing Tape Dispensers",
+      "category": "Tape & dispensers",
+      "description": "Compare bench top packing tape dispensers, including desktop and clamp-on options. Select the model and tape width suited to your packing station.",
+      "details": [
+        "Keep packing tape within reach at a fixed workstation. Bench top dispensers are useful when preparing several parcels or sealing small packages at a counter.",
+        "The available model determines the compatible tape width and how the dispenser sits on the bench. Check the selected option before ordering rolls or accessories."
+      ],
+      "specifications": [],
+      "optionExamples": [
+        "BD50 (50mm tape)",
+        "CBD50 Clamp-on (50mm tape)",
+        "PD351 (75mm tape)",
+        "B2 (24mm tape)"
+      ]
+    },
+    {
+      "id": "ps-pro-series-pacplus-tape-gun-dispenser-robust-pistol-grip-heavy-duty-parcel-seal-packaging-",
+      "name": "Pistol Grip Packing Tape Gun Dispensers",
+      "category": "Tape & dispensers",
+      "description": "Choose a pistol grip tape gun for sealing cardboard parcels. Compare dispenser models and tape widths for your reseller or small-business packing area.",
+      "details": [
+        "A handheld tape gun brings the tape roll and cutting edge together when sealing parcels. It can be used around a packing bench without fixing the dispenser in one place.",
+        "Select a model that accepts your tape width and roll. Dispenser models and pack contents vary; check the live option rather than relying on the illustration."
+      ],
+      "specifications": [],
+      "optionExamples": [
+        "HPG50B Pacplus Heavy Duty (50mm tape)",
+        "PG50B (50mm tape)",
+        "PG75B (75mm tape)",
+        "Big Tape 2in1 Core (50mm tape)"
+      ]
+    },
+    {
+      "id": "ps-jiffy-mono-bubbles-small-bubble-wrap-10mm",
+      "name": "Jiffy Mono Bubbles Small Bubble Wrap — 10mm",
+      "category": "Protective packaging",
+      "description": "Explore Jiffy Mono Bubbles 10mm small bubble wrap in the listed roll widths. Add cushioning around suitable products before packing them for dispatch.",
+      "details": [
+        "Jiffy Mono Bubbles small bubble wrap provides a flexible cushioning layer around suitable goods. The listed options identify the roll width and length.",
+        "Leave space inside the outer packaging for the wrapped item. The protection needed depends on the product, its weight and the rest of your parcel packaging."
+      ],
+      "specifications": [],
+      "optionExamples": [
+        "300mm x 100m",
+        "500mm x 100m"
+      ]
+    },
+    {
+      "id": "ps-large-bubble-wrap",
+      "name": "Large Bubble Wrap Rolls for Packing",
+      "category": "Protective packaging",
+      "description": "Choose large bubble wrap rolls for cushioning suitable goods in parcels and storage. Compare roll widths and check the selected roll length before ordering.",
+      "details": [
+        "Large bubble wrap can be cut to the amount needed around an item or used as part of a parcel cushioning system. Choose a roll width that suits your typical goods.",
+        "Allow room for the wrapped product inside its box. Use suitable outer packaging and additional support where an item is heavy, fragile or irregularly shaped."
+      ],
+      "specifications": [],
+      "optionExamples": [
+        "500mm x 50m",
+        "300mm x 50m"
+      ]
+    },
+    {
+      "id": "ps-small-bubble-wrap",
+      "name": "Small Bubble Wrap Rolls for Parcels",
+      "category": "Protective packaging",
+      "description": "Browse small bubble wrap rolls for wrapping suitable goods and preparing everyday parcels. Select the roll width and length needed for your packing bench.",
+      "details": [
+        "Small bubble wrap is a flexible option for wrapping suitable products before they go into outer packaging. Roll formats let you cut lengths to suit different items.",
+        "Check the roll dimensions and allow space for cushioning inside the parcel. Choose the complete packaging system to suit the goods rather than relying on a single layer."
+      ],
+      "specifications": [],
+      "optionExamples": [
+        "500mm x 100m",
+        "300mm x 100m"
+      ]
+    },
+    {
+      "id": "ps-bubble-pouches",
+      "name": "Bubble Pouches for Protective Packaging",
+      "category": "Protective packaging",
+      "description": "Explore protective bubble pouches in different sizes. Check pouch dimensions and pack contents to choose a fit for small products and parcel preparation.",
+      "details": [
+        "Bubble pouches provide a ready-made pocket for suitable small goods. Choosing a pouch can reduce the cutting and folding needed when using a roll of bubble wrap.",
+        "Measure the product, including its depth, before selecting a pouch. Allow enough room for insertion and closure, then choose suitable outer packaging for dispatch."
+      ],
+      "specifications": [],
+      "optionExamples": [
+        "BP1 (100 x 135mm)",
+        "BP2 (130 x 180mm)",
+        "BP3 (180 x 230mm)",
+        "BP4 (230 x 280mm)",
+        "BP5 (280 x 375mm)",
+        "BP6 (305 x 425mm)",
+        "BP7 (380 x 425mm)"
+      ]
+    },
+    {
+      "id": "ps-mini-handy-pallet-wrap-100mm-x-150m",
+      "name": "Mini Handy Pallet Wrap — 100mm × 150m",
+      "category": "Protective packaging",
+      "description": "Choose 100mm × 150m mini stretch-wrap rolls in the listed clear and black options. Check dispenser compatibility and the roll quantity before ordering.",
+      "details": [
+        "Narrow mini pallet wrap is suited to wrapping and holding suitable small bundles together. The 100mm width offers a compact roll format for hand use.",
+        "Compare the clear and black options and check the pack contents. If you use a handy dispenser, confirm that its core and roll requirements match your chosen wrap."
+      ],
+      "specifications": [],
+      "optionExamples": [
+        "Clear · 1 rolls",
+        "Black · 1 rolls"
+      ]
+    },
+    {
+      "id": "ps-clear-pallet-wrap",
+      "name": "Clear Pallet Stretch Wrap Rolls",
+      "category": "Protective packaging",
+      "description": "Browse clear pallet stretch-wrap rolls with different widths, lengths and core styles. Compare the selected roll specification for your packing workflow.",
+      "details": [
+        "Clear stretch wrap allows the wrapped contents or existing labels to remain visible. Choose a roll width and length that suit the loads or bundles you prepare.",
+        "Standard-core and extended-core options vary by roll. Check the film thickness, roll dimensions and core style in the selected option before ordering."
+      ],
+      "specifications": [],
+      "optionExamples": [
+        "400mm x 200m 23 Micron Standard Core (1.5kg) · 1 rolls",
+        "400mm x 250m 23 Micron Extended Core (1.5kg) · 1 rolls",
+        "500mm x 250m 23 Micron Standard Core (1.75kg) · 1 rolls",
+        "400mm x 120m 20 Micron Standard Core (750g) · 1 rolls"
+      ]
+    },
+    {
+      "id": "ps-black-pallet-wrap",
+      "name": "Black Pallet Stretch Wrap Rolls",
+      "category": "Protective packaging",
+      "description": "Compare black pallet stretch-wrap rolls by width, length, thickness and core style. Select the listed roll format for suitable bundles and pallet packing.",
+      "details": [
+        "Black stretch wrap provides an opaque wrapping option around suitable bundles or pallet loads. It is available in the roll specifications shown in the product options.",
+        "Check whether you need a standard or extended core, then compare film thickness and roll length. Safe load restraint depends on the load and complete packing method."
+      ],
+      "specifications": [],
+      "optionExamples": [
+        "500mm x 250m 23 Micron Standard Core (1.8kg) · 1 rolls",
+        "400mm x 200m 20 Micron Extended Core (1.4kg) · 1 rolls",
+        "400mm x 120m 20 Micron Standard Core (750g) · 1 rolls"
+      ]
+    },
+    {
+      "id": "ps-a4-sheet-labels",
+      "name": "A4 Self-Adhesive Sheet Labels",
+      "category": "Thermal & adhesive labels",
+      "description": "Choose A4 self-adhesive label sheets with different label layouts and sizes. Check your printer and template requirements before buying a sheet format.",
+      "details": [
+        "A4 sheet labels let you print multiple product, address or organisation labels from a sheet layout. The number of labels per sheet changes with the selected size.",
+        "Match your document template to the exact label dimensions and layout. Check printer compatibility and the stated pack contents before ordering."
+      ],
+      "specifications": [],
+      "optionExamples": [
+        "1 per sheet (199.6 x 289.1mm) · 500 sheets",
+        "2 per sheet (199.6 x 143.5mm) · 500 sheets",
+        "4 per sheet (99.1 x 139.0mm) · 500 sheets",
+        "8 per sheet (99.1 x 67.7mm) · 500 sheets",
+        "10 per sheet (99.1 x 57.3mm) · 500 sheets",
+        "21 per sheet (63.5 x 38.1mm) · 500 sheets",
+        "24 per sheet (64.0 x 33.9mm) · 500 sheets",
+        "27 per sheet (63.5 x 29.6mm) · 500 sheets",
+        "44 per sheet (48.5 x 25.4mm) · 500 sheets",
+        "65 per sheet (38.1 x 21.2mm) · 500 sheets"
+      ]
+    },
+    {
+      "id": "ps-warning-labels",
+      "name": "Fragile & Heavy Parcel Warning Labels",
+      "category": "Thermal & adhesive labels",
+      "description": "Choose Fragile or Caution Heavy parcel warning labels in the listed roll formats. Check label dimensions and contents for your dispatch workflow.",
+      "details": [
+        "Warning labels help communicate handling information on the outside of a parcel. The available options distinguish fragile contents from heavier packages.",
+        "Place the chosen label where it remains readable without covering delivery details or barcodes. Labels do not replace the cushioning and outer packaging your goods need."
+      ],
+      "specifications": [],
+      "optionExamples": [
+        "Fragile 89 x 32mm · 1 rolls",
+        "Caution Heavy 148 x 50mm · 1 rolls"
+      ]
+    },
+    {
+      "id": "ps-fanfold-thermal-label-4x6-100-x-150mm",
+      "name": "4 × 6 Fanfold Thermal Shipping Labels — 1,000",
+      "category": "Thermal & adhesive labels",
+      "description": "Explore 4 × 6 inch direct thermal fanfold labels, supplied as 1,000 labels per stack. Check your printer accepts the 101.6 × 152.4mm fanfold format.",
+      "details": [
+        "Fanfold labels feed from a folded stack rather than a roll. This listed direct thermal format measures 101.6 × 152.4mm and contains 1,000 labels per stack.",
+        "Confirm that your printer accepts this label width and an external fanfold feed. Match the label settings to the actual size so shipping barcodes print without scaling."
+      ],
+      "specifications": [
+        [
+          "Format",
+          "Direct thermal, fanfold"
+        ],
+        [
+          "Label size",
+          "101.6 × 152.4 mm"
+        ],
+        [
+          "Contents",
+          "1000 labels per stack"
+        ],
+        [
+          "Compatibility",
+          "Requires a printer with compatible fanfold feed and label width."
+        ]
+      ],
+      "optionExamples": [
+        "Fanfold Thermal Labels 4 x 6\" (101.6 x 152.4mm) · 1000 Labels"
+      ]
+    },
+    {
+      "id": "ps-masking-tape-pack-of-6",
+      "name": "Masking Tape Rolls — Width & Pack Options",
+      "category": "Tape & dispensers",
+      "description": "Compare masking tape roll widths and pack quantities. Choose the listed size for suitable masking, marking and preparation tasks in your workspace.",
+      "details": [
+        "Masking tape can be used for suitable temporary marking and preparation tasks. Select the width needed for the area or item you are working on.",
+        "Pack quantities differ by option. Test compatibility on the surface first and check any removal-time or finish requirements before using it on a visible surface."
+      ],
+      "specifications": [],
+      "optionExamples": [
+        "25mm x 50m · 9 rolls",
+        "50mm x 50m · 6 rolls"
+      ]
+    },
+    {
+      "id": "ps-thermal-labels-on-rolls",
+      "name": "Direct Thermal Label Rolls — Product & Shipping Labels",
+      "category": "Thermal & adhesive labels",
+      "description": "Compare direct thermal label rolls in product and shipping sizes, including 2 × 1 and 4 × 6 inch formats. Check printer width, core and roll diameter.",
+      "details": [
+        "Choose a label size for the information you need to print, from small stock labels to larger shipping formats. Label counts vary by the selected roll size.",
+        "These standard direct thermal rolls require a compatible printer and are not intended for Dymo LabelWriter or Brother QL systems. Confirm the width, core and outside diameter before purchase."
+      ],
+      "specifications": [
+        [
+          "Format",
+          "Direct thermal rolls"
+        ],
+        [
+          "Labels per roll",
+          "2×1: 1000; 3×2: 1000; 4×4: 750; 4×6: 500; 4×8: 200"
+        ],
+        [
+          "Compatibility",
+          "Requires a direct thermal printer accepting the selected standard roll width; not Dymo LabelWriter or Brother QL. Confirm core and outside diameter."
+        ]
+      ],
+      "optionExamples": [
+        "2 x 1\" (50 x 25mm) · 1 rolls",
+        "3 x 2\" (76 x 51mm) · 1 rolls",
+        "4 x 4\" (101.6 x 101.6mm) · 1 rolls",
+        "4 x 6\" (100 x 150mm) · 1 rolls",
+        "4 x 8\" (100 x 210mm) · 1 rolls"
+      ]
+    },
+    {
+      "id": "ps-duct-tape-48mm-x-50m",
+      "name": "Duct Tape — 48mm × 50m, Black or Silver/Grey",
+      "category": "Tape & dispensers",
+      "description": "Choose 48mm × 50m duct tape in the listed black and silver/grey options. Check the roll quantity and suitability for your surface before ordering.",
+      "details": [
+        "The listed duct tape format is 48mm wide with a 50m roll length. Select the available colour to suit the repair, marking or packing task you have in mind.",
+        "Check adhesion and removal requirements on your surface before use. Product suitability depends on the materials and conditions of the intended application."
+      ],
+      "specifications": [],
+      "optionExamples": [
+        "Black · 1 rolls",
+        "Silver/Grey · 1 rolls"
+      ]
+    },
+    {
+      "id": "ps-kraft-paper-tape-pack-of-6",
+      "name": "Kraft Paper Packing Tape Rolls",
+      "category": "Tape & dispensers",
+      "description": "Browse kraft paper packing tape with listed width, length and pack options. Choose a paper-finish parcel tape for suitable cardboard packaging.",
+      "details": [
+        "Kraft paper tape offers a paper-finish option for sealing suitable cardboard parcels. Choose the width and roll format that match your packing method.",
+        "Check the adhesive type and dispenser requirements for the selected option. Packaging recyclability depends on the complete materials and local collection rules."
+      ],
+      "specifications": [],
+      "optionExamples": [
+        "48mm x 50m Hotmelt · 6 rolls",
+        "75mm x 50m · 6 rolls"
+      ]
+    },
+    {
+      "id": "ps-fragile-tape-pack-of-6",
+      "name": "Fragile Printed Packing Tape Rolls",
+      "category": "Tape & dispensers",
+      "description": "Shop Fragile printed packing tape in the listed roll lengths and pack formats. Seal suitable parcels while adding a visible handling message.",
+      "details": [
+        "Fragile printed tape combines parcel sealing with a handling message. The selected option gives the tape width, roll length and quantity supplied.",
+        "Check that the roll fits your dispenser. Use appropriate cushioning and outer packaging for the product; a printed warning alone does not protect fragile contents."
+      ],
+      "specifications": [],
+      "optionExamples": [
+        "48mm x 66m · 6 rolls",
+        "BigTape 48mm x 150m Low Noise · 6 rolls"
+      ]
+    },
+    {
+      "id": "ps-brown-tape-pack-of-6",
+      "name": "Brown Parcel Packing Tape Rolls",
+      "category": "Tape & dispensers",
+      "description": "Compare brown packing tape roll lengths and pack sizes for sealing suitable cardboard boxes. Choose the width and format for your packing dispenser.",
+      "details": [
+        "Brown packing tape is a practical sealing option for suitable cardboard parcels. Different roll lengths let you choose a format for your packing volume.",
+        "Match the tape width and roll dimensions to your dispenser. Check the selected pack quantity and confirm adhesion is suitable for the box surface."
+      ],
+      "specifications": [],
+      "optionExamples": [
+        "48mm x 132m · 6 rolls",
+        "BigTape 48mm x 150m Low Noise · 6 rolls",
+        "Proloc 72mm x 66m · 6 rolls",
+        "Vibac 835 Buff 48mm x 66m · 6 rolls",
+        "48mm x 66m · 6 rolls"
+      ]
+    },
+    {
+      "id": "ps-clear-tape-pack-of-6",
+      "name": "Clear Parcel Packing Tape Rolls",
+      "category": "Tape & dispensers",
+      "description": "Choose clear packing tape in different widths, lengths and pack formats. Seal suitable parcels while keeping the underlying surface visible.",
+      "details": [
+        "Clear tape provides a transparent sealing option on suitable parcel packaging. Compare the listed widths and lengths for the boxes and packing tasks you handle.",
+        "Confirm that your dispenser accepts the chosen roll. Check the pack quantity and test adhesion on the packaging surface before relying on it for dispatch."
+      ],
+      "specifications": [],
+      "optionExamples": [
+        "24mm x 66m · 6 rolls",
+        "48mm x 132m · 6 rolls",
+        "BigTape 48mm x 150m Low Noise · 6 rolls",
+        "Proloc 72mm x 66m · 6 rolls",
+        "48mm x 66m · 6 rolls"
+      ]
+    },
+    {
+      "id": "ps-crash-lock-boxes",
+      "name": "Crash Lock Cardboard Boxes — Size Options",
+      "category": "Cardboard boxes",
+      "description": "Compare crash lock cardboard box sizes for small-business packing and dispatch. Check the selected dimensions, contents and minimum order quantity.",
+      "details": [
+        "Crash lock boxes offer a box format with a pre-formed base construction. Select the listed size that leaves room for the product and any protective material.",
+        "Box dimensions describe the product option, while the supplied flat-packed bundle has its own delivery size. Confirm contents and minimum quantities in the live options."
+      ],
+      "specifications": [],
+      "optionExamples": [
+        "CL-A (100 x 100 x 70mm) · 1 boxes",
+        "CL-B (160 x 150 x 75mm) · 1 boxes",
+        "CL-C (180 x 100 x 50mm) · 1 boxes",
+        "CL-D (220 x 111 x 78mm) · 1 boxes",
+        "CL-E (252 x 136 x 88mm) · 1 boxes",
+        "CL-F (290 x 208 x 95mm) · 1 boxes",
+        "CL-G (320 x 200 x 130mm) · 1 boxes",
+        "CL-H (375 x 255 x 150mm) · 1 boxes",
+        "CL-J (426 x 300 x 150mm) · 1 boxes",
+        "CL-K (426 x 300 x 300mm) · 1 boxes"
+      ]
+    },
+    {
+      "id": "ps-070502-die-cut-boxes-brown-pack-of-50",
+      "name": "Brown 070502 Die Cut Postal Boxes — Pack of 50",
+      "category": "Cardboard boxes",
+      "description": "Explore brown 070502 die cut boxes supplied in the listed pack of 50. Check the current dimensions and contents for your small-parcel packing needs.",
+      "details": [
+        "This die cut box listing uses the 070502 product reference and a pack of 50 boxes. Check the dimensions in the current option before matching it to your goods.",
+        "Allow room for cushioning and closure when choosing a postal box. The correct postage format depends on the final packed parcel, including its weight."
+      ],
+      "specifications": [],
+      "optionExamples": [
+        "Die Cut Boxes Brown 070502 · 50 boxes"
+      ]
+    },
+    {
+      "id": "ps-royal-mail-pip-large-letter-boxes-pack-of-50",
+      "name": "PIP Large Letter Postal Boxes — Packs of 50",
+      "category": "Cardboard boxes",
+      "description": "Compare PIP large letter postal box sizes in packs of 50. Check the final packed dimensions and weight against your chosen postal service limits.",
+      "details": [
+        "PIP postal boxes offer shallow cardboard packaging in the listed size options. Choose a box that fits the product while allowing it to close without bulging.",
+        "A box name does not guarantee a postage band. Measure and weigh the finished package against the current carrier requirements before buying postage."
+      ],
+      "specifications": [],
+      "optionExamples": [
+        "Mini (101 x 101 x 20mm) · 50 boxes",
+        "C6 (163 x 112 x 20mm) · 50 boxes",
+        "DL (218 x 108 x 20mm) · 50 boxes",
+        "C5 (229 x 159 x 20mm) · 50 boxes",
+        "C4 (325 x 225 x 20mm) · 50 boxes"
+      ]
+    },
+    {
+      "id": "ps-double-wall-boxes",
+      "name": "Double Wall Cardboard Packing Boxes",
+      "category": "Cardboard boxes",
+      "description": "Browse double wall cardboard boxes in different sizes for packing and storage. Choose dimensions suited to your goods and protective packaging.",
+      "details": [
+        "Double wall cardboard boxes provide a two-wall board construction for suitable packing and storage uses. Compare the listed dimensions before selecting a size.",
+        "Leave room for the goods, cushioning and closure. Check the selected quantity and assess the complete parcel for the weight and handling conditions involved."
+      ],
+      "specifications": [],
+      "optionExamples": [
+        "9 x 6 x 6\" (229 x 152 x 152mm) · 1 boxes",
+        "10 x 10 x 10\" (254 x 254 x 254mm) · 1 boxes",
+        "12 x 9 x 6\" (305 x 229 x 152mm) · 1 boxes",
+        "12 x 9 x 9\" (305 x 229 x 229mm) · 1 boxes",
+        "12 x 12 x 12\" (305 x 305 x 305mm) · 1 boxes",
+        "14 x 14 x 14\" (356 x 356 x 356mm) · 1 boxes",
+        "18 x 12 x 11\" (457 x 305 x 279mm) · 1 boxes",
+        "18 x 18 x 18\" (457 x 457 x 457mm) · 1 boxes",
+        "23 x 12 x 15\" (580 x 305 x 377mm) · 1 boxes",
+        "24 x 18 x 12\" (610 x 457 x 305mm) · 1 boxes",
+        "24 x 18 x 18\" (610 x 457 x 457mm) · 1 boxes",
+        "24 x 24 x 24\" (610 x 610 x 610mm) · 1 boxes"
+      ]
+    },
+    {
+      "id": "ps-single-wall-boxes",
+      "name": "Single Wall Cardboard Packing Boxes",
+      "category": "Cardboard boxes",
+      "description": "Choose single wall cardboard boxes in a range of listed sizes. Check dimensions and minimum quantities for everyday parcel packing and storage.",
+      "details": [
+        "Single wall cardboard boxes are available in the listed dimensions for suitable storage and dispatch tasks. Select the size around the product and its protective packing.",
+        "Check the quantity supplied and minimum order before purchase. Suitability depends on the product weight, cushioning and handling conditions of the finished package."
+      ],
+      "specifications": [],
+      "optionExamples": [
+        "5 x 5 x 5\" (127 x 127 x 127mm) · 1 boxes",
+        "6 x 6 x 6\" (152 x 152 x 152mm) · 1 boxes",
+        "7 x 5 x 5\" (178 x 127 x 127mm) · 1 boxes",
+        "8 x 6 x 4\" (203 x 152 x 102mm) · 1 boxes",
+        "8 x 6 x 5\" (203 x 152 x 127mm) · 1 boxes",
+        "9 x 6 x 6\" (229 x 152 x 152mm) · 1 boxes",
+        "10 x 8 x 6\" (254 x 203 x 152mm) · 1 boxes",
+        "12 x 9 x 4\" (305 x 229 x 102mm) · 1 boxes",
+        "12 x 9 x 6\" (305 x 229 x 152mm) · 1 boxes",
+        "12 x 9 x 9\" (305 x 229 x 229mm) · 1 boxes",
+        "12 x 12 x 12\" (305 x 305 x 305mm) · 1 boxes",
+        "15.35 x 11.6 x 7.3\" (390 x 295 x 185mm) Extra Strong · 1 boxes",
+        "17.7 x 13.7 x 6\" (450 x 350 x 160mm) Royal Mail Small Parcel Max · 1 boxes",
+        "18 x 10 x 5.5\" (457 x 252 x 143mm) · 1 boxes",
+        "24 x 18 x 18\" (610 x 457 x 457mm) · 1 boxes"
+      ]
+    },
+    {
+      "id": "ps-grey-mailing-bags-pack-of-100",
+      "name": "Grey Self-Seal Mailing Bags — Size Options",
+      "category": "Mailing bags",
+      "description": "Browse grey self-seal mailing bags by size and pack quantity. Choose a bag with space for suitable soft goods, the contents and the closing strip.",
+      "details": [
+        "Grey mailing bags provide a self-seal outer bag for suitable goods. Compare the listed dimensions and pack quantities rather than assuming every size has the same contents.",
+        "Allow room for the product depth and closing strip. Add appropriate internal protection where needed and keep the shipping label flat and readable."
+      ],
+      "specifications": [],
+      "optionExamples": [
+        "4 x 6\" (100 x 150mm) · 100 bags",
+        "6 x 9\" (165 x 230mm) · 100 bags",
+        "9 x 12\" (230 x 300mm) · 100 bags",
+        "10 x 14\" (250 x 350mm) · 100 bags",
+        "12 x 16\" (305 x 405mm) · 100 bags",
+        "13 x 19\" (330 x 485mm) · 100 bags",
+        "14 x 21\" (350 x 525mm) · 100 bags",
+        "15 x 18\" (381 x 457mm) · 100 bags",
+        "16 x 21\" (405 x 535mm) · 100 bags",
+        "17 x 24\" (425 x 600mm) · 100 bags",
+        "20 x 26\" (508 x 660mm) · 50 bags",
+        "21 x 24\" (525 x 600mm) · 50 bags",
+        "22 x 30\" (550 x 750mm) · 50 bags",
+        "24 x 36\" (600 x 900mm) · 50 bags",
+        "28 x 34\" (700 x 850mm) · 50 bags",
+        "34 x 42\" (850 x 1050mm) · 25 bags"
+      ]
+    },
+    {
+      "id": "ps-colour-mailing-bags",
+      "name": "Coloured Self-Seal Mailing Bags — Sizes & Colours",
+      "category": "Mailing bags",
+      "description": "Choose coloured self-seal mailing bags by size and colour, including Green, White, Purple, Baby Blue and Hot Pink. Check the selected pack contents.",
+      "details": [
+        "Coloured polythene mailing bags add a choice of finish to suitable parcel packaging. Select a size and colour separately, then check the exact option and contents.",
+        "Allow enough room for the product depth and self-seal closing strip. Choose the bag size around the packed item and add internal protection where appropriate."
+      ],
+      "specifications": [
+        [
+          "Material",
+          "Polythene with self-seal closure"
+        ],
+        [
+          "Choice",
+          "Colour and size vary by option"
+        ]
+      ],
+      "optionExamples": [
+        "Green · 9 x 12\" (230 x 300mm) · 100 bags",
+        "Green · 10 x 14\" (250 x 350mm) · 100 bags",
+        "Green · 12 x 16\" (305 x 405mm) · 100 bags",
+        "Green · 14 x 20\" (355 x 510mm) · 100 bags",
+        "Green · 17 x 22\" (430 x 560mm) · 100 bags",
+        "White · 9 x 12\" (230 x 300mm) · 100 bags",
+        "White · 10 x 14\" (250 x 350mm) · 100 bags",
+        "White · 12 x 16\" (305 x 405mm) · 100 bags",
+        "White · 14 x 20\" (355 x 510mm) · 100 bags",
+        "White · 17 x 22\" (430 x 560mm) · 100 bags",
+        "Purple · 9 x 12\" (230 x 300mm) · 100 bags",
+        "Purple · 10 x 14\" (250 x 350mm) · 100 bags",
+        "Purple · 12 x 16\" (305 x 405mm) · 100 bags",
+        "Purple · 14 x 20\" (355 x 510mm) · 100 bags",
+        "Purple · 17 x 22\" (430 x 560mm) · 100 bags",
+        "Baby Blue · 9 x 12\" (230 x 300mm) · 100 bags",
+        "Baby Blue · 10 x 14\" (250 x 350mm) · 100 bags",
+        "Baby Blue · 12 x 16\" (305 x 405mm) · 100 bags",
+        "Baby Blue · 14 x 20\" (355 x 510mm) · 100 bags",
+        "Baby Blue · 17 x 22\" (430 x 560mm) · 100 bags",
+        "Hot Pink · 9 x 12\" (230 x 300mm) · 100 bags",
+        "Hot Pink · 10 x 14\" (250 x 350mm) · 100 bags",
+        "Hot Pink · 12 x 16\" (305 x 405mm) · 100 bags",
+        "Hot Pink · 14 x 20\" (355 x 510mm) · 100 bags",
+        "Hot Pink · 17 x 22\" (430 x 560mm) · 100 bags"
+      ]
+    }
+  ]
+}

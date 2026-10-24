@@ -97,7 +97,7 @@ const SpotlightCard = ({
     const light = lightRef.current;
     const noise = grainRef.current;
     const edge = edgeRef.current;
-    if (!root || !light || !noise || !edge) return undefined;
+    if (!root || !light || !noise || !edge || !window.matchMedia('(hover: hover) and (pointer: fine)').matches || navigator.connection?.saveData) return undefined;
 
     const reduce = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
     const state = { x: 0, y: 0, presence: 0, flare: 0, time: Math.random() * 60, pressed: false, visible: true };
