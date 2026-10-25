@@ -32,4 +32,7 @@ console.log('Built three pre-rendered pages. All primary content and links work 
 
 await import('./build-shop.mjs');
 
+await import('./build-contact.mjs');
+
 await import('./build-seo.mjs');
+
