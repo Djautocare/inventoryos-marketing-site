@@ -10,3 +10,9 @@
 .desktop-nav{gap:22px;margin-left:10px}.shop-landing{border:1px solid var(--line);border-radius:18px;display:flex;align-items:center;justify-content:space-between;gap:30px;padding:36px;margin-block:70px;background:var(--guide-panel,#fff)}.shop-landing h2{font-size:30px;letter-spacing:-1px;margin:12px 0}.shop-landing p{font-size:14px}.shop-landing .button{flex-shrink:0}.shop-landing .eyebrow{color:var(--purple)}@media(max-width:600px){.shop-landing{flex-direction:column;align-items:flex-start;padding:26px;margin-block:45px}.shop-landing h2{font-size:27px}}
 
 .hero h1 .hero-topic{display:block;font-size:clamp(.85rem,1.4vw,1.1rem);font-weight:650;line-height:1.6;letter-spacing:.02em;margin-bottom:14px;color:var(--muted,#c4c0cb)}
+
+.story-crop-link{display:flex;width:fit-content;margin-top:16px}.story-copy .story-note{display:block;margin-top:16px}
+@media(min-width:1001px) and (max-width:1250px){.desktop-nav{gap:14px}.nav-actions{gap:12px}.header-inner{gap:18px}}
+@media(min-width:601px) and (max-width:1150px){.desktop-nav{display:none}.menu-toggle{display:flex;align-items:center;justify-content:center}.header-inner{gap:16px}.nav-actions{gap:14px}}
+/* Keep decorative orbits from widening the page at tablet widths. */
+.hero{overflow-x:clip}

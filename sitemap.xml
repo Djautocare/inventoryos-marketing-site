@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+ <url><loc>https://inventoryos.co.uk/guides</loc></url>
+ <url><loc>https://inventoryos.co.uk/shipping-label-cropping</loc></url>
+ <url><loc>https://inventoryos.co.uk/guides/prepare-shipping-labels-in-batches</loc></url>
+ <url><loc>https://inventoryos.co.uk/guides/organise-reseller-stock-locations</loc></url>
+ <url><loc>https://inventoryos.co.uk/guides/calculate-materials-for-small-batch-production</loc></url>
+ <url><loc>https://inventoryos.co.uk/guides/retail-reorder-levels-and-case-quantities</loc></url>
  <url><loc>https://inventoryos.co.uk/</loc></url>
  <url><loc>https://inventoryos.co.uk/manufacturing</loc></url>
  <url><loc>https://inventoryos.co.uk/retail</loc></url>

@@ -50,3 +50,27 @@ References:
 - https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap
 - https://web.dev/articles/vitals
 - https://developers.cloudflare.com/pages/configuration/redirects/
+
+## 27 October: guides, label preparation and merchant markup
+
+- Added `/guides` and four original practical articles covering batch shipping-label preparation, reseller storage, small-batch material calculations and retail case/reorder quantities. They contain complete static content, unique metadata, canonical URLs, article/breadcrumb markup and links to the relevant workflows. Dates record the actual publication date. Articles do not load React, GSAP or Lenis.
+- Added `/shipping-label-cropping`, linked from the main reseller page, shared footer and guide hub. It explains the repeated opening/cropping/saving steps, supported 4×6 workflow, batch review and mobile/desktop routes. Starter upload/cropping and Pro/Business email/direct-printing access are distinguished. The calculator measures a user's entered manual preparation workload; it does not claim measured product savings.
+- Shared navigation and relevant landing-page links make the guides discoverable. The generated sitemap now contains 45 canonical pages, including the six new content pages. Policy text and the original complete feature guide are preserved.
+- Added a shared public merchant-schema helper. Successful live catalogue responses supply configured Standard/Express delivery maximums to Offer markup, and the same live rates/restrictions are displayed on the product. Maximums allow for eligible free-delivery baskets without inventing a per-product free-delivery promise. No rates are inferred when settings are missing, invalid or mainland-only; exact regional exclusions need Merchant Center/Search Console delivery-region settings. Checkout remains authoritative.
+- Product seller markup points to the organization's published return policy. Google explicitly supports `merchantReturnLink` as its organization-level Option B. This preserves the actual policy (14 days to notify cancellation, then a further 14 days to send goods back) rather than inventing one delivery-to-return deadline. It is not an offer-level override with an incomplete finite return window. Google may still show an offer-field recommendation while it recrawls or if its reporting does not resolve the organization policy.
+- Static Product markup includes the known JADENS and Jiffy brands. Generic packaging does not get a fabricated brand, GTIN or MPN. Variant SKUs remain SKUs, not global identifiers. Product review/rating recommendations remain until genuine, visible product reviews exist; eBay seller feedback is not imported as product ratings.
+
+### Check in Search Console
+
+1. Inspect the new cropping URL and one guide, then request indexing for those key pages. The existing sitemap URL is unchanged; Google can fetch the updated contents.
+2. Test a published purchasable product with Google's Rich Results Test and inspect its rendered HTML. Live Offer data depends on a successful public catalogue response; it is deliberately not hardcoded into static pages.
+3. In Merchant listings, request validation for the relevant changes after the deployed pages are visible. Organization policy links and genuine missing identifiers/reviews do not guarantee every optional warning disappears.
+4. Compare the latest 28 days with the previous 28 in Performance, looking at non-branded queries, landing pages, clicks and impressions. Compare signup outcomes with your own account records. A daily signup increase alone does not establish the traffic source or prove which change caused it.
+
+Validation includes the existing 33 tests plus five content/schema/calculator checks; browser checks at 375, 1024 and 1440 px for navigation, themes, no horizontal overflow and calculator output; no-JavaScript article content; and a synthetic live-catalogue check for Offer delivery data, seller-policy references and matching visible prices. No live checkout, payment or message was sent.
+
+References:
+- https://developers.google.com/search/docs/fundamentals/creating-helpful-content
+- https://developers.google.com/search/docs/crawling-indexing/links-crawlable
+- https://developers.google.com/search/docs/appearance/structured-data/merchant-listing
+- https://developers.google.com/search/docs/appearance/structured-data/return-policy
