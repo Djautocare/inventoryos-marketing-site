@@ -1,3 +1,4 @@
+import {marketplaceGuides} from './marketplace-guides.js';
 // Original, task-focused articles. Dates reflect the actual publication of these pages.
 export const published='2026-10-27';
 export const guides=[
@@ -34,3 +35,5 @@ export const guides=[
  ['Review the levels after the shop has traded',`<p>Start with a few familiar products and review their actual sales and delivery pattern. Adjust targets for storage limits, shelf life and supplier minimums. A rule that suits a fast-selling ambient product may be unsuitable for fresh goods or a slow seasonal line.</p><p><a href="/retail">InventoryOS Retail</a> combines products, supplier ordering, reports, cash balancing and a dedicated till. It has separate shop subscriptions and stock from reseller and manufacturing workspaces. Staff record existing-terminal card payments using Confirm card; InventoryOS does not initiate or independently verify those payments.</p>`]
  ],related:['calculate-materials-for-small-batch-production'],cta:'Explore InventoryOS Retail',ctaURL:'/retail'}
 ];
+
+guides.push(...marketplaceGuides);

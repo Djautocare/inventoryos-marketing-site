@@ -5,7 +5,7 @@ import vm from 'node:vm';
 import {guides,published} from '../src/data/guides.js';
 import {shippingDetails,productBrand,merchantReturnPolicy} from '../assets/shop-schema.js';
 const read=file=>fs.readFileSync(file,'utf8');
-test('the guide hub, four original articles and cropping page are linked, canonical and crawlable without JS',()=>{
+test('the guide hub, original articles and cropping page are linked, canonical and crawlable without JS',()=>{
  const urls=['/guides','/shipping-label-cropping',...guides.map(g=>'/guides/'+g.slug)];
  const titles=new Set(),descriptions=new Set();
  for(const url of urls){const html=read(url.slice(1)+'.html');
@@ -18,7 +18,7 @@ test('the guide hub, four original articles and cropping page are linked, canoni
   assert(!html.includes('/assets/marketing/entry-'),'Articles should not load React or animation bundles');
   const schemas=[...html.matchAll(/type="application\/ld\+json">([^<]+)<\/script>/g)].map(m=>JSON.parse(m[1]));
   assert(schemas.some(s=>s['@graph'].some(x=>x['@type']==='BreadcrumbList')));
-  if(url.startsWith('/guides/')){const g=guides.find(g=>url==='/guides/'+g.slug),article=schemas[0]['@graph'].find(x=>x['@type']==='BlogPosting');assert.equal(article.headline,g.title);assert(article.datePublished.startsWith(published));assert.equal(article.author.name,'InventoryOS team');assert(g.sections.length>=5);assert(read('guides.html').includes('href="'+url+'"'));}
+  if(url.startsWith('/guides/')){const g=guides.find(g=>url==='/guides/'+g.slug),article=schemas[0]['@graph'].find(x=>x['@type']==='BlogPosting');assert.equal(article.headline,g.title);assert(article.datePublished.startsWith(g.published||published));assert.equal(article.author.name,'InventoryOS team');assert(g.sections.length>=5);assert(read('guides.html').includes('href="'+url+'"'));}
   const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);assert.equal(ids.length,new Set(ids).size,url);
   for(const [,raw]of html.matchAll(/(?:href|src)="([^"]+)"/g)){
    const link=raw.replaceAll('&amp;','&');if(/^(https?:|mailto:|data:)/.test(link))continue;
