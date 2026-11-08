@@ -324,7 +324,7 @@ export const faqs={
     ],
     [
       "Will I have an online space to sell from?",
-      "Mi Marché is the planned online selling space for InventoryOS businesses, with a branded storefront linked to eligible stock. It is coming soon and is not yet an available online shop included in your subscription. Register your interest on the Mi Marché page for launch updates. Launch availability, seller requirements and any transaction or payment-processing fees will be explained before you publish or take payments."
+      "Mi Marché gives you a branded storefront preview linked to eligible InventoryOS stock. Use Seller Centre to prepare your shop, connect branches and add product photos. Storefront previews are available to test now; online checkout is not open yet. Seller payment setup and launch checks must be completed before real payments are enabled. Register your interest on the Mi Marché page for launch updates."
     ],
     [
       "Can I use my existing card reader?",
