@@ -1,6 +1,6 @@
 # InventoryOS public website
 
-Marketing site for InventoryOS reseller stock tools, Business Manufacturing mode, and separate InventoryOS Retail shops. The existing GitHub / Cloudflare Pages deployment stays in place.
+Marketing site for the shared InventoryOS workspace: stock, selling, dispatch, production and Retail, with Free, Starter and Complete plans. The existing GitHub / Cloudflare Pages deployment stays in place.
 
 ## Build and edit
 
@@ -20,7 +20,7 @@ The redesign adds no analytics providers, advertising pixels, external font requ
 
 ## Verification
 
-`npm test` checks preserved original text, topic destinations, local links and assets, public policy coverage, pricing and the static no-JavaScript render. Browser QA is performed on the Sites managed preview. To prepare it: `node scripts/prepare-preview.mjs`, then use the supported preview supervisor. The ignored `dist/` directory is for QA; it is not the source of truth.
+`npm test` checks retained workflow coverage, topic destinations, local links and assets, public policy coverage, pricing and the static no-JavaScript render. Browser QA is performed on the Sites managed preview. To prepare it: `node scripts/prepare-preview.mjs`, then use the supported preview supervisor. The ignored `dist/` directory is for QA; it is not the source of truth.
 
 ## Policy review
 
@@ -36,3 +36,9 @@ Changes made on 22 October 2026 retain the existing policy topics and add:
 The exact operating legal trader/company name and a public business/service address were not supplied. They have **not** been guessed from the account holder's name or home details. Add the verified operator identity/contact address to Terms and Privacy. Exact retention schedules, provider transfer arrangements and any required controller/processor agreement also need the operator's factual confirmation. This update does not assert that the service has been independently audited or that the documents are a complete legal compliance review.
 
 Reference guidance consulted: [GOV.UK distance selling](https://www.gov.uk/online-and-distance-selling-for-businesses), [online selling](https://www.gov.uk/online-and-distance-selling-for-businesses/online-selling), [fair contracts](https://www.gov.uk/guidance/writing-a-fair-contract-for-customers), [ICO transparency](https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/individual-rights/individual-rights/right-to-be-informed/), [email marketing](https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guide-to-pecr/electronic-and-telephone-marketing/) and [cookies/storage](https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guide-to-pecr/cookies-and-similar-technologies/). The planned new UK subscription-contract regime was not described as already in force; the government's April 2026 update anticipates spring 2027.
+
+## 8 November 2026 content update
+
+Current plans: Free £0, Starter £7.99/month, Complete £19.99/month including one physical store; extra stores £10/month each. No VAT is currently charged. Existing Pro, Business and Retail subscribers retain their agreed billing until they choose a change. Receipt emails remain a separate paid add-on. Public marketplace pages remain coming soon.
+
+Three additional practical articles cover internal SKUs and manufacturer barcodes, stock across selling workflows, and end-of-day till checks. Published dates are preserved on older articles; substantive edits use a separate modified date. The sitemap contains 52 canonical URLs. No invented reviews, traffic claims, account statistics, product identifiers or unpublished Stripe checkout links were added.

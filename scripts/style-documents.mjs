@@ -6,7 +6,7 @@ for(const file of ['privacy.html','terms.html','refunds.html','cookies.html','da
  html=html.replace(/<header\b[\s\S]*?<\/header>/,header).replace(/<footer\b[\s\S]*?<\/footer>/,footer);
  html=html.replace(/<body[^>]*>/,'<body id="top"'+(file==='features.html'?' class="feature-guide"':'')+'>');
  if(!html.includes('assets/document-chrome.css'))html=html.replace('</head>','<link rel="stylesheet" href="assets/document-chrome.css?v=2"></head>');
- const documentStyle=file==='features.html'?'assets/feature-guide.css?v=3':'assets/pages.css?v=2';
+ const documentStyle=file==='features.html'?'assets/feature-guide.css?v=unified-1':'assets/pages.css?v=2';
  if(!html.includes(documentStyle))html=html.replace('</head>',`<link rel="stylesheet" href="${documentStyle}"></head>`);
  if(!html.includes('assets/pages.js'))html=html.replace('</body>','<script src="assets/pages.js?v=2" defer></script></body>');
  html=html.replace(/<script\s+src="script\.js(?:\?[^\"]*)?"><\/script>/g,file==='features.html'?'<script src="script.js?v=guide-3"></script>':'');
@@ -28,7 +28,7 @@ for(const file of ['privacy.html','terms.html','refunds.html','cookies.html','da
  html=html.replace(/(<meta\s+name="theme-color"\s+content=")[^"]+("\s*\/?\s*>)/,'$1#080909$2');
  if(!html.includes('assets/appearance.js'))html=html.replace(/(<meta\s+name="theme-color"[\s\S]*?>)/,'$1<script src="assets/appearance.js?v=1"></script>');
  html=html.replace(/<link rel="stylesheet" href="assets\/appearance\.css[^"]*">/g,'');
- html=html.replace('</head>','<link rel="stylesheet" href="assets/appearance.css?v=1"></head>');
+ html=html.replace('</head>','<link rel="stylesheet" href="assets/appearance.css?v=unified-1"></head>');
  await fs.writeFile(file,html);
 }
 console.log('Styled the complete guide and five policy pages.');

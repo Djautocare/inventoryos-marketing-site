@@ -2,25 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
  <url><loc>https://inventoryos.co.uk/marketplace</loc></url>
  <url><loc>https://inventoryos.co.uk/guides</loc></url>
- <url><loc>https://inventoryos.co.uk/shipping-label-cropping</loc></url>
- <url><loc>https://inventoryos.co.uk/guides/prepare-shipping-labels-in-batches</loc></url>
- <url><loc>https://inventoryos.co.uk/guides/organise-reseller-stock-locations</loc></url>
- <url><loc>https://inventoryos.co.uk/guides/calculate-materials-for-small-batch-production</loc></url>
- <url><loc>https://inventoryos.co.uk/guides/retail-reorder-levels-and-case-quantities</loc></url>
- <url><loc>https://inventoryos.co.uk/guides/introducing-mi-marche-marketplace</loc></url>
- <url><loc>https://inventoryos.co.uk/guides/who-mi-marche-is-for</loc></url>
- <url><loc>https://inventoryos.co.uk/guides/stockroom-to-marketplace-selling</loc></url>
- <url><loc>https://inventoryos.co.uk/</loc></url>
- <url><loc>https://inventoryos.co.uk/manufacturing</loc></url>
- <url><loc>https://inventoryos.co.uk/retail</loc></url>
+ <url><loc>https://inventoryos.co.uk/shipping-label-cropping</loc><lastmod>2026-11-08</lastmod></url>
+ <url><loc>https://inventoryos.co.uk/guides/sku-vs-barcode-small-business</loc><lastmod>2026-11-08</lastmod></url>
+ <url><loc>https://inventoryos.co.uk/guides/one-stock-record-online-and-in-store</loc><lastmod>2026-11-08</lastmod></url>
+ <url><loc>https://inventoryos.co.uk/guides/end-of-day-till-cash-card-reconciliation</loc><lastmod>2026-11-08</lastmod></url>
+ <url><loc>https://inventoryos.co.uk/guides/prepare-shipping-labels-in-batches</loc><lastmod>2026-11-08</lastmod></url>
+ <url><loc>https://inventoryos.co.uk/guides/organise-reseller-stock-locations</loc><lastmod>2026-11-08</lastmod></url>
+ <url><loc>https://inventoryos.co.uk/guides/calculate-materials-for-small-batch-production</loc><lastmod>2026-11-08</lastmod></url>
+ <url><loc>https://inventoryos.co.uk/guides/retail-reorder-levels-and-case-quantities</loc><lastmod>2026-11-08</lastmod></url>
+ <url><loc>https://inventoryos.co.uk/guides/introducing-mi-marche-marketplace</loc><lastmod>2026-10-31</lastmod></url>
+ <url><loc>https://inventoryos.co.uk/guides/who-mi-marche-is-for</loc><lastmod>2026-10-31</lastmod></url>
+ <url><loc>https://inventoryos.co.uk/guides/stockroom-to-marketplace-selling</loc><lastmod>2026-10-31</lastmod></url>
+ <url><loc>https://inventoryos.co.uk/</loc><lastmod>2026-11-08</lastmod></url>
+ <url><loc>https://inventoryos.co.uk/manufacturing</loc><lastmod>2026-11-08</lastmod></url>
+ <url><loc>https://inventoryos.co.uk/retail</loc><lastmod>2026-11-08</lastmod></url>
  <url><loc>https://inventoryos.co.uk/shop</loc></url>
  <url><loc>https://inventoryos.co.uk/contact</loc></url>
- <url><loc>https://inventoryos.co.uk/features</loc></url>
- <url><loc>https://inventoryos.co.uk/privacy</loc></url>
- <url><loc>https://inventoryos.co.uk/terms</loc></url>
- <url><loc>https://inventoryos.co.uk/refunds</loc></url>
- <url><loc>https://inventoryos.co.uk/cookies</loc></url>
- <url><loc>https://inventoryos.co.uk/data-security</loc></url>
+ <url><loc>https://inventoryos.co.uk/features</loc><lastmod>2026-11-08</lastmod></url>
+ <url><loc>https://inventoryos.co.uk/privacy</loc><lastmod>2026-11-08</lastmod></url>
+ <url><loc>https://inventoryos.co.uk/terms</loc><lastmod>2026-11-08</lastmod></url>
+ <url><loc>https://inventoryos.co.uk/refunds</loc><lastmod>2026-11-08</lastmod></url>
+ <url><loc>https://inventoryos.co.uk/cookies</loc><lastmod>2026-11-08</lastmod></url>
+ <url><loc>https://inventoryos.co.uk/data-security</loc><lastmod>2026-11-08</lastmod></url>
  <url><loc>https://inventoryos.co.uk/shop/product/jadens-668bt</loc><image:image><image:loc>https://inventoryos.co.uk/assets/shop/jadens-668bt-1.webp</image:loc><image:title>JADENS 668BT Bluetooth Thermal Label Printer</image:title></image:image></url>
  <url><loc>https://inventoryos.co.uk/shop/product/ps-hw38-handy-wrap-dispenser</loc><image:image><image:loc>https://inventoryos.co.uk/assets/shop-illustrations/01_handheld_stretch_wrap_dispenser.webp</image:loc><image:title>HW38 Handy Stretch Wrap Dispenser</image:title></image:image></url>
  <url><loc>https://inventoryos.co.uk/shop/product/ps-heavy-duty-bench-desktop-tape-dispenser</loc><image:image><image:loc>https://inventoryos.co.uk/assets/shop-illustrations/02_desktop_tape_dispenser.webp</image:loc><image:title>Bench Top Packing Tape Dispensers</image:title></image:image></url>

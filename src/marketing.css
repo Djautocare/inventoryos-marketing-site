@@ -16,3 +16,7 @@
 @media(min-width:601px) and (max-width:1150px){.desktop-nav{display:none}.menu-toggle{display:flex;align-items:center;justify-content:center}.header-inner{gap:16px}.nav-actions{gap:14px}}
 /* Keep decorative orbits from widening the page at tablet widths. */
 .hero{overflow-x:clip}
+
+/* The current plan range is Free, Starter and Complete. */
+.pricing-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:900px){.pricing-grid{grid-template-columns:1fr}.plan{max-width:640px;width:100%;margin-inline:auto}}

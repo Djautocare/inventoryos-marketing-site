@@ -17,3 +17,10 @@
 @media(max-width:600px){.header .appearance-toggle{height:34px;width:34px;min-height:34px;padding:8px;flex-shrink:0}.appearance-toggle .appearance-label{display:none}.header .nav-actions{gap:6px}.header .wordmark{font-size:19px}.header .button{gap:7px}}
 @media(max-width:370px){.hero-visual .visual-orbit{display:none}.header .wordmark{font-size:17px}.header .button{padding-inline:8px}.header .button>.icon{display:none}}
 @media print{.appearance-toggle{display:none!important}}
+:root[data-marketing-appearance="light"] .retail-price-card{color:#fff}
+:root[data-marketing-appearance="light"] .retail-price-card p,
+:root[data-marketing-appearance="light"] .retail-price-card small,
+:root[data-marketing-appearance="light"] .retail-price-card li,
+:root[data-marketing-appearance="light"] .retail-price-card .plan-price span{color:#e9e4f4}
+:root[data-marketing-appearance="light"] .retail-price-card .plan-name{color:#d0baff}
+:root[data-marketing-appearance="light"] .retail-price-card .button.white{color:#17121f;background:#fff}
