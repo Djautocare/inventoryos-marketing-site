@@ -7,7 +7,7 @@ export const paths={
 };
 export const modes={
   "resellers": {
-    "label": "Stock & selling",
+    "label": "Stock & dispatch",
     "short": "Reselling",
     "eyebrow": "FOR RESELLERS, MAKERS & INDEPENDENT SHOPS",
     "line1": "One clearer workspace.",
@@ -80,7 +80,7 @@ export const modes={
     "eyebrow": "FOR MAKERS, WORKSHOPS & SMALL BATCHES",
     "line1": "From raw materials.",
     "line2": "To ready for more.",
-    "intro": "Know what goes into every product. Connect your materials, recipes and production to the stock you’re ready to sell.",
+    "intro": "Use InventoryOS production tools to track raw materials, plan recipes and make batches. Release finished products into the stock you’re ready to sell. Manufacturing is included in Complete alongside your stock, dispatch and shop tools.",
     "cta": "Explore Complete",
     "note": "Manufacturing is included in Complete · £19.99/month.",
     "tag": "Your next batch starts here.",
@@ -143,13 +143,13 @@ export const modes={
     ]
   },
   "retail": {
-    "label": "Retail & services",
+    "label": "Shops & tills",
     "short": "Retail",
     "eyebrow": "FOR INDEPENDENT SHOPS & SERVICE BUSINESSES",
     "line1": "Your shop, in sync.",
     "line2": "From shelf to sale.",
-    "intro": "A focused till for staff, with stock, orders, deliveries and daily records together behind it. Use your existing card terminal and record confirmed payments.",
-    "cta": "Set up your shop",
+    "intro": "Run your physical shop with a focused till, stock control, supplier orders and daily reports. These are the shop tools within InventoryOS Complete: £19.99/month includes your first store, with unlimited tills and staff. Each additional physical store is £10/month.",
+    "cta": "Explore Complete",
     "note": "Complete · £19.99/month includes one store. Extra stores £10/month.",
     "tag": "Ready for the working day.",
     "accent": "#7344e7",
@@ -318,6 +318,14 @@ export const faqs={
     ]
   ],
   "retail": [
+    [
+      "Is Retail a separate subscription?",
+      "No. Shops, tills and production are tools within InventoryOS Complete, at £19.99/month. Your first physical store is included; each additional physical store allowance is £10/month. Unlimited tills and staff are included. Existing separate Retail subscriptions keep their agreed billing unless you choose to change."
+    ],
+    [
+      "Will I have an online space to sell from?",
+      "Mi Marché is the planned online selling space for InventoryOS businesses, with a branded storefront linked to eligible stock. It is coming soon and is not yet an available online shop included in your subscription. Register your interest on the Mi Marché page for launch updates. Launch availability, seller requirements and any transaction or payment-processing fees will be explained before you publish or take payments."
+    ],
     [
       "Can I use my existing card reader?",
       "Yes. Take payment on your existing terminal, then choose Confirm card in InventoryOS. This records your confirmation; InventoryOS does not trigger or independently verify the payment. Card-provider fees are separate."
