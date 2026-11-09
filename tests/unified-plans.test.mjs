@@ -9,11 +9,11 @@ test('public SoftwareApplication offers agree with the visible current plans',()
  assert.deepEqual(plans.map(p=>[p.key,p.price]),[['free','0'],['starter','7.99'],['complete','19.99']]);
  for(const file of ['index.html','manufacturing.html','retail.html']){
   const html=read(file),app=schemas(html).flatMap(x=>x['@graph']||[x]).find(x=>x['@type']==='SoftwareApplication');
-  assert(app);assert.deepEqual(app.offers.map(x=>x.price),file==='index.html'?['0','7.99','19.99']:['19.99']);
-  for(const offer of app.offers){assert.equal(offer.priceCurrency,'GBP');assert(html.includes('£'+offer.price));}
+  assert(app);assert.deepEqual(app.offers.map(x=>x.price),file==='retail.html'?['19.99']:['0','7.99','19.99']);
+  for(const offer of app.offers){assert.equal(offer.priceCurrency,'GBP');assert(html.replaceAll('<!-- -->','').includes('£'+offer.price));}
   assert(!html.includes('plan=pro'));assert(!html.includes('plan=business'));assert(html.includes('No VAT is currently charged'));
  }
- assert(read('index.html').includes('Existing Pro, Business and Retail subscriptions keep their agreed prices'));
+ assert(read('index.html').includes('Existing subscriptions keep their agreed prices'));
  assert.equal((read('features.html').match(/<h1\b/g)||[]).length,1);
 });
 test('new practical articles and substantive older edits retain accurate publication history',()=>{

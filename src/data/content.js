@@ -247,7 +247,7 @@ export const plans=[
   {
     "name": "Complete",
     "price": "19.99",
-    "description": "For the team, the workshop and the shop floor.",
+    "description": "Includes your first physical store. Each additional store is £10/month.",
     "featured": true,
     "key": "complete",
     "cta": "Choose Complete",
@@ -300,7 +300,7 @@ export const faqs={
     ],
     [
       "Are reorder email reminders included?",
-      "Yes, Complete includes reorder email reminders, with instant alerts or a scheduled daily summary. Existing Pro and Business subscriptions retain their agreed features and optional reminder add-on unless you choose to change them. Customer email receipts are a different paid add-on."
+      "Yes, Complete includes reorder email reminders, with instant alerts or a scheduled daily summary. Existing subscriptions with a separate reminder add-on keep their agreed features and billing. Customer email receipts are a different paid add-on."
     ]
   ],
   "manufacturing": [
@@ -336,7 +336,7 @@ export const faqs={
     ],
     [
       "Can I manage a shop and make products in the same plan?",
-      "Yes. Complete includes production, advanced stock tools and your first physical store. Inventory records remain independent until you explicitly configure linking. Existing Pro, Business and Retail subscriptions keep their agreed billing unless you choose to change."
+      "Yes. Complete includes production, advanced stock tools and your first physical store. Inventory records remain independent until you explicitly configure linking. Existing subscriptions keep their agreed billing unless you choose to change."
     ],
     [
       "What works without an internet connection?",
