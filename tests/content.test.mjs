@@ -8,7 +8,7 @@ const main=s=>s.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)[1].replace(/\s+/g,' ').
 test('the detailed feature guide retains the original workflows while using the current plans',()=>{
  const html=read('features.html');
  for(const id of ['what-it-does','features','workflow','mfg-overview','mfg-features','mfg-workflow','retail-overview','retail-features','retail-workflow','retail-pricing','printing','faq'])assert(html.includes('id="'+id+'"'),id);
- for(const text of ['1,000 active','Complete','£19.99','£10','Dispatch','QZ Tray','recipes','cash'])assert(html.toLowerCase().includes(text.toLowerCase()),text);
+ for(const text of ['1,000 active','Pro','£19.99','£10','Dispatch','QZ Tray','recipes','cash'])assert(html.toLowerCase().includes(text.toLowerCase()),text);
  assert(html.includes('<noscript>'));assert(html.includes('audience-panel[hidden]{display:block!important}'));
  assert(!html.includes('£14.99'));assert(!html.includes('£29.99/month</strong>'));
 });
@@ -22,7 +22,7 @@ test('learn-more links open their audience and relevant topic in the redesigned 
 });
 test('three public pages are pre-rendered, with distinct metadata, correct pricing and signup destinations',()=>{
  for(const [file,mode,price]of [['index.html','resellers','19.99'],['manufacturing.html','manufacturing','19.99'],['retail.html','retail','19.99']]){
-  const html=read(file).replace(/<!--[\s\S]*?-->/g,'');assert.equal((html.match(/<h1\b/g)||[]).length,1);assert(html.includes('data-mode="'+mode+'"'));assert(html.includes('https://inventoryos.co.uk/'));assert(html.includes('£'+price));assert(html.includes('/features?audience='+mode));assert(html.includes('href="/privacy"'));assert(html.includes('Illustrative interface'));assert(html.includes('one free week of Complete'));assert(!html.includes('visibility:hidden'));assert(!html.includes('opacity:0'));assert(html.includes('type="application/ld+json"'));
+  const html=read(file).replace(/<!--[\s\S]*?-->/g,'');assert.equal((html.match(/<h1\b/g)||[]).length,1);assert(html.includes('data-mode="'+mode+'"'));assert(html.includes('https://inventoryos.co.uk/'));assert(html.includes('£'+price));assert(html.includes('/features?audience='+mode));assert(html.includes('href="/privacy"'));assert(html.includes('Illustrative interface'));assert(html.includes('one free week of Pro'));assert(!html.includes('visibility:hidden'));assert(!html.includes('opacity:0'));assert(html.includes('type="application/ld+json"'));
  }
  const retail=read('retail.html');assert(retail.includes('returnTo=%2Fretail%2Fdashboard%2Findex.html'));assert(retail.includes('does not trigger or independently verify'));assert(retail.includes('separate paid add-on from £2.99/month'));assert(read('manufacturing.html').includes('Manufacturing is off by default'));
 });

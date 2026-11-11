@@ -1,6 +1,6 @@
 # InventoryOS public website
 
-Marketing site for the shared InventoryOS workspace: stock, selling, dispatch, production and Retail, with Free, Starter and Complete plans. The existing GitHub / Cloudflare Pages deployment stays in place.
+Marketing site for the shared InventoryOS workspace: stock, selling, dispatch, production and Retail, with Intro, Premium and Pro plans. The existing GitHub / Cloudflare Pages deployment stays in place.
 
 ## Build and edit
 
@@ -28,7 +28,7 @@ Changes made on 22 October 2026 retain the existing policy topics and add:
 
 - Separate Retail shop billing, unlimited tills/staff, independent subscription cancellation, optional receipt-email charges and accrued usage.
 - The current receipt-email introduction (£2.99 / first 30 days), monthly sending bands and 25,000-send limit, verified against `retailReceiptEmails.js` in the current application.
-- Manually activated Business trials, return to the previous plan and no automatic new subscription from the trial itself.
+- Manually activated Pro trials, return to the previous plan and no automatic new subscription from the trial itself.
 - Staff/loyalty/customer records, transactional receipts, support requests, local PWA records, CSV exports and permanent store deletion.
 - Public-certificate setup for QZ printing, private-key separation, manual card confirmation and human review of manufacturing/automation.
 - Separate marketing consent and service emails, locally hosted animations/fonts, consumer cancellation rights and non-excludable statutory rights.
@@ -39,6 +39,6 @@ Reference guidance consulted: [GOV.UK distance selling](https://www.gov.uk/onlin
 
 ## 8 November 2026 content update
 
-Current plans: Free £0, Starter £7.99/month, Complete £19.99/month including one physical store; extra stores £10/month each. No VAT is currently charged. Existing Pro, Business and Retail subscribers retain their agreed billing until they choose a change. Receipt emails remain a separate paid add-on. Public marketplace pages remain coming soon.
+Current plans: Intro £0, Premium £7.99/month, Pro £19.99/month including one physical store; extra stores £10/month each. No VAT is currently charged. Existing subscribers retain their agreed billing until they choose a change. Receipt emails remain a separate paid add-on. Public marketplace pages remain coming soon.
 
 Three additional practical articles cover internal SKUs and manufacturer barcodes, stock across selling workflows, and end-of-day till checks. Published dates are preserved on older articles; substantive edits use a separate modified date. The sitemap contains 52 canonical URLs. No invented reviews, traffic claims, account statistics, product identifiers or unpublished Stripe checkout links were added.

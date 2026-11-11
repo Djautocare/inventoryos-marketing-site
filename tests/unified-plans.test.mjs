@@ -6,6 +6,7 @@ import {guides} from '../src/data/guides.js';
 const read=file=>fs.readFileSync(file,'utf8');
 const schemas=html=>[...html.matchAll(/type="application\/ld\+json">([^<]+)<\/script>/g)].map(m=>JSON.parse(m[1]));
 test('public SoftwareApplication offers agree with the visible current plans',()=>{
+ assert.deepEqual(plans.map(p=>p.name),['Intro','Premium','Pro']);
  assert.deepEqual(plans.map(p=>[p.key,p.price]),[['free','0'],['starter','7.99'],['complete','19.99']]);
  for(const file of ['index.html','manufacturing.html','retail.html']){
   const html=read(file),app=schemas(html).flatMap(x=>x['@graph']||[x]).find(x=>x['@type']==='SoftwareApplication');
@@ -21,8 +22,8 @@ test('public SoftwareApplication offers agree with the visible current plans',()
   assert.match(html,/£10\/month/);
   assert.doesNotMatch(html,/£19\.99 per (shop|store)|one retail plan|shop-by-shop billing|confirm the shop subscription/i);
  }
- assert.match(features,/Shop tools included in Complete/);
- assert.match(features,/Manufacturing tools on Complete/);
+ assert.match(features,/Shop tools included in Pro/);
+ assert.match(features,/Manufacturing tools on Pro/);
 });
 test('new practical articles and substantive older edits retain accurate publication history',()=>{
  const fresh=guides.filter(g=>g.published==='2026-11-08');assert.equal(fresh.length,3);

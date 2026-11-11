@@ -38,7 +38,7 @@ export const modes={
         "scan",
         "From a great find to organised stock.",
         "Generate internal item codes (SKUs), then add, scan, search, move, remove, discard and refund stock. Keep locations and stock history connected.",
-        "Core stock tools · Free"
+        "Core stock tools · Intro"
       ],
       [
         "boxes",
@@ -50,19 +50,19 @@ export const modes={
         "receipt",
         "The numbers, without the pile of paper.",
         "Record expenses, upload receipts and review sales history and corrections alongside your stock.",
-        "Expenses & history · Starter"
+        "Expenses & history · Premium"
       ],
       [
         "repeat",
         "Stay ahead of running out.",
         "Set minimums, target levels and supplier details. Mark orders received, print barcodes and assign stock to its destinations.",
-        "Reordering · Complete"
+        "Reordering · Pro"
       ]
     ],
     "steps": [
       [
         "Create your account",
-        "Choose Free after signing up and follow the guided practice tutorial. Extra help stays in Settings → Guide."
+        "Choose Intro after signing up and follow the guided practice tutorial. Extra help stays in Settings → Guide."
       ],
       [
         "Give your stock a home",
@@ -80,9 +80,9 @@ export const modes={
     "eyebrow": "FOR MAKERS, WORKSHOPS & SMALL BATCHES",
     "line1": "From raw materials.",
     "line2": "To ready for more.",
-    "intro": "Use InventoryOS production tools to track raw materials, plan recipes and make batches. Release finished products into the stock you’re ready to sell. Manufacturing is included in Complete alongside your stock, dispatch and shop tools.",
-    "cta": "Explore Complete",
-    "note": "Manufacturing is included in Complete · £19.99/month.",
+    "intro": "Use InventoryOS production tools to track raw materials, plan recipes and make batches. Release finished products into the stock you’re ready to sell. Manufacturing is included in Pro alongside your stock, dispatch and shop tools.",
+    "cta": "Explore Pro",
+    "note": "Manufacturing is included in Pro · £19.99/month.",
     "tag": "Your next batch starts here.",
     "accent": "#7344e7",
     "tourTitle": "The recipe. The batch.\nThe whole picture.",
@@ -129,8 +129,8 @@ export const modes={
     ],
     "steps": [
       [
-        "Start on Complete",
-        "Create an account, choose Complete and enable the production tools you need. Manufacturing is off by default."
+        "Start on Pro",
+        "Create an account, choose Pro and enable the production tools you need. Manufacturing is off by default."
       ],
       [
         "Bring in your materials",
@@ -148,9 +148,9 @@ export const modes={
     "eyebrow": "FOR INDEPENDENT SHOPS & SERVICE BUSINESSES",
     "line1": "Your shop, in sync.",
     "line2": "From shelf to sale.",
-    "intro": "Run your physical shop with a focused till, stock control, supplier orders and daily reports. Your first physical store, unlimited tills and staff are included in the £19.99/month InventoryOS Complete subscription. Each additional physical store is £10/month.",
-    "cta": "Explore Complete",
-    "note": "Complete subscription £19.99/month with one physical store included. Extra stores £10/month each.",
+    "intro": "Run your physical shop with a focused till, stock control, supplier orders and daily reports. Your first physical store, unlimited tills and staff are included in the £19.99/month InventoryOS Pro subscription. Each additional physical store is £10/month.",
+    "cta": "Explore Pro",
+    "note": "Pro subscription £19.99/month with one physical store included. Extra stores £10/month each.",
     "tag": "Ready for the working day.",
     "accent": "#7344e7",
     "tourTitle": "Open the till.\nStay on top of the shop.",
@@ -197,8 +197,8 @@ export const modes={
     ],
     "steps": [
       [
-        "Choose Complete",
-        "Create your account and first store. Complete includes one physical store; review and confirm an allowance for any extra stores."
+        "Choose Pro",
+        "Create your account and first store. Pro includes one physical store; review and confirm an allowance for any extra stores."
       ],
       [
         "Stock up and connect",
@@ -213,7 +213,7 @@ export const modes={
 };
 export const plans=[
   {
-    "name": "Free",
+    "name": "Intro",
     "price": "0",
     "description": "A proper home for your first items.",
     "features": [
@@ -228,11 +228,11 @@ export const plans=[
     "key": "free"
   },
   {
-    "name": "Starter",
+    "name": "Premium",
     "price": "7.99",
     "description": "For stock, expenses and a smoother dispatch routine.",
     "features": [
-      "Everything in Free",
+      "Everything in Intro",
       "1,000 active stock items",
       "Sales history & corrections",
       "Expenses & receipt uploads",
@@ -241,18 +241,18 @@ export const plans=[
       "Shipping-label upload & cropping",
       "Dispatch Centre & mobile label printing"
     ],
-    "cta": "Choose Starter",
+    "cta": "Choose Premium",
     "key": "starter"
   },
   {
-    "name": "Complete",
+    "name": "Pro",
     "price": "19.99",
     "description": "Includes your first physical store. Each additional store is £10/month.",
     "featured": true,
     "key": "complete",
-    "cta": "Choose Complete",
+    "cta": "Choose Pro",
     "features": [
-      "Everything in Starter",
+      "Everything in Premium",
       "Unlimited active items & multiple inventories",
       "Workspace shipping-label email & reimports",
       "QZ Tray direct printing",
@@ -277,8 +277,8 @@ export const faqs={
       "No. The inventory tools work without a printer. Optional direct printing uses QZ Tray, your printer’s normal driver and the InventoryOS printing setup. Mobile printing uses your device’s supported print or share options."
     ],
     [
-      "Can I try Complete first?",
-      "Yes. Create an account, then email hello@inventoryos.co.uk to request one free week of Complete. We activate it manually. The app shows the end time and the plan you return to. Complimentary access does not itself create a paid subscription. Existing subscriptions and add-ons continue until separately cancelled."
+      "Can I try Pro first?",
+      "Yes. Create an account, then email hello@inventoryos.co.uk to request one free week of Pro. We activate it manually. The app shows the end time and the plan you return to. Complimentary access does not itself create a paid subscription. Existing subscriptions and add-ons continue until separately cancelled."
     ],
     [
       "Is InventoryOS connected to a marketplace?",
@@ -292,21 +292,21 @@ export const faqs={
   "resellers": [
     [
       "What is the difference between a SKU and a barcode?",
-      "A SKU (stock keeping unit) is an internal code that identifies a product. A barcode is the scannable pattern that can represent that code. InventoryOS generates internal item codes such as ITEM-42 and can print barcode labels that scan back to those codes. Barcode label print jobs are included from Starter."
+      "A SKU (stock keeping unit) is an internal code that identifies a product. A barcode is the scannable pattern that can represent that code. InventoryOS generates internal item codes such as ITEM-42 and can print barcode labels that scan back to those codes. Barcode label print jobs are included from Premium."
     ],
     [
       "How do shipping labels arrive in Dispatch Centre?",
-      "Starter includes shipping-label file uploads and supported cropping. Complete also provides a workspace email address: forward supported label attachments to it and review the prepared labels in Dispatch Centre. No Gmail mailbox connection is required."
+      "Premium includes shipping-label file uploads and supported cropping. Pro also provides a workspace email address: forward supported label attachments to it and review the prepared labels in Dispatch Centre. No Gmail mailbox connection is required."
     ],
     [
       "Are reorder email reminders included?",
-      "Yes, Complete includes reorder email reminders, with instant alerts or a scheduled daily summary. Existing subscriptions with a separate reminder add-on keep their agreed features and billing. Customer email receipts are a different paid add-on."
+      "Yes, Pro includes reorder email reminders, with instant alerts or a scheduled daily summary. Existing subscriptions with a separate reminder add-on keep their agreed features and billing. Customer email receipts are a different paid add-on."
     ]
   ],
   "manufacturing": [
     [
       "Is Manufacturing a separate subscription?",
-      "No. Production tools are included in Complete at £19.99/month, alongside the advanced inventory tools and first physical store. Manufacturing is off by default. Enable it when needed, and choose whether finished products use independent or explicitly linked stock."
+      "No. Production tools are included in Pro at £19.99/month, alongside the advanced inventory tools and first physical store. Manufacturing is off by default. Enable it when needed, and choose whether finished products use independent or explicitly linked stock."
     ],
     [
       "Does a timer automatically finish production?",
@@ -314,13 +314,13 @@ export const faqs={
     ],
     [
       "How do recipe reorder emails work?",
-      "The calculator groups shared ingredients across planned recipes and sends shortages to Reordering. Complete includes scheduled reminder emails, with 5pm UK time as the recipe-summary default unless you select another time. Review the proposed quantities before ordering."
+      "The calculator groups shared ingredients across planned recipes and sends shortages to Reordering. Pro includes scheduled reminder emails, with 5pm UK time as the recipe-summary default unless you select another time. Review the proposed quantities before ordering."
     ]
   ],
   "retail": [
     [
       "Which plan includes shop and till tools?",
-      "InventoryOS Complete is £19.99/month and includes your first physical store, unlimited tills and staff. Each additional physical store is £10/month. Existing separate shop subscriptions retain their agreed prices."
+      "InventoryOS Pro is £19.99/month and includes your first physical store, unlimited tills and staff. Each additional physical store is £10/month. Existing separate shop subscriptions retain their agreed prices."
     ],
     [
       "Will I have an online space to sell from?",
@@ -332,11 +332,11 @@ export const faqs={
     ],
     [
       "Do extra tills or staff cost more?",
-      "Complete includes unlimited tills and staff. Your first physical store is included in the £19.99/month Complete subscription. Each additional physical store is £10/month. Two stores cost £29.99/month and three cost £39.99/month, before optional add-ons."
+      "Pro includes unlimited tills and staff. Your first physical store is included in the £19.99/month Pro subscription. Each additional physical store is £10/month. Two stores cost £29.99/month and three cost £39.99/month, before optional add-ons."
     ],
     [
       "Can I manage a shop and make products in the same plan?",
-      "Yes. Complete includes production, advanced stock tools and your first physical store. Inventory records remain independent until you explicitly configure linking. Existing subscriptions keep their agreed billing unless you choose to change."
+      "Yes. Pro includes production, advanced stock tools and your first physical store. Inventory records remain independent until you explicitly configure linking. Existing subscriptions keep their agreed billing unless you choose to change."
     ],
     [
       "What works without an internet connection?",
