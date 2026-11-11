@@ -148,9 +148,9 @@ export const modes={
     "eyebrow": "FOR INDEPENDENT SHOPS & SERVICE BUSINESSES",
     "line1": "Your shop, in sync.",
     "line2": "From shelf to sale.",
-    "intro": "Run your physical shop with a focused till, stock control, supplier orders and daily reports. These are the shop tools within InventoryOS Complete: £19.99/month includes your first store, with unlimited tills and staff. Each additional physical store is £10/month.",
+    "intro": "Run your physical shop with a focused till, stock control, supplier orders and daily reports. Your first physical store, unlimited tills and staff are included in the £19.99/month InventoryOS Complete subscription. Each additional physical store is £10/month.",
     "cta": "Explore Complete",
-    "note": "Complete · £19.99/month includes one store. Extra stores £10/month.",
+    "note": "Complete subscription £19.99/month with one physical store included. Extra stores £10/month each.",
     "tag": "Ready for the working day.",
     "accent": "#7344e7",
     "tourTitle": "Open the till.\nStay on top of the shop.",
@@ -319,8 +319,8 @@ export const faqs={
   ],
   "retail": [
     [
-      "Is Retail a separate subscription?",
-      "No. Shops, tills and production are tools within InventoryOS Complete, at £19.99/month. Your first physical store is included; each additional physical store allowance is £10/month. Unlimited tills and staff are included. Existing separate Retail subscriptions keep their agreed billing unless you choose to change."
+      "Which plan includes shop and till tools?",
+      "InventoryOS Complete is £19.99/month and includes your first physical store, unlimited tills and staff. Each additional physical store is £10/month. Existing separate shop subscriptions retain their agreed prices."
     ],
     [
       "Will I have an online space to sell from?",
@@ -332,7 +332,7 @@ export const faqs={
     ],
     [
       "Do extra tills or staff cost more?",
-      "Complete includes unlimited tills and staff. £19.99/month includes your first physical store; each additional store allowance is £10/month. Two stores cost £29.99/month and three cost £39.99/month, before optional add-ons."
+      "Complete includes unlimited tills and staff. Your first physical store is included in the £19.99/month Complete subscription. Each additional physical store is £10/month. Two stores cost £29.99/month and three cost £39.99/month, before optional add-ons."
     ],
     [
       "Can I manage a shop and make products in the same plan?",

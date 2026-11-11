@@ -14,7 +14,15 @@ test('public SoftwareApplication offers agree with the visible current plans',()
   assert(!html.includes('plan=pro'));assert(!html.includes('plan=business'));assert(html.includes('No VAT is currently charged'));
  }
  assert(read('index.html').includes('Existing subscriptions keep their agreed prices'));
- assert.equal((read('features.html').match(/<h1\b/g)||[]).length,1);
+ const features=read('features.html'),retail=read('retail.html');
+ assert.equal((features.match(/<h1\b/g)||[]).length,1);
+ for(const html of [retail,features]){
+  assert.match(html,/£19\.99\/month/);
+  assert.match(html,/£10\/month/);
+  assert.doesNotMatch(html,/£19\.99 per (shop|store)|one retail plan|shop-by-shop billing|confirm the shop subscription/i);
+ }
+ assert.match(features,/Shop tools included in Complete/);
+ assert.match(features,/Manufacturing tools on Complete/);
 });
 test('new practical articles and substantive older edits retain accurate publication history',()=>{
  const fresh=guides.filter(g=>g.published==='2026-11-08');assert.equal(fresh.length,3);
