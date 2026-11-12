@@ -1,11 +1,52 @@
 import {test} from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import vm from 'node:vm';
 import {marketplaceGuides} from '../src/data/marketplace-guides.js';
 const read=p=>fs.readFileSync(p,'utf8');
-test('public marketplace is an honest coming-soon route with crawlable articles, privacy and launch-only opt-in',()=>{
- const html=read('marketplace.html');assert.equal((html.match(/<h1\b/g)||[]).length,1);assert(html.includes('href="https://inventoryos.co.uk/marketplace"'));assert(html.includes('Buying, selling and marketplace accounts have not launched'));assert(html.includes('name="consent" type="checkbox" required'));assert(!html.includes('type="checkbox" checked'));assert(html.includes('separate launch-interest list'));assert(html.includes('href="/privacy#marketplace-interest"'));assert(read('privacy.html').includes('id="marketplace-interest"'));assert(!html.includes('chatgpt.site'));assert(!html.includes('Stripe'));
+test('public marketplace leads to browsing and keeps the optional checkout launch list',()=>{
+ const html=read('marketplace.html');assert.equal((html.match(/<h1\b/g)||[]).length,1);assert(html.includes('href="https://inventoryos.co.uk/marketplace"'));assert(html.includes('href="#shops"'));assert(html.includes('id="mm-directory"'));assert(html.includes('Paid online checkout is currently closed'));assert(html.includes('name="consent" type="checkbox" required'));assert(!html.includes('type="checkbox" checked'));assert(html.includes('separate launch-interest list'));assert(html.includes('href="/privacy#marketplace-interest"'));assert(read('privacy.html').includes('id="marketplace-interest"'));assert(!html.includes('chatgpt.site'));assert(!html.includes('Stripe'));
  for(const file of ['index.html','manufacturing.html','retail.html','guides.html','contact.html'])assert(read(file).includes('href="/marketplace"'),file);
  for(const article of marketplaceGuides){assert(html.includes('/guides/'+article.slug));assert(read('guides/'+article.slug+'.html').includes('datetime="2026-10-31"'));assert(read('sitemap.xml').includes('/guides/'+article.slug));}
  const schemas=[...html.matchAll(/type="application\/ld\+json">([^<]+)/g)].map(x=>JSON.parse(x[1]));assert(schemas.every(x=>x['@graph'].every(y=>!['Product','Offer','AggregateRating'].includes(y['@type']))));
+});
+
+function directoryFixture(responses) {
+ const make=()=>({children:[],textContent:'',hidden:false,events:{},
+  append(child){this.children.push(child);},replaceChildren(...children){this.children=children;},
+  addEventListener(type,fn){this.events[type]=fn;}});
+ const nodes=Object.fromEntries(['mm-directory-status','mm-directory','mm-directory-retry'].map(id=>[id,make()]));
+ const requests=[];
+ const context={document:{getElementById:id=>nodes[id],createElement:make},AbortSignal,
+  fetch:async(url,options)=>{
+   requests.push({url,options});
+   const value=responses.shift();
+   if(value instanceof Error)throw value;
+   return {ok:true,json:async()=>value};
+  }};
+ vm.runInNewContext(read('assets/marketplace-directory.js'),context);
+ return {directory:nodes['mm-directory'],status:nodes['mm-directory-status'],retry:nodes['mm-directory-retry'],requests};
+}
+
+test('directory renders public store links without credentials or interpreting seller text as HTML',async()=>{
+ const f=directoryFixture([{success:true,shops:[
+  {slug:'willow-pine',name:'Willow & Pine',description:'<sample description>'},
+  {slug:'../seller',name:'Invalid storefront'},
+ ]}]);
+ await new Promise(resolve=>setImmediate(resolve));
+ assert.equal(f.requests[0].url,'https://api.inventoryos.co.uk/platform/marche/directory');
+ assert.equal(f.requests[0].options.credentials,'omit');
+ assert.equal(f.directory.children.length,1);
+ assert.equal(f.directory.children[0].children[0].children[0].href,'https://app.inventoryos.co.uk/marche/willow-pine');
+ assert.equal(f.directory.children[0].children[1].textContent,'<sample description>');
+ assert.equal(f.status.textContent,'');
+});
+
+test('directory distinguishes an outage from an empty catalogue and allows a retry',async()=>{
+ const f=directoryFixture([new Error('offline'),{success:true,shops:[]}]);
+ await new Promise(resolve=>setImmediate(resolve));
+ assert.match(f.status.textContent,/temporarily unavailable/);
+ assert.equal(f.retry.hidden,false);
+ await f.retry.events.click();
+ assert.match(f.status.textContent,/No shops have been published yet/);
+ assert.equal(f.retry.hidden,true);
 });
 function formFixture(responses,{valid=true,intent='sell'}={}){
  const nodes={},events={},fields={email:{value:' person@example.com '},audience:{value:'unsure'},consent:{checked:true},website:{value:''}},requests=[];

@@ -6,7 +6,7 @@
  let ready=false,busy=false,complete=false;const field=name=>form.elements.namedItem(name);
  const intent=new URLSearchParams(location.search).get('intent');
  if(['buy','sell','business','account'].includes(intent)){
-  document.getElementById('marketplace-intent').textContent='This part of Mi Marché is coming soon. Leave your email below to hear when it is ready. No account is needed to register interest.';
+  document.getElementById('marketplace-intent').textContent='Leave your email to hear when paid checkout opens. You can browse published shops without an account.';
   if(intent!=='account')field('audience').value=({buy:'buyer',sell:'private-seller',business:'business'})[intent];
  }
  async function check(){

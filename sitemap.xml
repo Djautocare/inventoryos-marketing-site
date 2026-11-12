@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
- <url><loc>https://inventoryos.co.uk/marketplace</loc></url>
+ <url><loc>https://inventoryos.co.uk/marketplace</loc><lastmod>2026-11-12</lastmod></url>
  <url><loc>https://inventoryos.co.uk/guides</loc></url>
  <url><loc>https://inventoryos.co.uk/shipping-label-cropping</loc><lastmod>2026-11-08</lastmod></url>
  <url><loc>https://inventoryos.co.uk/guides/sku-vs-barcode-small-business</loc><lastmod>2026-11-08</lastmod></url>
@@ -13,14 +13,15 @@
  <url><loc>https://inventoryos.co.uk/guides/introducing-mi-marche-marketplace</loc><lastmod>2026-10-31</lastmod></url>
  <url><loc>https://inventoryos.co.uk/guides/who-mi-marche-is-for</loc><lastmod>2026-10-31</lastmod></url>
  <url><loc>https://inventoryos.co.uk/guides/stockroom-to-marketplace-selling</loc><lastmod>2026-10-31</lastmod></url>
- <url><loc>https://inventoryos.co.uk/</loc><lastmod>2026-11-08</lastmod></url>
- <url><loc>https://inventoryos.co.uk/manufacturing</loc><lastmod>2026-11-08</lastmod></url>
- <url><loc>https://inventoryos.co.uk/retail</loc><lastmod>2026-11-08</lastmod></url>
+ <url><loc>https://inventoryos.co.uk/</loc><lastmod>2026-11-12</lastmod></url>
+ <url><loc>https://inventoryos.co.uk/roadmap</loc><lastmod>2026-11-12</lastmod></url>
+ <url><loc>https://inventoryos.co.uk/manufacturing</loc><lastmod>2026-11-12</lastmod></url>
+ <url><loc>https://inventoryos.co.uk/retail</loc><lastmod>2026-11-12</lastmod></url>
  <url><loc>https://inventoryos.co.uk/shop</loc></url>
  <url><loc>https://inventoryos.co.uk/contact</loc></url>
  <url><loc>https://inventoryos.co.uk/features</loc><lastmod>2026-11-08</lastmod></url>
- <url><loc>https://inventoryos.co.uk/privacy</loc><lastmod>2026-11-08</lastmod></url>
- <url><loc>https://inventoryos.co.uk/terms</loc><lastmod>2026-11-08</lastmod></url>
+ <url><loc>https://inventoryos.co.uk/privacy</loc><lastmod>2026-11-12</lastmod></url>
+ <url><loc>https://inventoryos.co.uk/terms</loc><lastmod>2026-11-12</lastmod></url>
  <url><loc>https://inventoryos.co.uk/refunds</loc><lastmod>2026-11-08</lastmod></url>
  <url><loc>https://inventoryos.co.uk/cookies</loc><lastmod>2026-11-08</lastmod></url>
  <url><loc>https://inventoryos.co.uk/data-security</loc><lastmod>2026-11-08</lastmod></url>

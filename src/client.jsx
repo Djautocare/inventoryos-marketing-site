@@ -2,6 +2,7 @@ import React from 'react';
 import {hydrateRoot} from 'react-dom/client';
 import App from './App.jsx';
 import './marketing.css';
+import './workflow.css';
 import 'lenis/dist/lenis.css';
 const root=document.getElementById('root'),mode=root.dataset.mode||'resellers';
 // Preserve the previous site's shared audience URLs without hiding the other products.

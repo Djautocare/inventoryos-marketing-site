@@ -1,1 +1,1 @@
-import './marketing/entry-FMYBP2C5.js';
+import './marketing/entry-QKDY2PQR.js';

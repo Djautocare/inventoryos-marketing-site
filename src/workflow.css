@@ -1,0 +1,87 @@
+.capture-hero {
+  display: grid;
+  align-content: center;
+  gap: 10px;
+  min-height: 0;
+  padding-block: 30px;
+}
+
+.capture-window {
+  margin: 0;
+  border-color: #504468;
+  background: #141220;
+  color: #f7f4fb;
+}
+
+.capture-window figcaption {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  font-size: 12px;
+  border-bottom: 1px solid #3d334f;
+}
+
+.capture-window figcaption > span:first-child { font-weight: 800; }
+.capture-window figcaption > span > span { color: #d6bbff; }
+.capture-window figcaption > span:last-child { color: #ddd1e9; }
+.capture-window img { display: block; width: 100%; height: auto; }
+.capture-credit { position: relative; text-align: right; font-size: 12px; }
+.tour-controls button { color: var(--muted); font-size: 12px; }
+.tour-caption > span { font-size: 11px; }
+.tour-caption > p { font-size: 13px; }
+
+.workflow-map-page { padding-block: clamp(36px, 7vw, 100px); }
+.workflow-map-head { max-width: 760px; }
+.workflow-map-head h1 { font-size: clamp(38px, 5vw, 72px); letter-spacing: -.045em; }
+.workflow-map-head p { margin-block: 16px 20px; }
+.workflow-map-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin: 34px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.workflow-map-steps > li,
+.workflow-map-extra {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 20px;
+  background: var(--guide-panel, #fff);
+}
+
+.workflow-map-steps h2,
+.workflow-map-extra h2 { font-size: 20px; letter-spacing: -.02em; }
+.workflow-map-steps ul { padding: 0; list-style: none; margin: 12px 0 0; }
+.workflow-map-steps ul li + li { border-top: 1px solid var(--line); margin-top: 12px; padding-top: 12px; }
+.workflow-map-steps p,
+.workflow-map-extra p { font-size: 14px; margin-top: 5px; }
+.workflow-map-page a:not(.button) { color: var(--purple); font-weight: 700; }
+.workflow-map-extra { margin-block: 20px; max-width: 720px; }
+.workflow-map-links { display: flex; flex-wrap: wrap; gap: 18px; }
+
+@media (max-width: 930px) {
+  .workflow-map-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 560px) {
+  .capture-hero { width: 100%; padding-block: 10px; }
+  .workflow-map-steps { grid-template-columns: minmax(0, 1fr); }
+  .workflow-map-steps { gap: 10px; margin-top: 22px; }
+  .tour-controls { gap: 13px; }
+}
+
+.audience-screenshot {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: top;
+  border-bottom: 1px solid var(--line);
+}
+
+.feature-story .capture-window { min-width: 0; }

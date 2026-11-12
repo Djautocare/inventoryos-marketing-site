@@ -10,9 +10,9 @@ export const modes={
     "label": "Stock & dispatch",
     "short": "Reselling",
     "eyebrow": "FOR RESELLERS, MAKERS & INDEPENDENT SHOPS",
-    "line1": "One clearer workspace.",
-    "line2": "More room to grow.",
-    "intro": "Bring stock, sales, dispatch and production into one place. Start with simple stock tools, then add the paid features your business needs.",
+    "line1": "Find your stock.",
+    "line2": "Get orders out faster.",
+    "intro": "Know where every item is, record sales and prepare shipping labels from one workspace.",
     "cta": "Start for free",
     "note": "100 active items. £0 to get started.",
     "tag": "Your stock. All accounted for.",
@@ -29,8 +29,8 @@ export const modes={
         "Upload a shipping label or forward it to your workspace address. Review, crop and work through your packing queue."
       ],
       [
-        "See the bigger picture.",
-        "Bring sales, expenses and stock records together, so you can understand your recorded profit."
+        "Keep receipts with your expenses.",
+        "Upload an invoice, review the scanned details and save it with your records."
       ]
     ],
     "features": [
@@ -80,7 +80,7 @@ export const modes={
     "eyebrow": "FOR MAKERS, WORKSHOPS & SMALL BATCHES",
     "line1": "From raw materials.",
     "line2": "To ready for more.",
-    "intro": "Use InventoryOS production tools to track raw materials, plan recipes and make batches. Release finished products into the stock you’re ready to sell. Manufacturing is included in Pro alongside your stock, dispatch and shop tools.",
+    "intro": "Track raw materials, plan recipes and make batches. Record the materials you use and add your finished products to sellable stock.",
     "cta": "Explore Pro",
     "note": "Manufacturing is included in Pro · £19.99/month.",
     "tag": "Your next batch starts here.",
@@ -148,7 +148,7 @@ export const modes={
     "eyebrow": "FOR INDEPENDENT SHOPS & SERVICE BUSINESSES",
     "line1": "Your shop, in sync.",
     "line2": "From shelf to sale.",
-    "intro": "Run your physical shop with a focused till, stock control, supplier orders and daily reports. Your first physical store, unlimited tills and staff are included in the £19.99/month InventoryOS Pro subscription. Each additional physical store is £10/month.",
+    "intro": "Run your physical shop with a dedicated till, stock control, supplier orders and daily reports. Pro includes unlimited tills and staff.",
     "cta": "Explore Pro",
     "note": "Pro subscription £19.99/month with one physical store included. Extra stores £10/month each.",
     "tag": "Ready for the working day.",
@@ -157,16 +157,16 @@ export const modes={
     "tourIntro": "A familiar workflow for the shop floor, with the stock, supplier and management tools you need behind it.",
     "tour": [
       [
-        "Your shop at a glance.",
-        "See deliveries, tasks and sales. Track the opening float, cash lifts and balancing from your dashboard."
+        "Ready to serve.",
+        "Scan products into the basket and record cash or confirm a card payment taken on your own terminal."
       ],
       [
-        "Scan, serve and keep moving.",
-        "Pair the till, then use a staff number or QR and a private PIN. Scan products and record cash or manually confirmed card payments."
+        "A record for every sale.",
+        "See the completed sale, then print the receipt or find it later in your till sales history."
       ],
       [
         "Know what comes next.",
-        "See reorder quantities grouped by supplier, estimated order costs, count differences, waste and management activity."
+        "Keep track of orders already placed and mark new stock as received when the supplier delivers it."
       ]
     ],
     "features": [
