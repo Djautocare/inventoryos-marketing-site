@@ -43,7 +43,7 @@ await fs.writeFile('roadmap.html', `<!doctype html>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${esc(title)}</title><meta name="description" content="${esc(description)}"><link rel="canonical" href="${url}">
 ${social({title,description,url})}<link rel="icon" href="/favicon.svg"><script src="/assets/appearance.js?v=1"></script>
-<link rel="stylesheet" href="/assets/marketing.css?v=workflow-1"><link rel="stylesheet" href="/assets/appearance.css?v=unified-1">
+<link rel="stylesheet" href="/assets/marketing.css?v=demo-1"><link rel="stylesheet" href="/assets/appearance.css?v=unified-1">
 <script type="application/ld+json">${jsonLD(graph)}</script>
 </head>
 <body id="top">
@@ -52,7 +52,7 @@ ${social({title,description,url})}<link rel="icon" href="/favicon.svg"><script s
   <div class="workflow-map-head">
     <h1>Your InventoryOS workflow</h1>
     <p>See how the tools fit together, then choose a task to learn more.</p>
-    <a class="button primary" href="/#workflow">Explore the workspace screens <span aria-hidden="true">↗</span></a>
+    <a class="button primary" href="/tour">Watch the full walkthrough <span aria-hidden="true">↗</span></a>
   </div>
   <ol class="workflow-map-steps">${steps}</ol>
   <section class="workflow-map-extra">

@@ -31,7 +31,7 @@ function Hero({mode}) {
       <p className="hero-intro">{m.intro}</p>
       <div className="hero-actions">
         <a className="button primary" href={urlFor(mode,mode==='resellers'?'free':'complete')}>{m.cta}<Icon/></a>
-        <a className="button text" href="/roadmap">Explore the workflow <Icon/></a>
+        <a className="button text" href={mode==='resellers'?'#see-it-in-action':'/tour#'+(mode==='retail'?'sales':'production')}>{mode==='resellers'?'See it in action':'Watch the walkthrough'} <Icon/></a>
       </div>
       <p className="hero-note"><Icon name="check"/>{m.note}</p>
     </div>
@@ -40,6 +40,18 @@ function Hero({mode}) {
       <ProductWindow capture={screenCaptures[mode][0]} hero/>
       <p className="capture-credit">InventoryOS screen with sample data</p>
     </div>
+  </section>;
+}
+function DemoIntro() {
+  return <section id="see-it-in-action" className="wrap demo-intro" aria-labelledby="demo-intro-title">
+    <div className="demo-intro-copy">
+      <h2 id="demo-intro-title">See InventoryOS in action</h2>
+      <p>Follow an item from organised stock to a packed order or a sale at the till.</p>
+      <a className="inline-link" href="/tour">Watch the full walkthrough <Icon/></a>
+    </div>
+    <inventoryos-demo clip="hook">
+      <img className="demo-fallback" src={workflowMedia+'stock-overview.webp'} alt="InventoryOS sample workspace overview" width="1120" height="700" loading="lazy"/>
+    </inventoryos-demo>
   </section>;
 }
 function Tour({mode}) {
@@ -115,5 +127,5 @@ function useMotion(root){useEffect(()=>{
  if('requestIdleCallback' in window)id=window.requestIdleCallback(load,{timeout:3000});else id=setTimeout(load,1500);
  return()=>{cancelled=true;if('cancelIdleCallback' in window)window.cancelIdleCallback(id);else clearTimeout(id);cleanup?.();};
  },[]);}
-export default function App({initialMode='resellers'}){const root=useRef(null),mode=Object.hasOwn(modes,initialMode)?initialMode:'resellers';useMotion(root);return <div ref={root} id="top" data-mode={mode}><a className="skip-link" href="#main">Skip to content</a><Header mode={mode}/><main id="main"><ModeNav mode={mode}/><Hero mode={mode}/><Tour mode={mode}/><EmailFeature mode={mode}/><Features mode={mode}/><Audiences mode={mode}/><section className="shop-landing wrap"><div><div className="eyebrow">INVENTORYOS SHOP</div><h2>The tools for your next working day.</h2><p>Explore equipment we recommend, sold by InventoryOS.</p></div><a className="button outline" href="/shop">Visit the shop<Icon/></a></section>{mode==='retail'?<OnlineStorefront/>:<MarketplaceTeaser/>}<PracticalGuides mode={mode}/><Steps mode={mode}/><Pricing mode={mode}/><Faq mode={mode}/><FinalCta mode={mode}/></main><Footer/></div>;}
+export default function App({initialMode='resellers'}){const root=useRef(null),mode=Object.hasOwn(modes,initialMode)?initialMode:'resellers';useMotion(root);return <div ref={root} id="top" data-mode={mode}><a className="skip-link" href="#main">Skip to content</a><Header mode={mode}/><main id="main"><ModeNav mode={mode}/><Hero mode={mode}/>{mode==='resellers'&&<DemoIntro/>}<Tour mode={mode}/><EmailFeature mode={mode}/><Features mode={mode}/><Audiences mode={mode}/><section className="shop-landing wrap"><div><div className="eyebrow">INVENTORYOS SHOP</div><h2>The tools for your next working day.</h2><p>Explore equipment we recommend, sold by InventoryOS.</p></div><a className="button outline" href="/shop">Visit the shop<Icon/></a></section>{mode==='retail'?<OnlineStorefront/>:<MarketplaceTeaser/>}<PracticalGuides mode={mode}/><Steps mode={mode}/><Pricing mode={mode}/><Faq mode={mode}/><FinalCta mode={mode}/></main><Footer/></div>;}
 

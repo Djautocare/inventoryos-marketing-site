@@ -40,8 +40,9 @@ for(const [name,[title,description]]of Object.entries(documents)){const file=nam
 const {guideURLs,guideDates}=await import('./build-guides.mjs');
 const {marketplaceURLs}=await import('./build-marketplace.mjs');
 await import('./build-roadmap.mjs');
-const urls=[...marketplaceURLs,...guideURLs,'/', '/roadmap', '/manufacturing','/retail','/shop',...Object.keys(documents).map(name=>'/'+name),...listings.map(p=>productPageURL(p.id))];
-const refreshedPages=['/','/manufacturing','/retail','/marketplace','/roadmap','/terms','/privacy'];
+await import('./build-tour.mjs');
+const urls=[...marketplaceURLs,...guideURLs,'/', '/roadmap', '/tour', '/manufacturing','/retail','/shop',...Object.keys(documents).map(name=>'/'+name),...listings.map(p=>productPageURL(p.id))];
+const refreshedPages=['/','/manufacturing','/retail','/marketplace','/roadmap','/tour','/terms','/privacy'];
 const updatedPages=Object.fromEntries(['/', '/manufacturing','/retail','/features','/privacy','/terms','/refunds','/cookies','/data-security','/shipping-label-cropping'].map(url=>[url,'2026-11-08']));
 for(const url of refreshedPages)updatedPages[url]='2026-11-12';
 const sitemap='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n'+urls.map(url=>{const p=listings.find(p=>productPageURL(p.id)===url);return ' <url><loc>'+origin+url+'</loc>'+((guideDates[url]||updatedPages[url])?'<lastmod>'+(guideDates[url]||updatedPages[url])+'</lastmod>':'')+(p?'<image:image><image:loc>'+esc(image(p))+'</image:loc><image:title>'+esc(p.name)+'</image:title></image:image>':'')+'</url>';}).join('\n')+'\n</urlset>\n';
