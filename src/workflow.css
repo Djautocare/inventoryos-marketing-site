@@ -129,3 +129,9 @@
 @media (max-width: 780px) {
   .demo-intro, .full-demo-layout { grid-template-columns: minmax(0, 1fr); }
 }
+
+.header .desktop-nav .practice-nav-link,.header .mobile-nav .practice-nav-link{color:var(--purple);font-weight:800;white-space:nowrap}
+.demo-intro-player{min-width:0;display:grid;gap:12px}
+.demo-intro-practice{display:flex;align-items:center;flex-wrap:wrap;gap:6px 14px}
+.demo-intro-practice small{color:var(--muted);font-size:12px}
+@media(max-width:1250px) and (min-width:1151px){.header .desktop-nav{gap:10px;margin-left:0}.header .header-inner{gap:14px}}
