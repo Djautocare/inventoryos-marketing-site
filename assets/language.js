@@ -18,6 +18,7 @@
   pt: {name: 'Português', tag: 'pt-PT', button: 'Idioma', waiting: 'A carregar o idioma…', error: 'Não foi possível carregar o idioma. Tenta novamente.'},
   nl: {name: 'Nederlands', tag: 'nl', button: 'Taal', waiting: 'Taal laden…', error: 'Deze taal kon niet worden geladen. Probeer het opnieuw.'}
  };
+ const freeTools = {es:'Herramientas gratuitas',fr:'Outils gratuits',de:'Kostenlose Tools',it:'Strumenti gratuiti',pl:'Bezpłatne narzędzia',pt:'Ferramentas gratuitas',nl:'Gratis tools'};
  const attributes = ['title', 'aria-label', 'aria-description', 'placeholder', 'alt'];
  const skip = 'script,style,noscript,svg,pre,code,kbd,samp,output,option:not([value]),[contenteditable],[translate="no"],[data-i18n-ignore]';
  // Product, customer and workspace values remain as entered. The public practice
@@ -178,7 +179,7 @@
      if (!response.ok) throw new Error('Language unavailable');
      return response.json();
     })
-    .then(data => new Map(Object.entries(data)))
+    .then(data => new Map(Object.entries({...data,'Free Tools':freeTools[next],...window.InventoryToolsLocale?.[next]})))
     .catch(error => {
      caches.delete(next);
      throw error;
