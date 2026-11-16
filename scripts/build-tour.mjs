@@ -61,7 +61,7 @@ ${social({title,description,url})}<link rel="icon" href="/favicon.svg"><script s
   <details id="tour-transcript"><summary>Read the walkthrough</summary><ol>${transcript}</ol></details>
   <div class="full-demo-links">
     <a class="button primary" href="${esc(signup + '&plan=free')}">Start free</a>
-    <a class="inline-link" href="/#see-it-in-action">Watch the short demo</a>
+    <a class="inline-link" href="/#overview">Watch the short demo</a>
     <a class="inline-link" href="/roadmap">Explore the workflow map</a>
   </div>
 </main>

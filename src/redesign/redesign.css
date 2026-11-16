@@ -1,0 +1,181 @@
+/* InventoryOS redesign (Version B) — "Ultraviolet bench".
+   Visual layer only: restyles existing markup below the 3D opener. No text, links or metadata change.
+   Ideas: the page continues the opener's dark studio; each section is a lit bench with its own soft purple key light;
+   real screens float in glass device frames with a faint floor reflection; dividers are ruler ticks and eyebrows carry a
+   barcode mark (labels, picking, packing); one restrained type family (Manrope, local) with tight display tracking. */
+html[data-marketing-appearance="dark"]{--rd-bg:var(--paper,#080909);--rd-raise:#121017;--rd-panel:rgba(255,255,255,.035);--rd-line:rgba(237,230,255,.09);--rd-line2:rgba(237,230,255,.17);--rd-ink:#f4f1f8;--rd-muted:#b7aec4;--rd-accent:#b28cff;--rd-brand:#7344e7;--rd-glow:rgba(115,68,231,.30);--rd-shadow:0 40px 90px -30px rgba(0,0,0,.85);--rd-reflect:rgba(255,255,255,.10)}
+html[data-marketing-appearance="light"]{--rd-bg:var(--paper,#f8f7f4);--rd-raise:#ffffff;--rd-panel:#ffffff;--rd-line:rgba(33,27,41,.09);--rd-line2:rgba(33,27,41,.17);--rd-ink:#1d1824;--rd-muted:#5a5163;--rd-accent:#6830bf;--rd-brand:#6830bf;--rd-glow:rgba(104,48,191,.13);--rd-shadow:0 34px 70px -34px rgba(52,30,90,.28);--rd-reflect:rgba(104,48,191,.06)}
+html{--rd-r:18px;--rd-ease:cubic-bezier(.2,.8,.2,1);--rd-ruler:repeating-linear-gradient(90deg,var(--rd-line2) 0 1px,transparent 1px 12px),repeating-linear-gradient(90deg,var(--rd-line2) 0 1px,transparent 1px 60px)}
+
+html main{background:var(--rd-bg);color:var(--rd-ink)}
+html main>section:not(.opening){position:relative}
+/* ruler divider on the main sections */
+html :is(.tour,.features-section,.audiences,.steps-section,.pricing-section,.faq-section,.final-cta)::before{content:"";position:absolute;left:50%;top:0;width:min(1240px,calc(100% - 48px));height:10px;transform:translateX(-50%);background:var(--rd-ruler);background-size:100% 6px,100% 10px;background-repeat:no-repeat;-webkit-mask:linear-gradient(90deg,transparent,#000 15%,#000 85%,transparent);mask:linear-gradient(90deg,transparent,#000 15%,#000 85%,transparent);opacity:.9;pointer-events:none}
+
+/* type */
+html main .eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:11px;font-weight:800;letter-spacing:.2em;color:var(--rd-accent);margin-bottom:18px}
+html main .eyebrow::before{content:"";width:28px;height:12px;flex:none;background:repeating-linear-gradient(90deg,currentColor 0 1px,transparent 1px 3px,currentColor 3px 5px,transparent 5px 6px,currentColor 6px 7px,transparent 7px 9px);opacity:.85}
+html main section:not(.opening) h2{font-size:clamp(36px,5vw,70px);line-height:1.02;letter-spacing:-.045em;font-weight:780;color:var(--rd-ink);text-wrap:balance}
+html main section:not(.opening) h2 .subtle{color:var(--rd-muted)}
+html main section:not(.opening) h3{letter-spacing:-.02em;color:var(--rd-ink)}
+html main section:not(.opening) p{color:var(--rd-muted)}
+html main .inline-link{color:var(--rd-ink);font-weight:700;text-decoration:none;background:linear-gradient(var(--rd-accent),var(--rd-accent)) 0 100%/0 2px no-repeat;transition:background-size .35s var(--rd-ease)}
+html main .inline-link:hover{background-size:100% 2px}
+
+/* buttons */
+html main .button{border-radius:999px;font-weight:750;letter-spacing:-.005em;transition:transform .2s var(--rd-ease),box-shadow .25s var(--rd-ease),background .2s}
+html main .button.primary{background:var(--rd-brand);color:#fff;box-shadow:0 10px 30px -8px var(--rd-glow),inset 0 1px 0 rgba(255,255,255,.25)}
+html main .button.primary:hover{transform:translateY(-2px);box-shadow:0 16px 40px -10px var(--rd-glow),inset 0 1px 0 rgba(255,255,255,.3)}
+html main .button.outline{background:transparent;border:1px solid var(--rd-line2);color:var(--rd-ink)}
+html main .button.outline:hover{border-color:var(--rd-accent);transform:translateY(-2px)}
+
+/* device frames for real screens */
+html main .product-window{position:relative;border-radius:16px;overflow:visible;background:var(--rd-raise);border:1px solid var(--rd-line2);box-shadow:var(--rd-shadow),0 0 0 6px var(--rd-panel);-webkit-box-reflect:below 14px linear-gradient(transparent 82%,var(--rd-reflect))}
+html main .product-window img{border-radius:0 0 15px 15px;display:block}
+html main .product-window figcaption{display:flex;align-items:center;gap:10px;padding:11px 16px;border-bottom:1px solid var(--rd-line);font-size:12px;color:var(--rd-muted);background:transparent}
+html main .product-window figcaption::before{content:"";width:40px;height:10px;flex:none;background:radial-gradient(circle at 5px 5px,var(--rd-line2) 4px,transparent 4.5px) 0 0/15px 10px repeat-x}
+/* key light behind each screen */
+html :is(.tour-demo,.feature-story){position:relative}
+html :is(.tour-demo,.feature-story)::after{content:"";position:absolute;inset:8% 10% -4%;z-index:-1;background:radial-gradient(50% 50% at 50% 55%,var(--rd-glow),transparent 70%);filter:blur(20px);pointer-events:none}
+
+/* tour */
+html main .tour{padding-block:clamp(90px,11vw,160px) clamp(70px,8vw,120px)}
+html main .tour-heading{text-align:center;max-width:860px;margin:0 auto 46px}
+html main .tour-heading p{font-size:18px;max-width:640px;margin-inline:auto}
+html main .tour-controls{display:inline-flex;gap:4px;padding:5px;border-radius:999px;background:var(--rd-panel);border:1px solid var(--rd-line);margin:0 auto 34px}
+html main .tour-demo{display:flex;flex-direction:column;align-items:center}
+html main .tour-controls button{border-radius:999px;padding:10px 18px;font-weight:700;font-size:13px;color:var(--rd-muted);background:transparent;border:0;transition:background .25s var(--rd-ease),color .25s}
+html main .tour-controls button[aria-selected="true"]{background:var(--rd-brand);color:#fff;box-shadow:0 8px 24px -8px var(--rd-glow)}
+html main #tour-panel{width:min(1040px,100%)}
+html main .tour-caption p{text-align:center;max-width:620px;margin:26px auto 0}
+
+/* feature story (Dispatch Centre): big screen, narrow copy */
+html main .feature-story{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:clamp(36px,6vw,90px);align-items:center;padding-block:clamp(80px,10vw,150px)}
+html main .story-copy h2{font-size:clamp(34px,4vw,56px)}
+html main .tick-list{list-style:none;padding:0;display:grid;gap:12px;margin:24px 0}
+html main .tick-list li{position:relative;padding-left:34px;color:var(--rd-ink);font-weight:600}
+html main .tick-list li::before{content:"";position:absolute;left:0;top:2px;width:20px;height:20px;border-radius:50%;background:var(--rd-brand);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Ccircle cx='10' cy='10' r='10'/%3E%3C/svg%3E");box-shadow:0 0 0 4px var(--rd-glow)}
+html main .tick-list li::after{content:"";position:absolute;left:6px;top:7px;width:8px;height:5px;border:2px solid #fff;border-top:0;border-right:0;transform:rotate(-45deg)}
+html main .tick-list li svg{display:none}
+html main .story-note{display:block;margin-top:18px;color:var(--rd-muted);opacity:.8}
+
+/* features bento: gradient-rim glass */
+html main .features-section{padding-block:clamp(90px,11vw,160px)}
+html main .section-heading{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:40px;align-items:end;margin-bottom:48px}
+html main .section-heading>p{font-size:17px}
+html main .bento-card{--spotlight-card-surface:var(--rd-raise)!important;--spotlight-card-border:transparent!important;--spotlight-card-shadow:var(--rd-shadow)!important;border-radius:var(--rd-r)!important;border:1px solid transparent!important;background:linear-gradient(var(--rd-raise),var(--rd-raise)) padding-box,linear-gradient(155deg,color-mix(in srgb,var(--rd-accent) 55%,transparent),var(--rd-line) 38%,var(--rd-line) 70%,color-mix(in srgb,var(--rd-accent) 25%,transparent)) border-box!important;transition:transform .35s var(--rd-ease)}
+html main .bento-card:hover{transform:translateY(-4px)}
+
+/* audiences */
+html main .audience-card{border-radius:var(--rd-r);background:var(--rd-raise);border:1px solid var(--rd-line);overflow:hidden;transition:transform .35s var(--rd-ease),border-color .3s,box-shadow .35s}
+html main .audience-card:hover{transform:translateY(-6px);border-color:var(--rd-line2);box-shadow:var(--rd-shadow)}
+html main .audience-card.current{border-color:color-mix(in srgb,var(--rd-accent) 60%,transparent);box-shadow:0 0 0 4px var(--rd-glow)}
+
+/* shop / marketplace / guides bands: perforated label strips */
+html main .shop-landing{border:1px solid var(--rd-line);border-radius:var(--rd-r);background:var(--rd-raise);position:relative;overflow:hidden;padding-left:clamp(40px,5vw,64px)}
+html main .shop-landing::before{content:"";position:absolute;left:18px;top:14px;bottom:14px;width:0;border-left:2px dashed var(--rd-line2)}
+html main .shop-landing h2{font-size:clamp(26px,2.6vw,36px)!important}
+
+/* steps: a conveyor line that fills as it comes into view */
+html main .steps{position:relative}
+html main .steps::before{content:"";position:absolute;left:0;right:0;top:27px;height:2px;background:linear-gradient(90deg,var(--rd-accent) var(--rd-fill,0%),var(--rd-line2) var(--rd-fill,0%));transition:--rd-fill 1.2s}
+html main .steps article{position:relative;background:transparent;border:0}
+html main .step-number{display:inline-grid;place-items:center;width:56px;height:56px;border-radius:50%;background:var(--rd-bg);border:1px solid var(--rd-line2);font-weight:800;font-size:15px;color:var(--rd-accent);position:relative;z-index:1;font-variant-numeric:tabular-nums}
+html main .step-number i{display:none}
+
+/* pricing: shelf of plans, Pro lit from behind */
+html main .pricing-section{padding-block:clamp(90px,11vw,160px)}
+html main .plan{border-radius:var(--rd-r);background:var(--rd-raise);border:1px solid var(--rd-line);box-shadow:none;transition:transform .35s var(--rd-ease)}
+html main .plan:hover{transform:translateY(-4px)}
+html main .plan-featured{position:relative;border:1px solid transparent;background:linear-gradient(var(--rd-raise),var(--rd-raise)) padding-box,linear-gradient(170deg,var(--rd-accent),color-mix(in srgb,var(--rd-accent) 20%,transparent) 55%) border-box;box-shadow:0 30px 80px -30px var(--rd-glow),0 0 0 6px var(--rd-panel)}
+html main .plan-name{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--rd-accent)}
+html main .plan-price{font-size:clamp(40px,4vw,56px);font-weight:800;letter-spacing:-.04em;color:var(--rd-ink);font-variant-numeric:tabular-nums}
+html main .plan li svg{color:var(--rd-accent)}
+
+/* FAQ: large questions, ruled list */
+html main .faq-section{padding-block:clamp(90px,11vw,160px)}
+html main .faq-list details{border:0;border-bottom:1px solid var(--rd-line);border-radius:0;background:transparent;padding:4px 0}
+html main .faq-list summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:24px;align-items:center;padding:20px 0;font-size:clamp(17px,1.5vw,20px);font-weight:700;color:var(--rd-ink);letter-spacing:-.01em}
+html main .faq-list summary::-webkit-details-marker{display:none}
+html main .faq-list summary::after{content:"";flex:none;width:30px;height:30px;border-radius:50%;border:1px solid var(--rd-line2);background:linear-gradient(var(--rd-ink),var(--rd-ink)) center/11px 1.5px no-repeat,linear-gradient(var(--rd-ink),var(--rd-ink)) center/1.5px 11px no-repeat;transition:transform .3s var(--rd-ease),background-color .3s}
+html main .faq-list details[open] summary::after{transform:rotate(45deg);background-color:var(--rd-glow)}
+html main .faq-list details p{padding:0 54px 22px 0;font-size:16px}
+
+/* final call to action: a lit stage */
+html main .final-cta{border-radius:28px;overflow:hidden;background:radial-gradient(70% 90% at 50% 0%,var(--rd-glow),transparent 70%),var(--rd-raise);border:1px solid var(--rd-line);margin-block:clamp(60px,8vw,110px)}
+html main .final-cta::before{display:none}
+
+/* reveal on scroll (only when JS runs and motion is allowed; content is never hidden otherwise) */
+html.rd-js [data-rd-reveal]{opacity:0;transform:translateY(26px);transition:opacity .8s var(--rd-ease),transform .8s var(--rd-ease)}
+html.rd-js [data-rd-reveal].rd-in{opacity:1;transform:none}
+
+/* Dispatch Centre demo overlay (decorative, aria-hidden; the real screenshot stays in the page) */
+.rd-demo{position:absolute;left:0;right:0;bottom:0;overflow:hidden;border-radius:0 0 15px 15px;pointer-events:none}
+.rd-cam{position:absolute;left:0;top:0;width:1120px;height:700px;transform-origin:0 0;will-change:transform}
+.rd-cam img{position:absolute;inset:0;width:1120px;height:700px;max-width:none}
+.rd-ring{position:absolute;border:calc(3px / var(--k,1)) solid var(--rd-accent);border-radius:calc(9px / var(--k,1));box-shadow:0 0 0 calc(6px / var(--k,1)) var(--rd-glow);opacity:0}
+.rd-cursor{position:absolute;width:34px;height:34px;left:0;top:0;transform-origin:4px 3px;filter:drop-shadow(0 4px 8px rgba(0,0,0,.5))}
+.rd-click{position:absolute;width:60px;height:60px;margin:-30px 0 0 -30px;border-radius:50%;border:2px solid var(--rd-accent);opacity:0}
+
+@media (max-width:900px){
+  html main .feature-story,html main .section-heading{grid-template-columns:1fr}
+  html main .tour-controls{display:flex;overflow-x:auto;max-width:100%}
+  html main .steps::before{display:none}
+  html main .faq-list details p{padding-right:0}
+  html main .product-window{-webkit-box-reflect:none}
+}
+@media (prefers-reduced-motion: reduce){html main *{transition:none!important}}
+
+/* ---- Stronger layout moves ---- */
+/* Tour: a centred cinema stage — heading, segmented control, then a large screen over a violet floor */
+html main .tour{display:block!important;text-align:center}
+html main .tour .tour-heading{display:block;max-width:900px;margin:0 auto 40px}
+html main .tour .tour-heading h2{font-size:clamp(44px,6.4vw,92px)}
+html main .tour .tour-heading .inline-link{display:inline-block;margin-top:8px}
+html main .tour .tour-demo{display:flex!important;flex-direction:column;align-items:center;gap:0}
+html main .tour #tour-panel{display:block!important;width:min(1120px,100%);margin:0 auto}
+html main .tour #tour-panel .product-window{width:100%}
+html main .tour .tour-demo::before{content:"";position:absolute;left:50%;bottom:-6%;width:120%;height:46%;transform:translateX(-50%);background:radial-gradient(50% 60% at 50% 0%,var(--rd-glow),transparent 70%);pointer-events:none;z-index:-1}
+/* Features: full-bleed raised plate on a faint cutting-mat grid, asymmetric bento */
+html main .features-section{background:linear-gradient(var(--rd-line) 1px,transparent 1px) 0 0/32px 32px,linear-gradient(90deg,var(--rd-line) 1px,transparent 1px) 0 0/32px 32px,linear-gradient(180deg,var(--rd-bg),color-mix(in srgb,var(--rd-raise) 70%,var(--rd-bg)) 18%,color-mix(in srgb,var(--rd-raise) 70%,var(--rd-bg)) 82%,var(--rd-bg))}
+html main .features-section .feature-bento{display:grid!important;grid-template-columns:repeat(6,minmax(0,1fr))!important;gap:18px}
+html main .features-section .bento-card{grid-column:span 3}
+html main .features-section .bento-0{grid-column:span 4}html main .features-section .bento-1{grid-column:span 2}
+html main .features-section .bento-2{grid-column:span 2}html main .features-section .bento-3{grid-column:span 4}
+/* Audiences: tall screen windows, copy beneath */
+html main .audience-cards{gap:22px}
+html main .audience-card .audience-screenshot{aspect-ratio:16/11;object-fit:cover;object-position:top left;width:100%;border-bottom:1px solid var(--rd-line);transition:transform .6s var(--rd-ease)}
+html main .audience-card:hover .audience-screenshot{transform:scale(1.03)}
+html main .audience-card-copy{padding:22px 22px 26px}
+html main .audience-card-copy h3{font-size:22px}
+/* Final call to action: a dark lit stage instead of a flat purple box */
+html main .final-cta{background:radial-gradient(60% 80% at 30% 0%,var(--rd-glow),transparent 65%),radial-gradient(40% 60% at 90% 100%,color-mix(in srgb,var(--rd-brand) 22%,transparent),transparent 70%),var(--rd-raise)!important;color:var(--rd-ink)!important;padding:clamp(48px,7vw,96px)!important}
+html main .final-cta h2,html main .final-cta h3{color:var(--rd-ink)!important}
+html main .final-cta p,html main .final-cta small,html main .final-cta .cta-login{color:var(--rd-muted)!important}
+html main .final-cta .eyebrow{color:var(--rd-accent)!important}
+html main .final-cta .button.white{background:var(--rd-brand)!important;color:#fff!important;border-radius:999px}
+html main .final-cta .trial-note{background:var(--rd-panel)!important;border:1px solid var(--rd-line)!important;border-radius:var(--rd-r)}
+html main .final-cta .trial-note a{color:var(--rd-ink)!important}
+@media (max-width:900px){html main .features-section .bento-card{grid-column:1/-1!important}}
+html main .features-section .feature-bento>*{grid-column:span 3;min-width:0}
+html main .features-section .feature-bento>*:nth-child(1){grid-column:span 4}html main .features-section .feature-bento>*:nth-child(2){grid-column:span 2}
+html main .features-section .feature-bento>*:nth-child(3){grid-column:span 2}html main .features-section .feature-bento>*:nth-child(4){grid-column:span 4}
+html main .features-section .feature-bento>* .bento-card{height:100%;width:100%}
+html main .audience-cards{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important}
+html main .audience-card{min-width:0}
+@media (max-width:900px){html main .features-section .feature-bento>*{grid-column:1/-1!important}html main .audience-cards{grid-template-columns:1fr!important}}
+html main .faq-list summary>svg,html main .faq-list summary .icon{display:none}
+html main .inline-link{display:inline-flex;align-items:center;gap:6px}
+
+/* Cinematic overlay (decorative; the real screenshots stay in the page underneath) */
+.rd-dim{position:fixed;inset:0;z-index:24;pointer-events:none;visibility:hidden;opacity:0;background:#07060a}
+.rd-cine{position:fixed;z-index:25;left:0;top:0;width:0;height:0;visibility:hidden;overflow:hidden;pointer-events:none;border-radius:16px;background:#0e1322;border:1px solid var(--rd-line2);box-shadow:0 40px 120px -20px rgba(0,0,0,.8),0 0 0 6px var(--rd-panel),0 0 120px -30px var(--rd-glow)}
+.rd-cine .rd-cam{position:absolute;left:0;top:0;width:1120px;height:700px;transform-origin:0 0;will-change:transform}
+.rd-cine .rd-cam img{position:absolute;inset:0;width:1120px;height:700px;max-width:none}
+
+/* Manufacturing demo: the screen grows inside its section */
+html main .feature-story .product-window{transform-origin:50% 50%;will-change:transform}
+.rd-mfg .rd-cam img{transition:none}
+.rd-mfg .rd-cam{position:absolute;left:0;top:0;width:1120px;height:700px;transform-origin:0 0}
+.rd-mfg .rd-cam img{position:absolute;inset:0;width:1120px;height:700px;max-width:none}
+html main .faq-list summary>span{display:none}

@@ -3,6 +3,8 @@ import SpotlightCard from './components/SpotlightCard.jsx';
 import AnimatedContent from './components/AnimatedContent.jsx';
 import {screenCaptures,workflowMedia} from './data/workflow.js';
 import {modes,paths,plans,faqs,signup,login} from './data/content.js';
+import Opening from './opening/Opening.jsx';
+import './opening/opening.css';
 
 const icons={arrow:'M7 17 17 7M7 7h10v10',check:'m5 12 4 4L19 6',boxes:'m12 3 9 5-9 5-9-5 9-5Zm-9 5v9l9 5 9-5V8M12 13v9',scan:'M4 8V4h4m8 0h4v4M4 16v4h4m8 0h4v-4M7 8v8m3-8v8m4-8v8m3-8v8',receipt:'M6 3h12v18l-3-2-3 2-3-2-3 2V3Zm3 5h6m-6 4h6',repeat:'M4 7h14l-3-3m3 3-3 3M20 17H6l3 3m-3-3 3-3',clock:'M12 8v5l3 2M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0',heart:'M20 5c-3-3-6-1-8 1-2-2-5-4-8-1-4 4 1 9 8 15 7-6 12-11 8-15',measure:'m3 17 14-14 4 4L7 21l-4-4Zm5-5 3 3m1-7 3 3',recipe:'M5 3h14v18H5V3Zm4 5h6m-6 4h6m-6 4h3',trace:'M5 4h5v5H5V4Zm9 11h5v5h-5v-5ZM7 9v8h7m3-2V7h-7',bag:'M4 7h16l-1 14H5L4 7Zm4 0V6a4 4 0 0 1 8 0v1',chart:'M4 20V5m0 15h17M8 15l4-5 4 2 5-7',search:'m16 16 5 5M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0',plus:'M12 5v14M5 12h14',minus:'M5 12h14',menu:'M4 6h16M4 12h16M4 18h16',close:'m5 5 14 14M19 5 5 19',mail:'M3 5h18v14H3V5Zm0 0 9 8 9-8',spark:'m12 2 2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5L12 2',shield:'m12 2 9 4v6c0 5-5 8-9 10-4-2-9-5-9-10V6l9-4Zm-4 10 3 3 5-6'};
 export function Icon({name='arrow',className=''}){return <svg className={'icon '+className} width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.65" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={icons[name]||icons.arrow}/></svg>;}
@@ -22,6 +24,22 @@ function ProductWindow({capture,hero=false}) {
       loading={hero?'eager':'lazy'} fetchPriority={hero?'high':undefined} decoding="async"/>
   </figure>;
 }
+function HeroCopy({mode}) {
+  const m=modes[mode];
+  const topic={resellers:'Inventory software for resellers, makers & small shops',manufacturing:'Small business manufacturing software',retail:'Retail POS & stock management software'};
+  return <>
+    <div className="hero-copy">
+      <div className="eyebrow"><span/>{m.eyebrow}</div>
+      <h1><span className="hero-topic">{topic[mode]}</span><span>{m.line1}</span><span className="hero-accent">{m.line2}</span></h1>
+      <p className="hero-intro">{m.intro}</p>
+      <div className="hero-actions">
+        <a className="button primary" href={urlFor(mode,mode==='resellers'?'free':'complete')}>{m.cta}<Icon/></a>
+        <a className="button text" href={mode==='resellers'?'/tour':'/tour#'+(mode==='retail'?'sales':'production')}>{mode==='resellers'?'See it in action':'Watch the walkthrough'} <Icon/></a>
+      </div>
+      <p className="hero-note"><Icon name="check"/>{m.note}</p>
+    </div>
+  </>;
+}
 function Hero({mode}) {
   const m=modes[mode];
   const topic={resellers:'Inventory software for resellers, makers & small shops',manufacturing:'Small business manufacturing software',retail:'Retail POS & stock management software'};
@@ -32,7 +50,7 @@ function Hero({mode}) {
       <p className="hero-intro">{m.intro}</p>
       <div className="hero-actions">
         <a className="button primary" href={urlFor(mode,mode==='resellers'?'free':'complete')}>{m.cta}<Icon/></a>
-        <a className="button text" href={mode==='resellers'?'#see-it-in-action':'/tour#'+(mode==='retail'?'sales':'production')}>{mode==='resellers'?'See it in action':'Watch the walkthrough'} <Icon/></a>
+        <a className="button text" href={mode==='resellers'?'/tour':'/tour#'+(mode==='retail'?'sales':'production')}>{mode==='resellers'?'See it in action':'Watch the walkthrough'} <Icon/></a>
       </div>
       <p className="hero-note"><Icon name="check"/>{m.note}</p>
     </div>
@@ -134,5 +152,5 @@ function useMotion(root){useEffect(()=>{
  if('requestIdleCallback' in window)id=window.requestIdleCallback(load,{timeout:3000});else id=setTimeout(load,1500);
  return()=>{cancelled=true;if('cancelIdleCallback' in window)window.cancelIdleCallback(id);else clearTimeout(id);cleanup?.();};
  },[]);}
-export default function App({initialMode='resellers'}){const root=useRef(null),mode=Object.hasOwn(modes,initialMode)?initialMode:'resellers';useMotion(root);return <div ref={root} id="top" data-mode={mode}><a className="skip-link" href="#main">Skip to content</a><Header showFreeTools mode={mode} showPractice={mode==='resellers'}/><main id="main"><ModeNav mode={mode}/><Hero mode={mode}/>{mode==='resellers'&&<DemoIntro/>}<Tour mode={mode}/><EmailFeature mode={mode}/><Features mode={mode}/><Audiences mode={mode}/><section className="shop-landing wrap"><div><div className="eyebrow">INVENTORYOS SHOP</div><h2>The tools for your next working day.</h2><p>Explore equipment we recommend, sold by InventoryOS.</p></div><a className="button outline" href="/shop">Visit the shop<Icon/></a></section>{mode==='retail'?<OnlineStorefront/>:<MarketplaceTeaser/>}<PracticalGuides mode={mode}/><Steps mode={mode}/><Pricing mode={mode}/><Faq mode={mode}/><FinalCta mode={mode}/></main><Footer showFreeTools/></div>;}
+export default function App({initialMode='resellers'}){const root=useRef(null),mode=Object.hasOwn(modes,initialMode)?initialMode:'resellers';useMotion(root);return <div ref={root} id="top" data-mode={mode}><a className="skip-link" href="#main">Skip to content</a><Header showFreeTools mode={mode} showPractice={mode==='resellers'}/><main id="main"><ModeNav mode={mode}/><Opening><HeroCopy mode={mode}/></Opening><Tour mode={mode}/><EmailFeature mode={mode}/><Features mode={mode}/><Audiences mode={mode}/><section className="shop-landing wrap"><div><div className="eyebrow">INVENTORYOS SHOP</div><h2>The tools for your next working day.</h2><p>Explore equipment we recommend, sold by InventoryOS.</p></div><a className="button outline" href="/shop">Visit the shop<Icon/></a></section>{mode==='retail'?<OnlineStorefront/>:<MarketplaceTeaser/>}<PracticalGuides mode={mode}/><Steps mode={mode}/><Pricing mode={mode}/><Faq mode={mode}/><FinalCta mode={mode}/></main><Footer showFreeTools/></div>;}
 
