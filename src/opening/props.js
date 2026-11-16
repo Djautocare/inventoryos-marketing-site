@@ -284,7 +284,10 @@ function parseSim(buf){const dv=new DataView(buf),n=dv.getInt32(0,true),f=dv.get
   return {n,f,end,data};}
 const fetchBin=async u=>{try{const r=await fetch(u);if(r.ok&&!/text\/html/.test(r.headers.get('content-type')||''))return await r.arrayBuffer();}catch(e){}
   const t=await (await fetch(u+'.b64.txt')).text();const b=atob(t.trim());const a=new Uint8Array(b.length);for(let i=0;i<b.length;i++)a[i]=b.charCodeAt(i);return a.buffer;};
-export async function loadBundle(base,name){const gltf=await new GLTFLoader().parseAsync(await fetchBin(base+'opening/'+name+'.glb'),base+'opening/');
+// The site CSP blocks fetch() of blob: URLs (connect-src), which GLTFLoader's ImageBitmapLoader uses for embedded textures.
+// Decode textures through <img> instead (img-src allows blob:), so no CSP change is needed.
+const cspSafeLoader=()=>{const l=new GLTFLoader();l.register(p=>{p.textureLoader=new THREE.TextureLoader(p.options.manager);return {name:'csp_safe_textures'};});return l;};
+export async function loadBundle(base,name){const gltf=await cspSafeLoader().parseAsync(await fetchBin(base+'opening/'+name+'.glb'),base+'opening/');
   if(name!=='pack')return {gltf};const buf=await fetchBin(base+'opening/peanuts.bin').catch(()=>null);return {gltf,sim:buf?parseSim(buf):null};}
 const shadowAll=r=>r.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true;}});
 const adopt=(target,src)=>{target.clear();[...src.children].forEach(c=>target.add(c));};

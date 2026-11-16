@@ -6,7 +6,7 @@ import {gsap} from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 // Pacing: scene length multiplier and reading holds (in screen-heights of scroll) where captions and screens appear.
-const PACE=1.12,HOLD_FOCUS=.28,HOLD_PANEL=.28,HOLD_TEXT=.05,HOLD_DASH=.45;
+const PACE=1.6,HOLD_FOCUS=.4,HOLD_PANEL=.4,HOLD_TEXT=.08,HOLD_DASH=.6;   // slowed down after live feedback (≈1.4×)
 const FOCUS=false;   // focus-and-zoom moments switched off by the owner (kept in code for later)
 
 const ASSETS=()=>window.__OPENING_ASSETS||'/assets/';
