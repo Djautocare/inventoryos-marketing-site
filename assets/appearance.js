@@ -10,7 +10,7 @@
  document.addEventListener('DOMContentLoaded',syncDocuments);
  document.addEventListener('click',event=>{const button=event.target.closest('[data-marketing-appearance-toggle]');if(button&&!button.closest('#root')){event.preventDefault();window.InventoryMarketingAppearance.toggle();}});
  const languageScript=document.createElement('script');
- languageScript.src='/assets/language.js?v=1';
+ languageScript.src='/assets/language.js?v=2';
  languageScript.dataset.localeScope='public';
  document.head.append(languageScript);
  window.addEventListener('storage',event=>{if(event.key===key)apply(event.newValue,false);});

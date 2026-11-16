@@ -24,7 +24,7 @@ for(const p of listings){
  let html=p.id==='jadens-668bt'?printer.replace(/<h2>(JADENS[^<]+)<\/h2>/,'<h1>$1</h1>'):printer.replace(staticSection,information(p)).replace(/<section class="shop-questions wrap">[\s\S]*?<\/section>/,'');
  html=html.replace(/<section class="shop-details wrap"/,details(p)+'<section class="shop-details wrap"');
  if(p.id!=='jadens-668bt')html=html.replace(/<div data-printer-legacy-purchase>[\s\S]*?<\/div>/g,'');
- const graph=productSchema(p,image(p),productURL(p));html=metadata(html,{title:(p.id==='ps-thermal-labels-on-rolls'?'Direct Thermal Label Rolls':p.id==='ps-colour-mailing-bags'?'Coloured Self-Seal Mailing Bags':p.name)+' | InventoryOS Shop',description:p.description,url:productURL(p),type:'product',image:image(p),imageAlt:p.name},graph);
+ const graph=productSchema(p,image(p),productURL(p));html=metadata(html,{title:(p.id==='ps-thermal-labels-on-rolls'?'Direct Thermal Label Rolls':p.id==='ps-colour-mailing-bags'?'Coloured Self-Seal Mailing Bags':p.name)+' | InventoryOS Shop',description:p.description,url:productURL(p),type:'product',image:origin+'/assets/og/'+p.id+'.jpg',imageAlt:p.name},graph);
  await fs.writeFile('shop-product-pages/'+p.id+'.html',html);
  if(p.id==='jadens-668bt'){await fs.writeFile('shop-printer.html',html);await fs.writeFile('shop/product/jadens-668bt/index.html',html);}
  redirects+=`${productPageURL(p.id)} /shop-product-pages/${p.id} 200\n${productPageURL(p.id)}/ ${productPageURL(p.id)} 301\n`;
@@ -46,6 +46,13 @@ const urls=[...marketplaceURLs,...guideURLs,...toolURLs,'/', '/roadmap', '/tour'
 const refreshedPages=['/','/manufacturing','/retail','/marketplace','/roadmap','/tour','/terms','/privacy'];
 const updatedPages=Object.fromEntries(['/', '/manufacturing','/retail','/features','/privacy','/terms','/refunds','/cookies','/data-security','/shipping-label-cropping'].map(url=>[url,'2026-11-08']));
 for(const url of refreshedPages)updatedPages[url]='2026-11-12';
+// 16 Nov 2026 release: redesigned homepages, expanded tool pages and guide/tool hub links.
+for(const url of ['/','/manufacturing','/retail','/tools','/guides',...toolURLs])updatedPages[url]='2026-11-16';
+// Every other URL: the date of the last commit that changed its HTML (omitted when git is unavailable).
+const {execFileSync}=await import('node:child_process');
+const fileFor=url=>url==='/'?'index.html':url.startsWith('/shop/product/')?'shop-product-pages/'+url.split('/').pop()+'.html':url.slice(1)+'.html';
+const gitDate=url=>{try{return execFileSync('git',['log','-1','--format=%cs','--',fileFor(url)],{encoding:'utf8',stdio:['ignore','pipe','ignore']}).trim()||null;}catch(e){return null;}};
+for(const url of urls)if(!guideDates[url]&&!updatedPages[url]){const d=gitDate(url);if(d)updatedPages[url]=d;}
 const sitemap='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n'+urls.map(url=>{const p=listings.find(p=>productPageURL(p.id)===url);return ' <url><loc>'+origin+url+'</loc>'+((guideDates[url]||updatedPages[url])?'<lastmod>'+(guideDates[url]||updatedPages[url])+'</lastmod>':'')+(p?'<image:image><image:loc>'+esc(image(p))+'</image:loc><image:title>'+esc(p.name)+'</image:title></image:image>':'')+'</url>';}).join('\n')+'\n</urlset>\n';
 await fs.writeFile('sitemap.xml',sitemap);
 await fs.writeFile('robots.txt','User-agent: *\nAllow: /\n\nSitemap: '+origin+'/sitemap.xml\n');

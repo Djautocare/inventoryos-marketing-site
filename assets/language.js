@@ -356,7 +356,15 @@
  }
  // The public homepage hydrates server-rendered React markup. Wait until its
  // deferred app scripts have run before adding a sibling or changing text.
- if (publicSite && document.readyState !== 'complete') window.addEventListener('load', start, {once: true});
+ const reactPage = publicSite && document.getElementById('root');
+ if (reactPage && !window.__iosHydrated) {
+  // Concurrent hydration can finish after 'load'; changing React's markup earlier forces a full client re-render.
+  let started = false;
+  const go = () => { if (!started) { started = true; start(); } };
+  window.addEventListener('inventoryos:hydrated', go, {once: true});
+  window.addEventListener('load', () => setTimeout(go, 8000), {once: true});
+ }
+ else if (publicSite && document.readyState !== 'complete') window.addEventListener('load', start, {once: true});
  else if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start, {once: true});
  else start();
 })();

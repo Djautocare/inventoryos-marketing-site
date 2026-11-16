@@ -179,3 +179,4 @@ html main .feature-story .product-window{transform-origin:50% 50%;will-change:tr
 .rd-mfg .rd-cam{position:absolute;left:0;top:0;width:1120px;height:700px;transform-origin:0 0}
 .rd-mfg .rd-cam img{position:absolute;inset:0;width:1120px;height:700px;max-width:none}
 html main .faq-list summary>span{display:none}
+.shop-landing .guide-tools{display:flex;flex-wrap:wrap;gap:10px 22px;margin:14px 0 0}

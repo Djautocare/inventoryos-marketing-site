@@ -13,6 +13,8 @@ if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
   cinematic();
   queueMicrotask(()=>{manufacturingDemo();});   // helpers below are defined after this block
 }
+// pins (tour) are in place now: scroll restoration waits for this before it finishes
+queueMicrotask(()=>{window.__iosRedesignReady=true;});
 // Standout: one continuous camera move. The first screenshot (tour) enlarges into the app, a cursor clicks Dispatch Centre in the
 // real sidebar, then "Import label files", the real 4×6 auto-crop preview is highlighted, and the view settles onto the
 // Dispatch Centre section's own screenshot. Scroll-scrubbed (reverses), decorative overlay only (aria-hidden).

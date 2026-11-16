@@ -1,6 +1,8 @@
 import fs from 'node:fs/promises';
 import {escapeHTML as esc,origin,social,jsonLD,organization} from './seo.mjs';
 import {tools} from '../assets/tools/data.mjs';
+import {toolContent} from './tools-content.mjs';
+import {guides} from '../src/data/guides.js';
 
 const header=(await fs.readFile('.build/header.html','utf8'))
   .replaceAll('href="#workflow"','href="/#workflow"').replaceAll('href="#features"','href="/#features"').replaceAll('href="#pricing"','href="/#pricing"')
@@ -27,12 +29,19 @@ function shell({title,path,description,main,extra=[],scripts=''}){
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#080909">
 <title>${esc(title)} | InventoryOS</title><meta name="description" content="${esc(description)}"><link rel="canonical" href="${url}">
 ${social({title:title+' | InventoryOS',description,url})}<link rel="icon" href="/favicon.svg">
-<script src="/assets/appearance.js?v=1"></script><link rel="stylesheet" href="/assets/marketing.css?v=unified-1"><link rel="stylesheet" href="/assets/appearance.css?v=unified-1"><link rel="stylesheet" href="/assets/tools/tools.css?v=1">
+<script src="/assets/appearance.js?v=1"></script><link rel="stylesheet" href="/assets/marketing.css?v=unified-1"><link rel="stylesheet" href="/assets/appearance.css?v=unified-1"><link rel="stylesheet" href="/assets/tools/tools.css?v=2">
 <script type="application/ld+json">${jsonLD(graph)}</script></head>
 <body id="top"><a class="skip-link" href="#main">Skip to content</a>${header}<main id="main" class="wrap tools-main">${main}</main>${footer}
 ${language}<script src="/assets/pages.js?v=2" defer></script>${scripts}</body></html>
 `;
 }
+// Crawlable guidance under each tool: when to use it, a worked example, questions, related guides and the matching InventoryOS feature.
+function guidance(tool){const c=toolContent[tool.id];if(!c)return '';const name=tool.title.replace(/^Free /,'');
+  const related=guides.filter(g=>c.guides.includes(g.slug));
+  return `<section class="tool-explainer"><h2>When to use the ${esc(name.toLowerCase())}</h2>${c.use.map(p=>'<p>'+esc(p)+'</p>').join('')}</section>
+<section class="tool-explainer"><h2>Worked example</h2><ol class="tool-steps">${c.example.map(li=>'<li>'+li+'</li>').join('')}</ol><p class="tool-support">Sample figures for illustration.</p></section>
+<section class="tool-explainer tool-faq"><h2>Common questions</h2>${c.faqs.map(([q,a])=>'<h3>'+esc(q)+'</h3><p>'+esc(a)+'</p>').join('')}</section>
+<section class="tool-explainer"><h2>Related guides</h2><ul class="tool-links">${related.map(g=>'<li><a href="/guides/'+g.slug+'">'+esc(g.title)+'</a></li>').join('')}<li><a href="/guides">Browse all practical guides</a></li></ul><h3>${esc(c.app[0])}</h3><p>${esc(c.app[1])} <a href="${c.app[2]}">${esc(c.app[3])}</a>.</p></section>`;}
 function fieldHTML(field){
   const {key,label,type='text',required,max,min,step,placeholder,value,options}=field;
   const attribute=(name,value)=>value===undefined?'':' '+name+'="'+esc(value)+'"';
@@ -47,7 +56,8 @@ function fieldHTML(field){
 const hub=shell({title:'Free Tools for Small Businesses',path:'/tools',description:publicDescription,
   main:`<header class="tools-hero"><p><a class="tools-back" href="/">InventoryOS</a></p><h1>Free Tools</h1><p>Make labels and documents, or work out pricing and stock levels. No account needed.</p></header>
 ${groups.map(group=>`<section class="tools-group" id="${slugByGroup[group]}"><h2>${esc(group)}</h2><div class="tools-grid">${tools.filter(tool=>tool.group===group).map(label).join('')}</div></section>`).join('')}
-<section class="tool-explainer"><h2>Need to keep a stock record?</h2><p>Use InventoryOS to manage stock, sales and dispatch in one workspace.</p><a href="/features">Explore InventoryOS features</a></section>`,
+<section class="tool-explainer"><h2>Need to keep a stock record?</h2><p>Use InventoryOS to manage stock, sales and dispatch in one workspace.</p><a href="/features">Explore InventoryOS features</a></section>
+<section class="tool-explainer"><h2>Practical guides</h2><p>Step-by-step advice on SKUs and barcodes, reorder levels, materials planning and shipping labels.</p><a href="/guides">Browse the practical guides</a></section>`,
   extra:[{'@type':'CollectionPage',name:'InventoryOS Free Tools',url:origin+'/tools',mainEntity:{'@type':'ItemList',itemListElement:tools.map((tool,index)=>({'@type':'ListItem',position:index+1,name:tool.title,url:origin+pagePath(tool)}))}}]});
 await fs.writeFile('tools.html',hub);
 await fs.mkdir('tools',{recursive:true});
@@ -75,6 +85,7 @@ ${outputs?'<p class="tool-support">Files and details are processed in this brows
 ${outputs?'<div class="tool-actions"><button type="button" data-export class="button primary" hidden>'+exportLabel+'</button>'+(print?'<button type="button" data-print class="tool-secondary" hidden>Print</button>':'')+'</div>':''}</section>
 </div>
 <section class="tool-explainer"><h2>${tool.formula?'How the calculation works':'Using the output'}</h2>${tool.formula?'<p><strong>'+esc(tool.formula)+'</strong></p>':''}<p>${esc(tool.method)}</p></section>
+${guidance(tool)}
 <section class="tools-group"><h2>Other free tools</h2><div class="tools-grid">${tools.filter(item=>item.id!==tool.id&&item.group===tool.group).map(label).join('')}<a class="tools-card" href="/tools"><h3>See all free tools</h3><p>Browse the full set of InventoryOS business tools.</p></a></div></section>`;
   await fs.writeFile('tools/'+tool.id+'.html',shell({title:tool.title,description:tool.description,path,main,scripts,
     extra:[{'@type':'WebApplication',name:tool.title,description:tool.description,url:origin+path,applicationCategory:'BusinessApplication',operatingSystem:'Web',isAccessibleForFree:true,offers:{'@type':'Offer',price:'0',priceCurrency:'GBP'}}]}));

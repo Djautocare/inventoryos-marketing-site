@@ -56,3 +56,5 @@
   .tool-output canvas{width:210mm!important;height:297mm!important;break-after:page}
   .tool-output canvas:last-child{break-after:auto}
 }
+.tool-steps{margin:4px 0 12px;padding-left:1.3em}.tool-steps li{margin:6px 0}.tool-faq h3,.tool-explainer h3{margin:16px 0 4px;font-size:1rem}.tool-links{margin:4px 0 12px;padding-left:1.2em}.tool-links li{margin:6px 0}
+.tool-explainer a{color:inherit;text-decoration:underline;text-underline-offset:3px}
